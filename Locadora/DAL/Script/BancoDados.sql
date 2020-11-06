@@ -37,3 +37,5 @@ CREATE TABLE Itens (
         Diretor varchar(max) NOT NULL,
         CapaFilme image NOT NULL
 )
+
+fiz cagada mesmo

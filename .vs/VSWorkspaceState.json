@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Locadora",
+    "\\Locadora\\DAL",
     "\\Locadora\\DAL\\Script"
   ],
-  "SelectedNode": "\\Teste",
+  "SelectedNode": "\\Locadora\\DAL\\Script\\BancoDados.sql",
   "PreviewInSolutionExplorer": false
 }

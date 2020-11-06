@@ -38,4 +38,39 @@ CREATE TABLE Itens (
         CapaFilme image NOT NULL
 )
 
-fiz cagada mesmo
+CREATE TABLE Clientes (
+    CdCliente INT PRIMARY KEY IDENTITY,
+    Nome varchar(50) NOT NULL,
+    DtNascimento date NOT NULL,
+    Sexo char(1) NOT NULL,
+    DsEstadoCivil CHAR (1) NOT NULL,
+    RG varchar(10) NOT NULL,
+    CPF varchar(12) NOT NULL,
+    Endereco varchar(50) NOT NULL,
+    Cidade varchar(50) NOT NULL,
+    CEP varchar(50) NOT NULL,
+    Estado varchar(2) NOT NULL,
+    Telefone varchar(20) NOT NULL,
+    Email varchar(50) NOT NULL,
+    Celular varchar(20) NOT NULL,
+    DsStatus varchar(50) NOT NULL
+)
+
+CREATE TABLE Artistas (
+    CdArtistia INT PRIMARY KEY IDENTITY,
+    Nome varchar (50) NOT NULL,
+    DtNascimento date NOT NULL,
+    PaisNascimento varchar(20) NOT NULL,
+    Foto image
+)
+
+CREATE TABLE Generos (
+    CdGenero INT PRIMARY KEY IDENTITY,
+    Nome varchar(50) NOT NULL,
+)
+
+--CREATE TABLE Locacao (
+    -- 05/11/202:
+    -- Devemos falar com o Anderson, para saber como proceder:
+    -- Chave primaria composta
+--)

@@ -16,7 +16,14 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCadastroFilme());
+
+            frmLogin login = new frmLogin();
+
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new frmPaginaInicial());
+
+            }
         }
     }
 }

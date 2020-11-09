@@ -8,3 +8,13 @@ Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.GenerateResource.c
 Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.exe
 Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.pdb
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\GUI.exe.config
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\GUI.exe
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\GUI.pdb
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroFilme.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.exe
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.pdb

@@ -6,6 +6,6 @@
     "\\Locadora\\DAL\\Script",
     "\\Locadora\\GUI"
   ],
-  "SelectedNode": "\\Locadora\\GUI\\FrmCadastroFilmes.cs",
+  "SelectedNode": "\\Locadora\\DAL\\FilmeDAL.cs",
   "PreviewInSolutionExplorer": false
 }

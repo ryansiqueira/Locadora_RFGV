@@ -10,7 +10,7 @@ using System.Configuration;
 
 namespace DAL
 {
-    public class UsuárioDAL
+    public class UsuarioDAL
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["BDLocadoraConnectionString"].ConnectionString;
 

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using DAL;
-using Models;
 
 namespace GUI
 {

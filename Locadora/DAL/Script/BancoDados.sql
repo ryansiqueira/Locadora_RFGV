@@ -6,7 +6,7 @@ GO
 
 CREATE TABLE Funcionarios (
     CdFuncionario INT PRIMARY KEY IDENTITY,
-	Nome     VARCHAR (50)  NOT NULL,
+	NmFuncionario VARCHAR (50)  NOT NULL,
     CPF        VARCHAR (14)  NOT NULL,
     DtNascimento  DATE          NOT NULL,
     DsEstadoCivil CHAR (1)      NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE Itens (
 
 CREATE TABLE Clientes (
     CdCliente INT PRIMARY KEY IDENTITY,
-    Nome varchar(50) NOT NULL,
+    NmCliente varchar(50) NOT NULL,
     DtNascimento date NOT NULL,
     Sexo char(1) NOT NULL,
     DsEstadoCivil CHAR (1) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE Clientes (
 
 CREATE TABLE Artistas (
     CdArtistia INT PRIMARY KEY IDENTITY,
-    Nome varchar (50) NOT NULL,
+    NmArtistas varchar (50) NOT NULL,
     DtNascimento date NOT NULL,
     PaisNascimento varchar(20) NOT NULL,
     Foto image
@@ -66,7 +66,7 @@ CREATE TABLE Artistas (
 
 CREATE TABLE Generos (
     CdGenero INT PRIMARY KEY IDENTITY,
-    Nome varchar(50) NOT NULL,
+    NmGenero varchar(50) NOT NULL,
 )
 
 --CREATE TABLE Locacao (

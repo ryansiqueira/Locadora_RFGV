@@ -55,6 +55,22 @@
             this.txtAtoresParticipantes = new System.Windows.Forms.TextBox();
             this.txtDiretor = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.GridViewListaItens = new System.Windows.Forms.DataGridView();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.GridViewHistorico = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -279,18 +295,140 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(161, 531);
+            this.btnAdicionar.Location = new System.Drawing.Point(161, 509);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionar.Size = new System.Drawing.Size(100, 31);
             this.btnAdicionar.TabIndex = 25;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            // 
+            // GridViewListaItens
+            // 
+            this.GridViewListaItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewListaItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.GridViewListaItens.Location = new System.Drawing.Point(543, 41);
+            this.GridViewListaItens.Name = "GridViewListaItens";
+            this.GridViewListaItens.Size = new System.Drawing.Size(449, 253);
+            this.GridViewListaItens.TabIndex = 26;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(161, 546);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(100, 31);
+            this.btnEditar.TabIndex = 27;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(161, 583);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(100, 31);
+            this.btnExcluir.TabIndex = 28;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // GridViewHistorico
+            // 
+            this.GridViewHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewHistorico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.Column1});
+            this.GridViewHistorico.Location = new System.Drawing.Point(543, 314);
+            this.GridViewHistorico.Name = "GridViewHistorico";
+            this.GridViewHistorico.Size = new System.Drawing.Size(449, 253);
+            this.GridViewHistorico.TabIndex = 29;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "CodigoBarras";
+            this.Column2.HeaderText = "Código de Barras";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Titulo";
+            this.Column3.HeaderText = "Titulo";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Genero";
+            this.Column4.HeaderText = "Gênero";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Ano";
+            this.Column5.HeaderText = "Ano";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NmCliente";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nome do Cliente";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DtLocacao";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Data Locação";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DtDevolucaoPrevista";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Data de devolução prevista";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DtDevolucao";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Data de devolução";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "VlPago";
+            this.Column1.HeaderText = "Valor Pago";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(267, 36);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 30;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // frmCadastroFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 643);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.GridViewHistorico);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.GridViewListaItens);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.txtDiretor);
             this.Controls.Add(this.txtAtoresParticipantes);
@@ -321,6 +459,8 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCadastroFilme";
             this.Text = "Cadastro de Filmes";
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,6 +495,20 @@
         private System.Windows.Forms.TextBox txtAtoresParticipantes;
         private System.Windows.Forms.TextBox txtDiretor;
         private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.DataGridView GridViewListaItens;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.DataGridView GridViewHistorico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 

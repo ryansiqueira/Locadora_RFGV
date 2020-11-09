@@ -7,7 +7,6 @@ using Models;
 using System.Data.SqlClient;
 using System.Configuration;
 
-
 namespace DAL
 {
     public class UsuarioDAL
@@ -22,7 +21,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT COUNT(*) FROM Usuarios WHERE DsLogin = @login AND DsSenha = @senha";
+            string sql = "SELECT COUNT(*) FROM Usuarios WHERE DsLogin = @login AND Senha = @senha";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -55,5 +54,4 @@ namespace DAL
             conn.Close();
         }
     }
-}
 }

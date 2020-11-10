@@ -12,3 +12,12 @@ C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Tra
 C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Locadora\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Locadora\DAL\obj\Debug\DAL.dll
 C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Locadora\DAL\obj\Debug\DAL.pdb
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\DAL\bin\Debug\DAL.dll
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\DAL\bin\Debug\DAL.pdb
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\DAL\bin\Debug\Models.dll
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\DAL\bin\Debug\Models.pdb
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\DAL\obj\Debug\DAL.dll
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\DAL\obj\Debug\DAL.pdb

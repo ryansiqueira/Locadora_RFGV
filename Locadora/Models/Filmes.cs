@@ -9,17 +9,17 @@ namespace Models
     public class Filmes
     {
         public int Codigo { get; set; }
-        public int CodigoBarras { get; set; }
+        public string CodigoBarras { get; set; }
         public string Titulo { get; set; }
         public string Genero { get; set; }
         public int Ano { get; set; }
         public char Tipo { get; set; }
-        public decimal Preco { get; set; }
+        public string Preco { get; set; }
         public DateTime DataAdquirida { get; set; }
-        public decimal ValorCusto { get; set; }
+        public string ValorCusto { get; set; }
         public string Situacao { get; set; }
         public string Atores { get; set; }
         public string Diretor { get; set; }
-        public string FotoFilme { get; set; }
+        public System.Reflection.ImageFileMachine FotoFilme { get; set; }
     }
 }

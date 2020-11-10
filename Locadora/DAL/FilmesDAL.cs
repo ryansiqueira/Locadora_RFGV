@@ -18,9 +18,9 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "INSERT INTO Itens VALUES (@codigo, @codigobarras, @titulo, @genero, @ano, @tipo, @preco, @dataadquirida, @valorcusto, @situacao, @atores, @diretor, @foto)";
+            string sql = "INSERT INTO Itens VALUES (@codigobarras, @titulo, @genero, @ano, @tipo, @preco, @dataadquirida, @valorcusto, @situacao, @atores, @diretor)";
             SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@codigo", objFilmes.Codigo);
+            //cmd.Parameters.AddWithValue("@codigo", objFilmes.Codigo);
             cmd.Parameters.AddWithValue("@codigobarras", objFilmes.CodigoBarras);
             cmd.Parameters.AddWithValue("@titulo", objFilmes.Titulo);
             cmd.Parameters.AddWithValue("@genero", objFilmes.Genero);
@@ -32,14 +32,14 @@ namespace DAL
             cmd.Parameters.AddWithValue("@situacao", objFilmes.Situacao);
             cmd.Parameters.AddWithValue("@atores", objFilmes.Atores);
             cmd.Parameters.AddWithValue("@diretor", objFilmes.Diretor);
-            cmd.Parameters.AddWithValue("@foto", objFilmes.FotoFilme);
+            //cmd.Parameters.AddWithValue("@foto", objFilmes.FotoFilme);
 
             cmd.ExecuteNonQuery();
 
             conn.Close();
         }
 
-        public Filmes ObterFilme(int cdFilme, string tituloFilme)
+        public Filmes ObterFilme(string cdFilme, string tituloFilme)
         {
             Filmes filme = null;
 
@@ -62,13 +62,13 @@ namespace DAL
                 filme.Genero = dr["Genero"].ToString();
                 filme.Ano = Convert.ToInt32(dr["Ano"]);
                 filme.Tipo = Convert.ToChar(dr["Tipo"]);
-                filme.Preco = Convert.ToDecimal(dr["Preco"]);
+                filme.Preco = dr["Preco"].ToString();
                 filme.DataAdquirida = Convert.ToDateTime(dr["DtAdquirida"]);
-                filme.ValorCusto = Convert.ToDecimal(dr["VlCusto"]);
+                filme.ValorCusto = dr["VlCusto"].ToString();
                 filme.Situacao = dr["Situacao"].ToString();
                 filme.Atores = dr["Atores"].ToString();
                 filme.Diretor = dr["Diretor"].ToString();
-                filme.FotoFilme = dr["CapaFilme"].ToString();
+                //filme.FotoFilme = dr["CapaFilme"].ToString();
             }
 
             string sql2 = "SELECT * FROM Itens WHERE Titulo = @titulo";
@@ -82,17 +82,17 @@ namespace DAL
                 filme = new Filmes();
                 filme.Titulo = tituloFilme;
                 filme.Codigo = Convert.ToInt32(dr2["Codigo"]);
-                filme.CodigoBarras = Convert.ToInt32(dr2["CodigoBarras"]);
+                filme.CodigoBarras = dr2["CodigoBarras"].ToString();
                 filme.Genero = dr2["Genero"].ToString();
                 filme.Ano = Convert.ToInt32(dr2["Ano"]);
                 filme.Tipo = Convert.ToChar(dr2["Tipo"]);
-                filme.Preco = Convert.ToDecimal(dr2["Preco"]);
+                filme.Preco = dr2["Preco"].ToString();
                 filme.DataAdquirida = Convert.ToDateTime(dr2["DtAdquirida"]);
-                filme.ValorCusto = Convert.ToDecimal(dr2["VlCusto"]);
+                filme.ValorCusto = dr2["VlCusto"].ToString();
                 filme.Situacao = dr2["Situacao"].ToString();
                 filme.Atores = dr2["Atores"].ToString();
                 filme.Diretor = dr2["Diretor"].ToString();
-                filme.FotoFilme = dr2["CapaFilme"].ToString();
+                //filme.FotoFilme = dr2["CapaFilme"].ToString();
             }
             conn.Close();
 
@@ -120,18 +120,18 @@ namespace DAL
                 {
                     objFilmes = new Filmes();
                     objFilmes.Codigo = Convert.ToInt32(dr["Codigo"]);
-                    objFilmes.CodigoBarras = Convert.ToInt32(dr["CodigoBarras"]);
+                    objFilmes.CodigoBarras = dr["CodigoBarras"].ToString();
                     objFilmes.Titulo = dr["Titulo"].ToString();
                     objFilmes.Genero = dr["Genero"].ToString();
                     objFilmes.Ano = Convert.ToInt32(dr["Ano"]);
                     objFilmes.Tipo = Convert.ToChar(dr["Tipo"]);
-                    objFilmes.Preco = Convert.ToDecimal(dr["Preco"]);
+                    objFilmes.Preco = dr["Preco"].ToString();
                     objFilmes.DataAdquirida = Convert.ToDateTime(dr["DtAdquirida"]);
-                    objFilmes.ValorCusto = Convert.ToDecimal(dr["VlCusto"]);
+                    objFilmes.ValorCusto = dr["VlCusto"].ToString();
                     objFilmes.Situacao = dr["Situacao"].ToString();
                     objFilmes.Atores = dr["Atores"].ToString();
                     objFilmes.Diretor = dr["Diretor"].ToString();
-                    objFilmes.FotoFilme = dr["CapaFilme"].ToString();
+                    //objFilmes.FotoFilme = dr["CapaFilme"].ToString();
 
                     listaFilmes.Add(objFilmes);
                 }

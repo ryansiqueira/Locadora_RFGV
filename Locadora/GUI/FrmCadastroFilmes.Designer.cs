@@ -42,15 +42,12 @@
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblFoto = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtCodigoBarra = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.txtAno = new System.Windows.Forms.TextBox();
             this.rbDVD = new System.Windows.Forms.RadioButton();
             this.rbBLURAY = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dtDataadquirida = new System.Windows.Forms.DateTimePicker();
             this.cbSituacao = new System.Windows.Forms.ComboBox();
             this.txtAtoresParticipantes = new System.Windows.Forms.TextBox();
             this.txtDiretor = new System.Windows.Forms.TextBox();
@@ -69,10 +66,15 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picFoto = new System.Windows.Forms.PictureBox();
+            this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
+            this.btnCarregarFoto = new System.Windows.Forms.Button();
+            this.txtPreco = new System.Windows.Forms.MaskedTextBox();
+            this.txtValorcusto = new System.Windows.Forms.MaskedTextBox();
+            this.txtCodigoBarra = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -208,23 +210,15 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(215, 47);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(132, 22);
             this.txtCodigo.TabIndex = 13;
             // 
-            // txtCodigoBarra
-            // 
-            this.txtCodigoBarra.Location = new System.Drawing.Point(215, 85);
-            this.txtCodigoBarra.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodigoBarra.Name = "txtCodigoBarra";
-            this.txtCodigoBarra.Size = new System.Drawing.Size(132, 22);
-            this.txtCodigoBarra.TabIndex = 14;
-            // 
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(215, 118);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(132, 22);
             this.txtTitulo.TabIndex = 15;
@@ -232,7 +226,7 @@
             // txtGenero
             // 
             this.txtGenero.Location = new System.Drawing.Point(215, 159);
-            this.txtGenero.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(132, 22);
             this.txtGenero.TabIndex = 16;
@@ -240,7 +234,7 @@
             // txtAno
             // 
             this.txtAno.Location = new System.Drawing.Point(215, 204);
-            this.txtAno.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(132, 22);
             this.txtAno.TabIndex = 17;
@@ -250,7 +244,7 @@
             this.rbDVD.AutoSize = true;
             this.rbDVD.Checked = true;
             this.rbDVD.Location = new System.Drawing.Point(215, 251);
-            this.rbDVD.Margin = new System.Windows.Forms.Padding(4);
+            this.rbDVD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbDVD.Name = "rbDVD";
             this.rbDVD.Size = new System.Drawing.Size(58, 21);
             this.rbDVD.TabIndex = 0;
@@ -262,36 +256,20 @@
             // 
             this.rbBLURAY.AutoSize = true;
             this.rbBLURAY.Location = new System.Drawing.Point(336, 251);
-            this.rbBLURAY.Margin = new System.Windows.Forms.Padding(4);
+            this.rbBLURAY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbBLURAY.Name = "rbBLURAY";
             this.rbBLURAY.Size = new System.Drawing.Size(84, 21);
             this.rbBLURAY.TabIndex = 1;
             this.rbBLURAY.Text = "BLURAY";
             this.rbBLURAY.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // dtDataadquirida
             // 
-            this.textBox1.Location = new System.Drawing.Point(215, 297);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 18;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 335);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(325, 22);
-            this.dateTimePicker1.TabIndex = 19;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(215, 383);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 20;
+            this.dtDataadquirida.Location = new System.Drawing.Point(215, 335);
+            this.dtDataadquirida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtDataadquirida.Name = "dtDataadquirida";
+            this.dtDataadquirida.Size = new System.Drawing.Size(325, 22);
+            this.dtDataadquirida.TabIndex = 19;
             // 
             // cbSituacao
             // 
@@ -300,7 +278,7 @@
             "Locado",
             "Não Locado"});
             this.cbSituacao.Location = new System.Drawing.Point(215, 426);
-            this.cbSituacao.Margin = new System.Windows.Forms.Padding(4);
+            this.cbSituacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSituacao.Name = "cbSituacao";
             this.cbSituacao.Size = new System.Drawing.Size(160, 24);
             this.cbSituacao.TabIndex = 21;
@@ -308,7 +286,7 @@
             // txtAtoresParticipantes
             // 
             this.txtAtoresParticipantes.Location = new System.Drawing.Point(215, 464);
-            this.txtAtoresParticipantes.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAtoresParticipantes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAtoresParticipantes.Name = "txtAtoresParticipantes";
             this.txtAtoresParticipantes.Size = new System.Drawing.Size(132, 22);
             this.txtAtoresParticipantes.TabIndex = 22;
@@ -316,7 +294,7 @@
             // txtDiretor
             // 
             this.txtDiretor.Location = new System.Drawing.Point(215, 506);
-            this.txtDiretor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiretor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDiretor.Name = "txtDiretor";
             this.txtDiretor.Size = new System.Drawing.Size(132, 22);
             this.txtDiretor.TabIndex = 23;
@@ -324,7 +302,7 @@
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(88, 660);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(133, 38);
             this.btnAdicionar.TabIndex = 25;
@@ -341,10 +319,10 @@
             this.Column4,
             this.Column5});
             this.GridViewListaItens.Location = new System.Drawing.Point(724, 50);
-            this.GridViewListaItens.Margin = new System.Windows.Forms.Padding(4);
+            this.GridViewListaItens.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GridViewListaItens.Name = "GridViewListaItens";
             this.GridViewListaItens.RowHeadersWidth = 51;
-            this.GridViewListaItens.Size = new System.Drawing.Size(599, 311);
+            this.GridViewListaItens.Size = new System.Drawing.Size(953, 311);
             this.GridViewListaItens.TabIndex = 26;
             // 
             // Column2
@@ -385,23 +363,25 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(229, 659);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(229, 658);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(133, 38);
             this.btnEditar.TabIndex = 27;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(370, 660);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Location = new System.Drawing.Point(371, 660);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(133, 38);
             this.btnExcluir.TabIndex = 28;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // GridViewHistorico
             // 
@@ -413,10 +393,10 @@
             this.dataGridViewTextBoxColumn4,
             this.Column1});
             this.GridViewHistorico.Location = new System.Drawing.Point(724, 386);
-            this.GridViewHistorico.Margin = new System.Windows.Forms.Padding(4);
+            this.GridViewHistorico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GridViewHistorico.Name = "GridViewHistorico";
             this.GridViewHistorico.RowHeadersWidth = 51;
-            this.GridViewHistorico.Size = new System.Drawing.Size(599, 311);
+            this.GridViewHistorico.Size = new System.Drawing.Size(953, 311);
             this.GridViewHistorico.TabIndex = 29;
             // 
             // dataGridViewTextBoxColumn1
@@ -467,27 +447,72 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(356, 44);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
             this.btnBuscar.TabIndex = 30;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // pictureBox1
+            // picFoto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(213, 535);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(162, 118);
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
+            this.picFoto.Location = new System.Drawing.Point(213, 535);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(147, 105);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFoto.TabIndex = 31;
+            this.picFoto.TabStop = false;
+            this.picFoto.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // ofdFoto
+            // 
+            this.ofdFoto.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdFoto_FileOk);
+            // 
+            // btnCarregarFoto
+            // 
+            this.btnCarregarFoto.Location = new System.Drawing.Point(371, 562);
+            this.btnCarregarFoto.Name = "btnCarregarFoto";
+            this.btnCarregarFoto.Size = new System.Drawing.Size(133, 55);
+            this.btnCarregarFoto.TabIndex = 32;
+            this.btnCarregarFoto.Text = "Carregar Foto";
+            this.btnCarregarFoto.UseVisualStyleBackColor = true;
+            this.btnCarregarFoto.Click += new System.EventHandler(this.btnCarregarFoto_Click);
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.Location = new System.Drawing.Point(212, 297);
+            this.txtPreco.Mask = "999,99";
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(132, 22);
+            this.txtPreco.TabIndex = 34;
+            // 
+            // txtValorcusto
+            // 
+            this.txtValorcusto.Location = new System.Drawing.Point(212, 383);
+            this.txtValorcusto.Mask = "999,99";
+            this.txtValorcusto.Name = "txtValorcusto";
+            this.txtValorcusto.Size = new System.Drawing.Size(132, 22);
+            this.txtValorcusto.TabIndex = 35;
+            // 
+            // txtCodigoBarra
+            // 
+            this.txtCodigoBarra.Location = new System.Drawing.Point(212, 86);
+            this.txtCodigoBarra.Mask = "9 999999 999999";
+            this.txtCodigoBarra.Name = "txtCodigoBarra";
+            this.txtCodigoBarra.Size = new System.Drawing.Size(132, 22);
+            this.txtCodigoBarra.TabIndex = 37;
             // 
             // frmCadastroFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 791);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1716, 791);
+            this.Controls.Add(this.txtCodigoBarra);
+            this.Controls.Add(this.txtValorcusto);
+            this.Controls.Add(this.txtPreco);
+            this.Controls.Add(this.btnCarregarFoto);
+            this.Controls.Add(this.picFoto);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.GridViewHistorico);
             this.Controls.Add(this.btnExcluir);
@@ -497,15 +522,12 @@
             this.Controls.Add(this.txtDiretor);
             this.Controls.Add(this.txtAtoresParticipantes);
             this.Controls.Add(this.cbSituacao);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtDataadquirida);
             this.Controls.Add(this.rbBLURAY);
             this.Controls.Add(this.rbDVD);
             this.Controls.Add(this.txtAno);
             this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.txtTitulo);
-            this.Controls.Add(this.txtCodigoBarra);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblFoto);
             this.Controls.Add(this.lblPreco);
@@ -525,7 +547,7 @@
             this.Text = "Cadastro de Filmes";
             ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,15 +569,12 @@
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.TextBox txtCodigoBarra;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtAno;
         private System.Windows.Forms.RadioButton rbDVD;
         private System.Windows.Forms.RadioButton rbBLURAY;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DateTimePicker dtDataadquirida;
         private System.Windows.Forms.ComboBox cbSituacao;
         private System.Windows.Forms.TextBox txtAtoresParticipantes;
         private System.Windows.Forms.TextBox txtDiretor;
@@ -574,7 +593,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picFoto;
+        private System.Windows.Forms.OpenFileDialog ofdFoto;
+        private System.Windows.Forms.Button btnCarregarFoto;
+        private System.Windows.Forms.MaskedTextBox txtPreco;
+        private System.Windows.Forms.MaskedTextBox txtValorcusto;
+        private System.Windows.Forms.MaskedTextBox txtCodigoBarra;
     }
 }
 

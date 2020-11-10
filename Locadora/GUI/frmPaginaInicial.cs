@@ -32,5 +32,13 @@ namespace GUI
 
             tela.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadastroCliente frmCadastroCliente = new frmCadastroCliente();
+            frmCadastroCliente.MdiParent = this;
+            frmCadastroCliente.Show();
+
+        }
     }
 }

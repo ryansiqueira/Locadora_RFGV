@@ -40,5 +40,12 @@ namespace GUI
             frmCadastroCliente.Show();
 
         }
+
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCadastroFuncionarios func = new FrmCadastroFuncionarios();
+            func.MdiParent = this;
+            func.Show();
+        }
     }
 }

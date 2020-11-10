@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="ClienteDAL.cs" />
     <Compile Include="FilmesDAL.cs" />
+    <Compile Include="FuncionarioDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

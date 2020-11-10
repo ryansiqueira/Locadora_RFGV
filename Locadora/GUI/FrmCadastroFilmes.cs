@@ -17,5 +17,9 @@ namespace GUI
             InitializeComponent();
         }
 
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

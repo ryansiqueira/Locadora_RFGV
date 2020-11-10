@@ -3,10 +3,8 @@
     "",
     "\\Locadora",
     "\\Locadora\\DAL",
-    "\\Locadora\\DAL\\Script",
-    "\\Locadora\\GUI",
-    "\\Locadora\\Models"
+    "\\Locadora\\DAL\\Script"
   ],
-  "SelectedNode": "\\Locadora\\DAL\\UsuarioDAL.cs",
-  "PreviewInSolutionExplorer": false
+  "SelectedNode": "\\Locadora\\DAL\\Script\\BancoDados.sql",
+  "PreviewInSolutionExplorer": true
 }

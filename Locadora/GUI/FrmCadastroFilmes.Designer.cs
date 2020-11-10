@@ -208,7 +208,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(215, 47);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(132, 22);
             this.txtCodigo.TabIndex = 13;
@@ -216,7 +216,7 @@
             // txtCodigoBarra
             // 
             this.txtCodigoBarra.Location = new System.Drawing.Point(215, 85);
-            this.txtCodigoBarra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigoBarra.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigoBarra.Name = "txtCodigoBarra";
             this.txtCodigoBarra.Size = new System.Drawing.Size(132, 22);
             this.txtCodigoBarra.TabIndex = 14;
@@ -224,7 +224,7 @@
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(215, 118);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(132, 22);
             this.txtTitulo.TabIndex = 15;
@@ -232,7 +232,7 @@
             // txtGenero
             // 
             this.txtGenero.Location = new System.Drawing.Point(215, 159);
-            this.txtGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGenero.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(132, 22);
             this.txtGenero.TabIndex = 16;
@@ -240,7 +240,7 @@
             // txtAno
             // 
             this.txtAno.Location = new System.Drawing.Point(215, 204);
-            this.txtAno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAno.Margin = new System.Windows.Forms.Padding(4);
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(132, 22);
             this.txtAno.TabIndex = 17;
@@ -250,7 +250,7 @@
             this.rbDVD.AutoSize = true;
             this.rbDVD.Checked = true;
             this.rbDVD.Location = new System.Drawing.Point(215, 251);
-            this.rbDVD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbDVD.Margin = new System.Windows.Forms.Padding(4);
             this.rbDVD.Name = "rbDVD";
             this.rbDVD.Size = new System.Drawing.Size(58, 21);
             this.rbDVD.TabIndex = 0;
@@ -262,7 +262,7 @@
             // 
             this.rbBLURAY.AutoSize = true;
             this.rbBLURAY.Location = new System.Drawing.Point(336, 251);
-            this.rbBLURAY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbBLURAY.Margin = new System.Windows.Forms.Padding(4);
             this.rbBLURAY.Name = "rbBLURAY";
             this.rbBLURAY.Size = new System.Drawing.Size(84, 21);
             this.rbBLURAY.TabIndex = 1;
@@ -272,7 +272,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(215, 297);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 18;
@@ -280,7 +280,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(215, 335);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(325, 22);
             this.dateTimePicker1.TabIndex = 19;
@@ -288,7 +288,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(215, 383);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 20;
@@ -300,7 +300,7 @@
             "Locado",
             "Não Locado"});
             this.cbSituacao.Location = new System.Drawing.Point(215, 426);
-            this.cbSituacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSituacao.Margin = new System.Windows.Forms.Padding(4);
             this.cbSituacao.Name = "cbSituacao";
             this.cbSituacao.Size = new System.Drawing.Size(160, 24);
             this.cbSituacao.TabIndex = 21;
@@ -308,7 +308,7 @@
             // txtAtoresParticipantes
             // 
             this.txtAtoresParticipantes.Location = new System.Drawing.Point(215, 464);
-            this.txtAtoresParticipantes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAtoresParticipantes.Margin = new System.Windows.Forms.Padding(4);
             this.txtAtoresParticipantes.Name = "txtAtoresParticipantes";
             this.txtAtoresParticipantes.Size = new System.Drawing.Size(132, 22);
             this.txtAtoresParticipantes.TabIndex = 22;
@@ -316,20 +316,21 @@
             // txtDiretor
             // 
             this.txtDiretor.Location = new System.Drawing.Point(215, 506);
-            this.txtDiretor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiretor.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiretor.Name = "txtDiretor";
             this.txtDiretor.Size = new System.Drawing.Size(132, 22);
             this.txtDiretor.TabIndex = 23;
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(226, 660);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdicionar.Location = new System.Drawing.Point(88, 660);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(133, 38);
             this.btnAdicionar.TabIndex = 25;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // GridViewListaItens
             // 
@@ -340,7 +341,7 @@
             this.Column4,
             this.Column5});
             this.GridViewListaItens.Location = new System.Drawing.Point(724, 50);
-            this.GridViewListaItens.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridViewListaItens.Margin = new System.Windows.Forms.Padding(4);
             this.GridViewListaItens.Name = "GridViewListaItens";
             this.GridViewListaItens.RowHeadersWidth = 51;
             this.GridViewListaItens.Size = new System.Drawing.Size(599, 311);
@@ -384,8 +385,8 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(226, 706);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Location = new System.Drawing.Point(229, 659);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(133, 38);
             this.btnEditar.TabIndex = 27;
@@ -394,8 +395,8 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(226, 752);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcluir.Location = new System.Drawing.Point(370, 660);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(133, 38);
             this.btnExcluir.TabIndex = 28;
@@ -412,7 +413,7 @@
             this.dataGridViewTextBoxColumn4,
             this.Column1});
             this.GridViewHistorico.Location = new System.Drawing.Point(724, 386);
-            this.GridViewHistorico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridViewHistorico.Margin = new System.Windows.Forms.Padding(4);
             this.GridViewHistorico.Name = "GridViewHistorico";
             this.GridViewHistorico.RowHeadersWidth = 51;
             this.GridViewHistorico.Size = new System.Drawing.Size(599, 311);
@@ -466,7 +467,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(356, 44);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
             this.btnBuscar.TabIndex = 30;

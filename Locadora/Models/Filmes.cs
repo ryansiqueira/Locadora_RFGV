@@ -14,9 +14,9 @@ namespace Models
         public string Genero { get; set; }
         public int Ano { get; set; }
         public char Tipo { get; set; }
-        public int Preco { get; set; }
+        public decimal Preco { get; set; }
         public DateTime DataAdquirida { get; set; }
-        public int ValorCusto { get; set; }
+        public decimal ValorCusto { get; set; }
         public string Situacao { get; set; }
         public string Atores { get; set; }
         public string Diretor { get; set; }

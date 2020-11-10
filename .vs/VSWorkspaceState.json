@@ -4,8 +4,9 @@
     "\\Locadora",
     "\\Locadora\\DAL",
     "\\Locadora\\DAL\\Script",
-    "\\Locadora\\GUI"
+    "\\Locadora\\GUI",
+    "\\Locadora\\Models"
   ],
-  "SelectedNode": "\\Locadora\\GUI\\FrmCadastroFilmes.cs",
+  "SelectedNode": "\\Locadora\\DAL\\UsuarioDAL.cs",
   "PreviewInSolutionExplorer": false
 }

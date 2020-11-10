@@ -27,7 +27,7 @@ CREATE TABLE Itens (
         CodigoBarras INT NOT NULL,
         Titulo varchar(50) NOT NULL,
         Genero varchar(50) NOT NULL,
-        Ano date NOT NULL,
+        Ano INT NOT NULL,
         Tipo char(1) NOT NULL,
         Preco decimal NOT NULL,
         DtAdquirida date NOT NULL,
@@ -67,6 +67,12 @@ CREATE TABLE Artistas (
 CREATE TABLE Generos (
     CdGenero INT PRIMARY KEY IDENTITY,
     NmGenero varchar(50) NOT NULL,
+)
+
+CREATE TABLE Usuarios (
+    CdUsuario INT PRIMARY KEY IDENTITY,
+    DsLogin VARCHAR(32) NOT NULL,
+    Senha VARCHAR(32) NOT NULL,
 )
 
 --CREATE TABLE Locacao (

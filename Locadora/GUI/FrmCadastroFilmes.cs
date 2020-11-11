@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using DAL;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace GUI
 {
@@ -22,18 +24,33 @@ namespace GUI
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             Filmes objFilmes = new Filmes();
-            objFilmes.CodigoBarras = txtCodigoBarra.Text;
+            objFilmes.CodigoBarras = Convert.ToInt32(txtCodigoBarra.Text);
             objFilmes.Titulo = txtTitulo.Text;
             objFilmes.Genero = txtGenero.Text;
             objFilmes.Ano = Convert.ToInt32(txtAno.Text);
             objFilmes.Tipo = rbBLURAY.Checked ? 'B' : 'D';
-            objFilmes.Preco = txtPreco.Text;
+            objFilmes.Preco = Convert.ToDecimal(txtPreco.Text);
             objFilmes.DataAdquirida = dtDataadquirida.Value;
-            objFilmes.ValorCusto = txtValorcusto.Text;
-            objFilmes.Situacao = cbSituacao.Text;
+            objFilmes.ValorCusto = Convert.ToDecimal(txtValorcusto.Text);
+            objFilmes.Situacao = chLocado.Checked ? 'L' : 'N';
             objFilmes.Atores = txtAtoresParticipantes.Text;
             objFilmes.Diretor = txtDiretor.Text;
-            //objFilmes.FotoFilme = picFoto.ToString();
+            //if (picFoto.Image != null)
+            //{
+            //    using (MemoryStream stream = new MemoryStream())
+            //    {
+            //        picFoto.Image.Save(stream, ImageFormat.Jpeg);
+
+            //        byte[] CapaFilme = stream.ToArray();
+
+            //        FilmesDAL Cad_Foto = new FilmesDAL();
+
+            //        Cad_Foto.InserirFilmes(picFoto.Text, CapaFilme, picFoto.Name, picFoto.Properties.ZoomPercent);
+            //    }
+
+            //    picFoto.Image.Dispose();
+            //    picFoto.Image = null;
+            //}
 
             FilmesDAL fDAL = new FilmesDAL();
             fDAL.InserirFilmes(objFilmes);
@@ -43,14 +60,26 @@ namespace GUI
             LimparCampos();
             CarregarFilmes();
         }
+        //void converterFoto()
+        //{
+        //    //convertendo a foto para dados binários
+        //    if (picFoto.Image != null)
+        //    {
+        //        MemoryStream ms = new MemoryStream();
+        //        picFoto.Image.Save(ms, ImageFormat.Jpeg);
+        //        byte[] CapaFilme = new byte[ms.Length];
+        //        ms.Position = 0;
+        //        ms.Read(CapaFilme, 0, CapaFilme.Length);
+        //        cmd.Parameters.AddWithValue("@capafilme", CapaFilme);
+        //    }
+        //}
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string cdFilme = txtCodigoBarra.Text;
-            string stTitulo = txtTitulo.Text;
-
+            int cdFilme = Convert.ToInt32(txtCodigoBarra.Text);
+            
             FilmesDAL fDAL = new FilmesDAL();
-            Filmes filme = fDAL.ObterFilme(cdFilme, stTitulo);
+            Filmes filme = fDAL.ObterFilme(cdFilme);
 
             if (filme == null)
             {
@@ -59,6 +88,7 @@ namespace GUI
             }
             else
             {
+                txtCodigo.Text = Convert.ToString(filme.Codigo);
                 txtCodigoBarra.Text = Convert.ToString(filme.CodigoBarras);
                 txtTitulo.Text = filme.Titulo;
                 txtGenero.Text = filme.Genero;
@@ -68,7 +98,8 @@ namespace GUI
                 txtPreco.Text = Convert.ToString(filme.Preco);
                 dtDataadquirida.Value = filme.DataAdquirida;
                 txtValorcusto.Text = Convert.ToString(filme.ValorCusto);
-                cbSituacao.Text = filme.Situacao;
+                chLocado.Checked = filme.Situacao == 'L';
+                //chNaoLocado.Checked = filme.Situacao == 'N';
                 txtAtoresParticipantes.Text = filme.Atores;
                 txtDiretor.Text = filme.Diretor;
                 //txtfoto = Convert.ToString(filme.FotoFilme);
@@ -84,7 +115,7 @@ namespace GUI
             txtPreco.Text = string.Empty;
             txtAno.Text = string.Empty;
             txtValorcusto.Text = string.Empty;
-            cbSituacao.Text = string.Empty;
+            chLocado.Checked = true;
             txtAtoresParticipantes.Text = string.Empty;
             txtDiretor.Text = string.Empty;
             picFoto.Text = string.Empty;
@@ -98,7 +129,7 @@ namespace GUI
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int cdFilme = Convert.ToInt32(txtCodigo.Text);
+            int cdFilme = Convert.ToInt32(txtCodigoBarra.Text);
 
             FilmesDAL fDAL = new FilmesDAL();
             fDAL.ExcluirItem(cdFilme);
@@ -112,18 +143,19 @@ namespace GUI
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Filmes objFilmes = new Filmes();
-            objFilmes.CodigoBarras = txtCodigoBarra.Text;
+            objFilmes.Codigo = Convert.ToInt32(txtCodigo.Text);
+            objFilmes.CodigoBarras = Convert.ToInt32(txtCodigoBarra.Text);
             objFilmes.Titulo = txtTitulo.Text;
             objFilmes.Genero = txtGenero.Text;
             objFilmes.Ano = Convert.ToInt32(txtAno.Text);
             objFilmes.Tipo = rbBLURAY.Checked ? 'B' : 'D';
-            objFilmes.Preco = txtPreco.Text;
+            objFilmes.Preco = Convert.ToDecimal(txtPreco.Text);
             objFilmes.DataAdquirida = dtDataadquirida.Value;
-            objFilmes.ValorCusto = txtValorcusto.Text;
-            objFilmes.Situacao = cbSituacao.Text;
+            objFilmes.ValorCusto = Convert.ToDecimal(txtValorcusto.Text);
+            objFilmes.Situacao = chLocado.Checked ? 'L' : 'N';
             objFilmes.Atores = txtAtoresParticipantes.Text;
             objFilmes.Diretor = txtDiretor.Text;
-            //objFilmes.FotoFilme = picFoto.ToString();
+            //objFilmes.FotoFilme = picFoto.();
 
             FilmesDAL fDAL = new FilmesDAL();
             fDAL.EditarFilme(objFilmes);
@@ -150,6 +182,53 @@ namespace GUI
         private void ofdFoto_FileOk(object sender, CancelEventArgs e)
         {
             picFoto.Image = Image.FromFile(ofdFoto.FileName);
+        }
+
+        private void GridViewListaItens_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmCadastroFilme_Load(object sender, EventArgs e)
+        {
+            CarregarFilmes();
+        }
+
+        private void btnBuscarTitulo_Click(object sender, EventArgs e)
+        {
+            string stTitulo = txtTitulo.Text;
+
+            FilmesDAL fDAL = new FilmesDAL();
+            Filmes filme = fDAL.ObterFilmeTitulo(stTitulo);
+
+            if (filme == null)
+            {
+                MessageBox.Show("Filme não encontrado.");
+                LimparCampos();
+            }
+            else
+            {
+                txtCodigo.Text = Convert.ToString(filme.Codigo);
+                txtCodigoBarra.Text = Convert.ToString(filme.CodigoBarras);
+                txtTitulo.Text = filme.Titulo;
+                txtGenero.Text = filme.Genero;
+                txtAno.Text = Convert.ToString(filme.Ano);
+                rbBLURAY.Checked = filme.Tipo == 'B';
+                rbDVD.Checked = filme.Tipo == 'D';
+                txtPreco.Text = Convert.ToString(filme.Preco);
+                dtDataadquirida.Value = filme.DataAdquirida;
+                txtValorcusto.Text = Convert.ToString(filme.ValorCusto);
+                chLocado.Checked = filme.Situacao == 'L';
+                //chNaoLocado.Checked = filme.Situacao == 'N';
+                txtAtoresParticipantes.Text = filme.Atores;
+                txtDiretor.Text = filme.Diretor;
+                //txtfoto = Convert.ToString(filme.FotoFilme);
+            }        
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
     }   
 }

@@ -2,7 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Locadora",
-    "\\Locadora\\DAL\\Script"
+    "\\Locadora\\DAL",
+    "\\Locadora\\DAL\\Script",
+    "\\Locadora\\GUI",
+    "\\Locadora\\Models"
   ],
+  "SelectedNode": "\\Locadora\\DAL\\Script\\BancoDados.sql",
   "PreviewInSolutionExplorer": false
 }

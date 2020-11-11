@@ -45,3 +45,13 @@ D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win 
 D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CopyComplete
 D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.exe
 D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.pdb
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\bin\Debug\DAL.dll
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\bin\Debug\Models.dll
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\bin\Debug\DAL.pdb
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\bin\Debug\Models.pdb
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroCliente.resources
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.FrmCadastroFuncionarios.resources
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroUsuarios.resources
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmLogin.resources
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmPaginaInicial.resources
+Q:\FONTES GIT\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CopyComplete

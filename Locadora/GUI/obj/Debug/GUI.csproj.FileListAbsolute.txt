@@ -66,3 +66,5 @@ C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CopyComplet
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.exe
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.pdb
 D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.FrmCadastroFuncionarios.resources
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroArtistas.resources
+D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroGeneros.resources

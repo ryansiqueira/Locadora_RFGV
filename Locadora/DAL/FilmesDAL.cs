@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,13 +33,14 @@ namespace DAL
             cmd.Parameters.AddWithValue("@situacao", objFilmes.Situacao);
             cmd.Parameters.AddWithValue("@atores", objFilmes.Atores);
             cmd.Parameters.AddWithValue("@diretor", objFilmes.Diretor);
-            cmd.Parameters.AddWithValue("@capafilme", objFilmes.FotoFilme != null ? (object)objFilmes.FotoFilme : DBNull.Value);
+            
+            //cmd.Parameters.Add("@capafilme", SqlDbType.VarBinary).Value = ;
 
             cmd.ExecuteNonQuery();
 
             conn.Close();
         }
-
+        
         public Filmes ObterFilme(int cdFilme)
         {
             Filmes filme = null;

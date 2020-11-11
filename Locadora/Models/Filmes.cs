@@ -20,6 +20,7 @@ namespace Models
         public char Situacao { get; set; }
         public string Atores { get; set; }
         public string Diretor { get; set; }
-        public byte[] FotoFilme { get; set; }
+        public byte[] CapaFilme { get; set; }
+
     }
 }

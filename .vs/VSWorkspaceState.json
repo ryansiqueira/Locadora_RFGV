@@ -1,12 +1,8 @@
 {
   "ExpandedNodes": [
-    "",
     "\\Locadora",
     "\\Locadora\\DAL",
-    "\\Locadora\\DAL\\Script",
-    "\\Locadora\\GUI",
-    "\\Locadora\\Models"
+    "\\Locadora\\DAL\\Script"
   ],
-  "SelectedNode": "\\Locadora\\Models\\Filmes.cs",
-  "PreviewInSolutionExplorer": false
+  "PreviewInSolutionExplorer": true
 }

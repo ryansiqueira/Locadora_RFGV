@@ -23,6 +23,6 @@ namespace Models
         public string CEP { get; set; }
         public string Estado { get; set; }
         public string Celular { get; set; }
-        public string DsStatus { get; set; }        
+        public bool DsStatus { get; set; }        
     }
 }

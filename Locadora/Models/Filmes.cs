@@ -17,9 +17,9 @@ namespace Models
         public decimal Preco { get; set; }
         public DateTime DataAdquirida { get; set; }
         public decimal ValorCusto { get; set; }
-        public string Situacao { get; set; }
+        public char Situacao { get; set; }
         public string Atores { get; set; }
         public string Diretor { get; set; }
-        public string FotoFilme { get; set; }
+        public byte[] FotoFilme { get; set; }
     }
 }

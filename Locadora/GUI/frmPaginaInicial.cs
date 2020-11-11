@@ -47,5 +47,19 @@ namespace GUI
             func.MdiParent = this;
             func.Show();
         }
+
+        private void artistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadastroArtistas func = new frmCadastroArtistas();
+            func.MdiParent = this;
+            func.Show();
+        }
+
+        private void gênerosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadastroGeneros func = new frmCadastroGeneros();
+            func.MdiParent = this;
+            func.Show();
+        }
     }
 }

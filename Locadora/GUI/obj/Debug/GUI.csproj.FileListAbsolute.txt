@@ -45,7 +45,23 @@ D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win 
 D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CopyComplete
 D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.exe
 D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.pdb
-C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroArtistas.resources
-C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroCliente.resources
-C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.FrmCadastroFuncionarios.resources
-C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroGeneros.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\GUI.exe.config
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\GUI.exe
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\GUI.pdb
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\DAL.dll
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\Models.dll
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\DAL.pdb
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\bin\Debug\Models.pdb
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroCliente.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroFilme.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.FrmCadastroFuncionarios.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroUsuarios.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmLogin.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmPaginaInicial.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.exe
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.pdb

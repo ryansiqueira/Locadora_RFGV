@@ -22,25 +22,134 @@ namespace GUI
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             Filmes objFilmes = new Filmes();
-            objFilmes.CodigoBarras = Convert.ToInt32(txtCodigoBarra.Text);
+            objFilmes.CodigoBarras = txtCodigoBarra.Text;
             objFilmes.Titulo = txtTitulo.Text;
             objFilmes.Genero = txtGenero.Text;
             objFilmes.Ano = Convert.ToInt32(txtAno.Text);
             objFilmes.Tipo = rbBLURAY.Checked ? 'B' : 'D';
-            objFilmes.Preco = Convert.ToDecimal(txtPreco);
+            objFilmes.Preco = txtPreco.Text;
             objFilmes.DataAdquirida = dtDataadquirida.Value;
-            objFilmes.ValorCusto = Convert.ToDecimal(txtValorcusto);
+            objFilmes.ValorCusto = txtValorcusto.Text;
             objFilmes.Situacao = cbSituacao.Text;
             objFilmes.Atores = txtAtoresParticipantes.Text;
             objFilmes.Diretor = txtDiretor.Text;
-            objFilmes.FotoFilme = foto.ToString();
+            //objFilmes.FotoFilme = picFoto.ToString();
 
             FilmesDAL fDAL = new FilmesDAL();
             fDAL.InserirFilmes(objFilmes);
 
             MessageBox.Show("Filme Inserido com Sucesso");
 
-            
+            LimparCampos();
+            CarregarFilmes();
         }
-    }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string cdFilme = txtCodigoBarra.Text;
+            string stTitulo = txtTitulo.Text;
+
+            FilmesDAL fDAL = new FilmesDAL();
+            Filmes filme = fDAL.ObterFilme(cdFilme, stTitulo);
+
+            if (filme == null)
+            {
+                MessageBox.Show("Filme não encontrado.");
+                LimparCampos();
+            }
+            else
+            {
+                txtCodigoBarra.Text = Convert.ToString(filme.CodigoBarras);
+                txtTitulo.Text = filme.Titulo;
+                txtGenero.Text = filme.Genero;
+                txtAno.Text = Convert.ToString(filme.Ano);
+                rbBLURAY.Checked = filme.Tipo == 'B';
+                rbDVD.Checked = filme.Tipo == 'D';
+                txtPreco.Text = Convert.ToString(filme.Preco);
+                dtDataadquirida.Value = filme.DataAdquirida;
+                txtValorcusto.Text = Convert.ToString(filme.ValorCusto);
+                cbSituacao.Text = filme.Situacao;
+                txtAtoresParticipantes.Text = filme.Atores;
+                txtDiretor.Text = filme.Diretor;
+                //txtfoto = Convert.ToString(filme.FotoFilme);
+            }
+        }
+        private void LimparCampos()
+        {
+            txtCodigo.Text = string.Empty;
+            txtCodigoBarra.Text = string.Empty;
+            txtTitulo.Text = string.Empty;            
+            txtGenero.Text = string.Empty;
+            rbBLURAY.Checked = true;
+            txtPreco.Text = string.Empty;
+            txtAno.Text = string.Empty;
+            txtValorcusto.Text = string.Empty;
+            cbSituacao.Text = string.Empty;
+            txtAtoresParticipantes.Text = string.Empty;
+            txtDiretor.Text = string.Empty;
+            picFoto.Text = string.Empty;
+            dtDataadquirida.Value = DateTime.Now;
+        }
+        private void CarregarFilmes()
+        {
+            FilmesDAL fDAL = new FilmesDAL();
+            GridViewListaItens.DataSource = fDAL.ListarFilmes();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            int cdFilme = Convert.ToInt32(txtCodigo.Text);
+
+            FilmesDAL fDAL = new FilmesDAL();
+            fDAL.ExcluirItem(cdFilme);
+
+            MessageBox.Show("Filme excluído com sucesso.");
+
+            LimparCampos();
+            CarregarFilmes();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Filmes objFilmes = new Filmes();
+            objFilmes.CodigoBarras = txtCodigoBarra.Text;
+            objFilmes.Titulo = txtTitulo.Text;
+            objFilmes.Genero = txtGenero.Text;
+            objFilmes.Ano = Convert.ToInt32(txtAno.Text);
+            objFilmes.Tipo = rbBLURAY.Checked ? 'B' : 'D';
+            objFilmes.Preco = txtPreco.Text;
+            objFilmes.DataAdquirida = dtDataadquirida.Value;
+            objFilmes.ValorCusto = txtValorcusto.Text;
+            objFilmes.Situacao = cbSituacao.Text;
+            objFilmes.Atores = txtAtoresParticipantes.Text;
+            objFilmes.Diretor = txtDiretor.Text;
+            //objFilmes.FotoFilme = picFoto.ToString();
+
+            FilmesDAL fDAL = new FilmesDAL();
+            fDAL.EditarFilme(objFilmes);
+
+            MessageBox.Show("Filme atualizado com Sucesso");
+
+            LimparCampos();
+            CarregarFilmes();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCarregarFoto_Click(object sender, EventArgs e)
+        {
+            ofdFoto.FileName = "";
+            ofdFoto.Title = "Selecione uma imagem";
+            ofdFoto.Filter = "JPEG|*.JPG|PNG|*.png";
+            ofdFoto.ShowDialog();
+        }
+
+        private void ofdFoto_FileOk(object sender, CancelEventArgs e)
+        {
+            picFoto.Image = Image.FromFile(ofdFoto.FileName);
+        }
+    }   
 }

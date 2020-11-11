@@ -48,7 +48,6 @@
             this.rbDVD = new System.Windows.Forms.RadioButton();
             this.rbBLURAY = new System.Windows.Forms.RadioButton();
             this.dtDataadquirida = new System.Windows.Forms.DateTimePicker();
-            this.cbSituacao = new System.Windows.Forms.ComboBox();
             this.txtAtoresParticipantes = new System.Windows.Forms.TextBox();
             this.txtDiretor = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -57,7 +56,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.GridViewHistorico = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,9 +68,12 @@
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
             this.btnCarregarFoto = new System.Windows.Forms.Button();
-            this.txtPreco = new System.Windows.Forms.MaskedTextBox();
-            this.txtValorcusto = new System.Windows.Forms.MaskedTextBox();
-            this.txtCodigoBarra = new System.Windows.Forms.MaskedTextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtValorcusto = new System.Windows.Forms.TextBox();
+            this.txtCodigoBarra = new System.Windows.Forms.TextBox();
+            this.chLocado = new System.Windows.Forms.CheckBox();
+            this.btnBuscarTitulo = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
@@ -209,8 +211,9 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(215, 47);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(132, 22);
             this.txtCodigo.TabIndex = 13;
@@ -218,7 +221,7 @@
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(215, 118);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(132, 22);
             this.txtTitulo.TabIndex = 15;
@@ -226,7 +229,7 @@
             // txtGenero
             // 
             this.txtGenero.Location = new System.Drawing.Point(215, 159);
-            this.txtGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGenero.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(132, 22);
             this.txtGenero.TabIndex = 16;
@@ -234,7 +237,7 @@
             // txtAno
             // 
             this.txtAno.Location = new System.Drawing.Point(215, 204);
-            this.txtAno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAno.Margin = new System.Windows.Forms.Padding(4);
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(132, 22);
             this.txtAno.TabIndex = 17;
@@ -244,7 +247,7 @@
             this.rbDVD.AutoSize = true;
             this.rbDVD.Checked = true;
             this.rbDVD.Location = new System.Drawing.Point(215, 251);
-            this.rbDVD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbDVD.Margin = new System.Windows.Forms.Padding(4);
             this.rbDVD.Name = "rbDVD";
             this.rbDVD.Size = new System.Drawing.Size(58, 21);
             this.rbDVD.TabIndex = 0;
@@ -256,7 +259,7 @@
             // 
             this.rbBLURAY.AutoSize = true;
             this.rbBLURAY.Location = new System.Drawing.Point(336, 251);
-            this.rbBLURAY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbBLURAY.Margin = new System.Windows.Forms.Padding(4);
             this.rbBLURAY.Name = "rbBLURAY";
             this.rbBLURAY.Size = new System.Drawing.Size(84, 21);
             this.rbBLURAY.TabIndex = 1;
@@ -265,28 +268,17 @@
             // 
             // dtDataadquirida
             // 
+            this.dtDataadquirida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDataadquirida.Location = new System.Drawing.Point(215, 335);
-            this.dtDataadquirida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtDataadquirida.Margin = new System.Windows.Forms.Padding(4);
             this.dtDataadquirida.Name = "dtDataadquirida";
-            this.dtDataadquirida.Size = new System.Drawing.Size(325, 22);
+            this.dtDataadquirida.Size = new System.Drawing.Size(132, 22);
             this.dtDataadquirida.TabIndex = 19;
-            // 
-            // cbSituacao
-            // 
-            this.cbSituacao.FormattingEnabled = true;
-            this.cbSituacao.Items.AddRange(new object[] {
-            "Locado",
-            "Não Locado"});
-            this.cbSituacao.Location = new System.Drawing.Point(215, 426);
-            this.cbSituacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbSituacao.Name = "cbSituacao";
-            this.cbSituacao.Size = new System.Drawing.Size(160, 24);
-            this.cbSituacao.TabIndex = 21;
             // 
             // txtAtoresParticipantes
             // 
             this.txtAtoresParticipantes.Location = new System.Drawing.Point(215, 464);
-            this.txtAtoresParticipantes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAtoresParticipantes.Margin = new System.Windows.Forms.Padding(4);
             this.txtAtoresParticipantes.Name = "txtAtoresParticipantes";
             this.txtAtoresParticipantes.Size = new System.Drawing.Size(132, 22);
             this.txtAtoresParticipantes.TabIndex = 22;
@@ -294,7 +286,7 @@
             // txtDiretor
             // 
             this.txtDiretor.Location = new System.Drawing.Point(215, 506);
-            this.txtDiretor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiretor.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiretor.Name = "txtDiretor";
             this.txtDiretor.Size = new System.Drawing.Size(132, 22);
             this.txtDiretor.TabIndex = 23;
@@ -302,7 +294,7 @@
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(88, 660);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(133, 38);
             this.btnAdicionar.TabIndex = 25;
@@ -319,11 +311,12 @@
             this.Column4,
             this.Column5});
             this.GridViewListaItens.Location = new System.Drawing.Point(724, 50);
-            this.GridViewListaItens.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridViewListaItens.Margin = new System.Windows.Forms.Padding(4);
             this.GridViewListaItens.Name = "GridViewListaItens";
             this.GridViewListaItens.RowHeadersWidth = 51;
-            this.GridViewListaItens.Size = new System.Drawing.Size(953, 311);
+            this.GridViewListaItens.Size = new System.Drawing.Size(1035, 311);
             this.GridViewListaItens.TabIndex = 26;
+            this.GridViewListaItens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewListaItens_CellContentClick);
             // 
             // Column2
             // 
@@ -361,21 +354,21 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 125;
             // 
-            // btnEditar
+            // btnAtualizar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(229, 658);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(133, 38);
-            this.btnEditar.TabIndex = 27;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnAtualizar.Location = new System.Drawing.Point(229, 658);
+            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(133, 38);
+            this.btnAtualizar.TabIndex = 27;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
             this.btnExcluir.Location = new System.Drawing.Point(371, 660);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(133, 38);
             this.btnExcluir.TabIndex = 28;
@@ -393,10 +386,10 @@
             this.dataGridViewTextBoxColumn4,
             this.Column1});
             this.GridViewHistorico.Location = new System.Drawing.Point(724, 386);
-            this.GridViewHistorico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridViewHistorico.Margin = new System.Windows.Forms.Padding(4);
             this.GridViewHistorico.Name = "GridViewHistorico";
             this.GridViewHistorico.RowHeadersWidth = 51;
-            this.GridViewHistorico.Size = new System.Drawing.Size(953, 311);
+            this.GridViewHistorico.Size = new System.Drawing.Size(1035, 311);
             this.GridViewHistorico.TabIndex = 29;
             // 
             // dataGridViewTextBoxColumn1
@@ -446,12 +439,12 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(356, 44);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Location = new System.Drawing.Point(354, 80);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(208, 28);
             this.btnBuscar.TabIndex = 30;
-            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Text = "Buscar por Codigo de Barras";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -481,33 +474,66 @@
             // 
             // txtPreco
             // 
-            this.txtPreco.Location = new System.Drawing.Point(212, 297);
-            this.txtPreco.Mask = "999,99";
+            this.txtPreco.Location = new System.Drawing.Point(212, 300);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(132, 22);
-            this.txtPreco.TabIndex = 34;
+            this.txtPreco.Size = new System.Drawing.Size(135, 22);
+            this.txtPreco.TabIndex = 38;
             // 
             // txtValorcusto
             // 
             this.txtValorcusto.Location = new System.Drawing.Point(212, 383);
-            this.txtValorcusto.Mask = "999,99";
             this.txtValorcusto.Name = "txtValorcusto";
-            this.txtValorcusto.Size = new System.Drawing.Size(132, 22);
-            this.txtValorcusto.TabIndex = 35;
+            this.txtValorcusto.Size = new System.Drawing.Size(135, 22);
+            this.txtValorcusto.TabIndex = 39;
             // 
             // txtCodigoBarra
             // 
             this.txtCodigoBarra.Location = new System.Drawing.Point(212, 86);
-            this.txtCodigoBarra.Mask = "9 999999 999999";
             this.txtCodigoBarra.Name = "txtCodigoBarra";
-            this.txtCodigoBarra.Size = new System.Drawing.Size(132, 22);
-            this.txtCodigoBarra.TabIndex = 37;
+            this.txtCodigoBarra.Size = new System.Drawing.Size(135, 22);
+            this.txtCodigoBarra.TabIndex = 40;
+            // 
+            // chLocado
+            // 
+            this.chLocado.AutoSize = true;
+            this.chLocado.Checked = true;
+            this.chLocado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chLocado.Location = new System.Drawing.Point(212, 425);
+            this.chLocado.Name = "chLocado";
+            this.chLocado.Size = new System.Drawing.Size(77, 21);
+            this.chLocado.TabIndex = 41;
+            this.chLocado.Text = "Locado";
+            this.chLocado.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscarTitulo
+            // 
+            this.btnBuscarTitulo.Location = new System.Drawing.Point(355, 115);
+            this.btnBuscarTitulo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarTitulo.Name = "btnBuscarTitulo";
+            this.btnBuscarTitulo.Size = new System.Drawing.Size(208, 28);
+            this.btnBuscarTitulo.TabIndex = 43;
+            this.btnBuscarTitulo.Text = "Buscar por Titulo";
+            this.btnBuscarTitulo.UseVisualStyleBackColor = true;
+            this.btnBuscarTitulo.Click += new System.EventHandler(this.btnBuscarTitulo_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(511, 660);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(124, 40);
+            this.btnLimpar.TabIndex = 44;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // frmCadastroFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1716, 791);
+            this.ClientSize = new System.Drawing.Size(1772, 791);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnBuscarTitulo);
+            this.Controls.Add(this.chLocado);
             this.Controls.Add(this.txtCodigoBarra);
             this.Controls.Add(this.txtValorcusto);
             this.Controls.Add(this.txtPreco);
@@ -516,12 +542,11 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.GridViewHistorico);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.GridViewListaItens);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.txtDiretor);
             this.Controls.Add(this.txtAtoresParticipantes);
-            this.Controls.Add(this.cbSituacao);
             this.Controls.Add(this.dtDataadquirida);
             this.Controls.Add(this.rbBLURAY);
             this.Controls.Add(this.rbDVD);
@@ -545,6 +570,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCadastroFilme";
             this.Text = "Cadastro de Filmes";
+            this.Load += new System.EventHandler(this.frmCadastroFilme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
@@ -575,12 +601,11 @@
         private System.Windows.Forms.RadioButton rbDVD;
         private System.Windows.Forms.RadioButton rbBLURAY;
         private System.Windows.Forms.DateTimePicker dtDataadquirida;
-        private System.Windows.Forms.ComboBox cbSituacao;
         private System.Windows.Forms.TextBox txtAtoresParticipantes;
         private System.Windows.Forms.TextBox txtDiretor;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.DataGridView GridViewListaItens;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.DataGridView GridViewHistorico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -596,9 +621,12 @@
         private System.Windows.Forms.PictureBox picFoto;
         private System.Windows.Forms.OpenFileDialog ofdFoto;
         private System.Windows.Forms.Button btnCarregarFoto;
-        private System.Windows.Forms.MaskedTextBox txtPreco;
-        private System.Windows.Forms.MaskedTextBox txtValorcusto;
-        private System.Windows.Forms.MaskedTextBox txtCodigoBarra;
+        private System.Windows.Forms.TextBox txtPreco;
+        private System.Windows.Forms.TextBox txtValorcusto;
+        private System.Windows.Forms.TextBox txtCodigoBarra;
+        private System.Windows.Forms.CheckBox chLocado;
+        private System.Windows.Forms.Button btnBuscarTitulo;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
 

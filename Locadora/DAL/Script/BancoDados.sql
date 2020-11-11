@@ -24,18 +24,19 @@ CREATE TABLE Funcionarios (
 
 CREATE TABLE Itens (
         CdItem INT PRIMARY KEY IDENTITY,
-        CodigoBarras varchar NOT NULL,
+        CodigoBarras int NOT NULL,
         Titulo varchar(50) NOT NULL,
-        Genero varchar(50) NOT NULL,
+        Genero varchar(Max) NOT NULL,
         Ano INT NOT NULL,
         Tipo char(1) NOT NULL,
-        Preco varchar NOT NULL,
-        DtAdquirida date NOT NULL,
-        VlCusto varchar NOT NULL,
+        Preco decimal NOT NULL,
+        DtAdquirida Datetime NOT NULL,
+        VlCusto decimal NOT NULL,
         Situacao char(1) NOT NULL,
         Atores varchar(max) NOT NULL,
         Diretor varchar(max) NOT NULL,
-        CapaFilme image NOT NULL
+        CapaFilme nvarchar(Max) NOT NULL
+
 )
 
 CREATE TABLE Clientes (

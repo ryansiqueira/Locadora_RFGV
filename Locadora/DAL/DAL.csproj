@@ -57,9 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistaDAL.cs" />
     <Compile Include="ClienteDAL.cs" />
     <Compile Include="FilmesDAL.cs" />
     <Compile Include="FuncionarioDAL.cs" />
+    <Compile Include="GeneroDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCadastroArtistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroArtistas.Designer.cs">
+      <DependentUpon>frmCadastroArtistas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadastroFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="FrmCadastroFilmes.Designer.cs">
       <DependentUpon>FrmCadastroFilmes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastroGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroGeneros.Designer.cs">
+      <DependentUpon>frmCadastroGeneros.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCadastroUsuarios.cs">
       <SubType>Form</SubType>
@@ -84,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadastroArtistas.resx">
+      <DependentUpon>frmCadastroArtistas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroCliente.resx">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastroFuncionarios.resx">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroGeneros.resx">
+      <DependentUpon>frmCadastroGeneros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroUsuarios.resx">
       <DependentUpon>frmCadastroUsuarios.cs</DependentUpon>

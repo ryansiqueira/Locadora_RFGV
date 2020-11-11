@@ -7,6 +7,6 @@
     "\\Locadora\\GUI",
     "\\Locadora\\Models"
   ],
-  "SelectedNode": "\\Locadora\\Models\\Filmes.cs",
+  "SelectedNode": "\\Locadora\\DAL\\FilmesDAL.cs",
   "PreviewInSolutionExplorer": false
 }

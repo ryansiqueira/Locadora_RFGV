@@ -19,7 +19,7 @@ CREATE TABLE Funcionarios (
     CEP varchar(9) NOT NULL,
     Estado varchar(3) NOT NULL,
     Celular varchar(12) NOT NULL,
-    DsStatus varchar(max) NOT NULL
+    DsStatus bit NOT NULL
 )
 
 CREATE TABLE Itens (

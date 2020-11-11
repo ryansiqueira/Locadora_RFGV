@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using DAL;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace GUI
 {
@@ -33,7 +35,22 @@ namespace GUI
             objFilmes.Situacao = chLocado.Checked ? 'L' : 'N';
             objFilmes.Atores = txtAtoresParticipantes.Text;
             objFilmes.Diretor = txtDiretor.Text;
-            //objFilmes.FotoFilme = Convert.ToString(picFoto.Text);
+            //if (picFoto.Image != null)
+            //{
+            //    using (MemoryStream stream = new MemoryStream())
+            //    {
+            //        picFoto.Image.Save(stream, ImageFormat.Jpeg);
+
+            //        byte[] CapaFilme = stream.ToArray();
+
+            //        FilmesDAL Cad_Foto = new FilmesDAL();
+
+            //        Cad_Foto.InserirFilmes(picFoto.Text, CapaFilme, picFoto.Name, picFoto.Properties.ZoomPercent);
+            //    }
+
+            //    picFoto.Image.Dispose();
+            //    picFoto.Image = null;
+            //}
 
             FilmesDAL fDAL = new FilmesDAL();
             fDAL.InserirFilmes(objFilmes);
@@ -43,6 +60,19 @@ namespace GUI
             LimparCampos();
             CarregarFilmes();
         }
+        //void converterFoto()
+        //{
+        //    //convertendo a foto para dados binários
+        //    if (picFoto.Image != null)
+        //    {
+        //        MemoryStream ms = new MemoryStream();
+        //        picFoto.Image.Save(ms, ImageFormat.Jpeg);
+        //        byte[] CapaFilme = new byte[ms.Length];
+        //        ms.Position = 0;
+        //        ms.Read(CapaFilme, 0, CapaFilme.Length);
+        //        cmd.Parameters.AddWithValue("@capafilme", CapaFilme);
+        //    }
+        //}
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {

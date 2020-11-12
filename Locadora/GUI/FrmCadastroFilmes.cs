@@ -138,13 +138,13 @@ namespace GUI
             chLocado.Checked = true;
             txtAtoresParticipantes.Text = string.Empty;
             txtDiretor.Text = string.Empty;
-            picFoto.Text = string.Empty;
+            picFoto.Image = null;
             dtDataadquirida.Value = DateTime.Now;
         }
         private void CarregarFilmes()
         {
             FilmesDAL fDAL = new FilmesDAL();
-            GridViewListaItens.DataSource = fDAL.ListarFilmes();
+            GridViewListarItens.DataSource = fDAL.ListarFilmes();
         }
 
         private Image ConverteByteParaImagem(byte[] arquivo)
@@ -190,6 +190,24 @@ namespace GUI
             objFilmes.Situacao = chLocado.Checked ? 'L' : 'N';
             objFilmes.Atores = txtAtoresParticipantes.Text;
             objFilmes.Diretor = txtDiretor.Text;
+            if (picFoto.Image != null)
+            {
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    picFoto.Image.Save(stream, ImageFormat.Jpeg);
+
+                    byte[] CapaFilme = stream.ToArray();
+
+                    objFilmes.CapaFilme = CapaFilme;
+
+                    //FilmesDAL Cad_Foto = new FilmesDAL();
+
+                    //Cad_Foto.InserirFilmes(picFoto.Text, CapaFilme, picFoto.Name, picFoto.Properties.ZoomPercent);
+                }
+
+                //picFoto.Image.Dispose();
+                //picFoto.Image = null;
+            }
             //objFilmes.FotoFilme = picFoto.();
 
             FilmesDAL fDAL = new FilmesDAL();

@@ -110,6 +110,10 @@ namespace DAL
                 filme.Situacao = Convert.ToChar(dr["Situacao"]);
                 filme.Atores = dr["Atores"].ToString();
                 filme.Diretor = dr["Diretor"].ToString();
+                if (dr["CapaFilme"] != DBNull.Value)
+                {
+                    filme.CapaFilme = (byte[])dr["CapaFilme"];
+                }
                 //filme.FotoFilme = dr2["CapaFilme"].ToString();
             }
             conn.Close();
@@ -149,6 +153,10 @@ namespace DAL
                     //objFilmes.Situacao = Convert.ToChar(dr["Situacao"]);
                     //objFilmes.Atores = dr["Atores"].ToString();
                     //objFilmes.Diretor = dr["Diretor"].ToString();
+                    //if (dr["CapaFilme"] != DBNull.Value)
+                    //{
+                    //    objFilmes.CapaFilme = (byte[])dr["CapaFilme"];
+                    //}
                     //objFilmes.CapaFilme = dr["CapaFilme"].ToString();
 
                     listaFilmes.Add(objFilmes);

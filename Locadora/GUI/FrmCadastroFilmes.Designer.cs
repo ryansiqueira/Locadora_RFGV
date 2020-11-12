@@ -69,22 +69,23 @@
             this.chLocado = new System.Windows.Forms.CheckBox();
             this.btnBuscarTitulo = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.GridViewListaItens = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridViewListarItens = new System.Windows.Forms.DataGridView();
+            this.CodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gênero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DtAdquirida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VlCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Atores = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diretor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapaFilme = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewListarItens)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -482,144 +483,148 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // GridViewListaItens
+            // GridViewListarItens
             // 
-            this.GridViewListaItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewListaItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
-            this.GridViewListaItens.Location = new System.Drawing.Point(725, 51);
-            this.GridViewListaItens.Margin = new System.Windows.Forms.Padding(4);
-            this.GridViewListaItens.Name = "GridViewListaItens";
-            this.GridViewListaItens.RowHeadersWidth = 51;
-            this.GridViewListaItens.Size = new System.Drawing.Size(1035, 311);
-            this.GridViewListaItens.TabIndex = 45;
+            this.GridViewListarItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewListarItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodigoBarras,
+            this.Titulo,
+            this.Gênero,
+            this.Ano,
+            this.CdItem,
+            this.Tipo,
+            this.Preco,
+            this.DtAdquirida,
+            this.VlCusto,
+            this.Situacao,
+            this.Atores,
+            this.Diretor,
+            this.CapaFilme});
+            this.GridViewListarItens.Location = new System.Drawing.Point(724, 47);
+            this.GridViewListarItens.Name = "GridViewListarItens";
+            this.GridViewListarItens.RowHeadersWidth = 51;
+            this.GridViewListarItens.RowTemplate.Height = 24;
+            this.GridViewListarItens.Size = new System.Drawing.Size(1036, 306);
+            this.GridViewListarItens.TabIndex = 45;
             // 
-            // dataGridViewTextBoxColumn5
+            // CodigoBarras
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CodigoBarras";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Código de Barras";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 125;
+            this.CodigoBarras.DataPropertyName = "CodigoBarras";
+            this.CodigoBarras.HeaderText = "Codigo de Barras";
+            this.CodigoBarras.MinimumWidth = 6;
+            this.CodigoBarras.Name = "CodigoBarras";
+            this.CodigoBarras.Width = 125;
             // 
-            // dataGridViewTextBoxColumn6
+            // Titulo
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Titulo";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Nome do Filme";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 125;
+            this.Titulo.DataPropertyName = "Titulo";
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Width = 125;
             // 
-            // dataGridViewTextBoxColumn7
+            // Gênero
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Genero";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Gênero";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 125;
+            this.Gênero.DataPropertyName = "Gênero";
+            this.Gênero.HeaderText = "Gênero";
+            this.Gênero.MinimumWidth = 6;
+            this.Gênero.Name = "Gênero";
+            this.Gênero.Width = 125;
             // 
-            // dataGridViewTextBoxColumn8
+            // Ano
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Ano";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Ano";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 125;
+            this.Ano.DataPropertyName = "Ano";
+            this.Ano.HeaderText = "Ano";
+            this.Ano.MinimumWidth = 6;
+            this.Ano.Name = "Ano";
+            this.Ano.Width = 125;
             // 
-            // dataGridViewTextBoxColumn9
+            // CdItem
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Tipo";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Tipo";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Visible = false;
-            this.dataGridViewTextBoxColumn9.Width = 125;
+            this.CdItem.DataPropertyName = "CdItem";
+            this.CdItem.HeaderText = "Código";
+            this.CdItem.MinimumWidth = 6;
+            this.CdItem.Name = "CdItem";
+            this.CdItem.Width = 125;
             // 
-            // Column2
+            // Tipo
             // 
-            this.Column2.DataPropertyName = "Preco";
-            this.Column2.HeaderText = "Preço";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            this.Column2.Width = 125;
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MinimumWidth = 6;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.Visible = false;
+            this.Tipo.Width = 125;
             // 
-            // Column3
+            // Preco
             // 
-            this.Column3.DataPropertyName = "DtAdquirida";
-            this.Column3.HeaderText = "Data Adquirida";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Visible = false;
-            this.Column3.Width = 125;
+            this.Preco.DataPropertyName = "Preco";
+            this.Preco.HeaderText = "Preço";
+            this.Preco.MinimumWidth = 6;
+            this.Preco.Name = "Preco";
+            this.Preco.Visible = false;
+            this.Preco.Width = 125;
             // 
-            // Column4
+            // DtAdquirida
             // 
-            this.Column4.DataPropertyName = "VlCusto";
-            this.Column4.HeaderText = "Valor Custo";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Visible = false;
-            this.Column4.Width = 125;
+            this.DtAdquirida.DataPropertyName = "DtAdquirida";
+            this.DtAdquirida.HeaderText = "Data Adquirida";
+            this.DtAdquirida.MinimumWidth = 6;
+            this.DtAdquirida.Name = "DtAdquirida";
+            this.DtAdquirida.Visible = false;
+            this.DtAdquirida.Width = 125;
             // 
-            // Column5
+            // VlCusto
             // 
-            this.Column5.DataPropertyName = "Situacao";
-            this.Column5.HeaderText = "Situação";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Visible = false;
-            this.Column5.Width = 125;
+            this.VlCusto.DataPropertyName = "VlCusto";
+            this.VlCusto.HeaderText = "Valor de Custo";
+            this.VlCusto.MinimumWidth = 6;
+            this.VlCusto.Name = "VlCusto";
+            this.VlCusto.Visible = false;
+            this.VlCusto.Width = 125;
             // 
-            // Column6
+            // Situacao
             // 
-            this.Column6.DataPropertyName = "Atores";
-            this.Column6.HeaderText = "Atores Participantes";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Visible = false;
-            this.Column6.Width = 125;
+            this.Situacao.DataPropertyName = "Situacao";
+            this.Situacao.HeaderText = "Situacao";
+            this.Situacao.MinimumWidth = 6;
+            this.Situacao.Name = "Situacao";
+            this.Situacao.Visible = false;
+            this.Situacao.Width = 125;
             // 
-            // Column7
+            // Atores
             // 
-            this.Column7.DataPropertyName = "Diretor";
-            this.Column7.HeaderText = "Diretor";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Visible = false;
-            this.Column7.Width = 125;
+            this.Atores.DataPropertyName = "Atores";
+            this.Atores.HeaderText = "Atores";
+            this.Atores.MinimumWidth = 6;
+            this.Atores.Name = "Atores";
+            this.Atores.Visible = false;
+            this.Atores.Width = 125;
             // 
-            // Column8
+            // Diretor
             // 
-            this.Column8.DataPropertyName = "CapaFilme";
-            this.Column8.HeaderText = "Capa do Filme";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Visible = false;
-            this.Column8.Width = 125;
+            this.Diretor.DataPropertyName = "Diretor";
+            this.Diretor.HeaderText = "Diretor";
+            this.Diretor.MinimumWidth = 6;
+            this.Diretor.Name = "Diretor";
+            this.Diretor.Visible = false;
+            this.Diretor.Width = 125;
+            // 
+            // CapaFilme
+            // 
+            this.CapaFilme.DataPropertyName = "CapaFilme";
+            this.CapaFilme.HeaderText = "Capa do Filme";
+            this.CapaFilme.MinimumWidth = 6;
+            this.CapaFilme.Name = "CapaFilme";
+            this.CapaFilme.Visible = false;
+            this.CapaFilme.Width = 125;
             // 
             // frmCadastroFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1772, 791);
-            this.Controls.Add(this.GridViewListaItens);
+            this.Controls.Add(this.GridViewListarItens);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnBuscarTitulo);
             this.Controls.Add(this.chLocado);
@@ -661,7 +666,7 @@
             this.Load += new System.EventHandler(this.frmCadastroFilme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewListarItens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -710,19 +715,20 @@
         private System.Windows.Forms.CheckBox chLocado;
         private System.Windows.Forms.Button btnBuscarTitulo;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.DataGridView GridViewListaItens;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridView GridViewListarItens;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoBarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gênero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ano;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CdItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DtAdquirida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VlCusto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Situacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Atores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diretor;
+        private System.Windows.Forms.DataGridViewImageColumn CapaFilme;
     }
 }
 

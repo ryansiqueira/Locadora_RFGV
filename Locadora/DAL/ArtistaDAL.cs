@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
 using Models;
+using System.Data;
 
 namespace DAL
 {
@@ -19,15 +20,15 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "INSERT INTO Artistas VALUES (@nome, @dtnascimento, @paisnascimento)";
+            string sql = "INSERT INTO Artistas VALUES (@nome, @dtnascimento, @paisnascimento, @foto)";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@nome", objArtista.Nome);
             cmd.Parameters.AddWithValue("@dtnascimento", objArtista.DtNascimento);
             cmd.Parameters.AddWithValue("@paisnascimento", objArtista.PaisNascimento);
-            //cmd.Parameters.AddWithValue("@foto", objArtista.FotodoArtista);
-
+            cmd.Parameters.AddWithValue("@foto", objArtista.FotodoArtista);
+            cmd.Parameters.Add("@foto", SqlDbType.VarBinary).Value = objArtista.FotodoArtista;
             cmd.ExecuteNonQuery();
 
             conn.Close();
@@ -39,12 +40,12 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "UPDATE Artistas SET NmArtistas = @nome, DtNascimento = @dtnascimento, PaisNascimento = @paisnasc";
+            string sql = "UPDATE Artistas SET NmArtistas = @nome, DtNascimento = @dtnascimento, PaisNascimento = @paisnasc, Foto = @foto";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@nome", objArtista.Nome);
             cmd.Parameters.AddWithValue("@dtnascimento", objArtista.DtNascimento);
             cmd.Parameters.AddWithValue("@paisnascimento", objArtista.PaisNascimento);
-            //cmd.Parameters.AddWithValue("@foto", objArtista.FotodoArtista);
+            cmd.Parameters.Add("@foto", SqlDbType.VarBinary).Value = objArtista.FotodoArtista;
 
 
             cmd.ExecuteNonQuery();
@@ -75,7 +76,10 @@ namespace DAL
                 objArtista.Nome = NmArtista;
                 objArtista.DtNascimento = Convert.ToDateTime(dr["DtNascimento"]);
                 objArtista.PaisNascimento = dr["PaisNascimento"].ToString();
-                //objArtista.FotodoArtista = dr["Foto"]; 
+                if (dr["Foto"]!= DBNull.Value)
+                {
+                    objArtista.FotodoArtista = (byte[])dr["Foto"];
+                }
             }
 
             conn.Close();
@@ -162,45 +166,6 @@ namespace DAL
             cmd.ExecuteNonQuery();
 
             conn.Close();
-        }
-
-       /*public List<Artista> ListaFilmesArtistas()
-        {
-            List<Artista> listaArtistas = new List<Artista>();
-
-            int CdArtista = ;
-
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            conn.Open();
-
-            string sql = "SELECT B.Titulo CASE WHEN A.CdArtista = @codigo FROM Artistas INNER JOIN Itens B ON A.NmArtista = B.Atores";
-
-            SqlCommand cmd = new SqlCommand(sql, conn);
-
-            cmd.Parameters.AddWithValue("@codigo", CdArtista);
-
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            if (dr.HasRows)
-            {
-                Artista objArtista;
-                while (dr.Read())
-                {
-                    objArtista = new Artista();
-                    objArtista.CdArtista = Convert.ToInt32(dr["CdArtista"]);
-                    objArtista.Nome = dr["NmArtista"].ToString();
-                    objArtista.DtNascimento = Convert.ToDateTime(dr["DtNascimento"]);
-                    objArtista.PaisNascimento = dr["PaisNascimento"].ToString();
-                    //objArtista.FotodoArtista = dr["Foto"]; 
-
-                    listaArtistas.Add(objArtista);
-                }
-            }
-
-            conn.Close();
-
-            return listaArtistas;
-        }*/    
+        } 
     }
 }

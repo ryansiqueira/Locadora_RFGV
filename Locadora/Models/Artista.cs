@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Models
 {
     public class Artista
@@ -13,6 +14,6 @@ namespace Models
         public string Nome { get; set; }
         public DateTime DtNascimento { get; set; }
         public string PaisNascimento { get; set; }
-        public ImageFileMachine FotodoArtista { get; set; }
+        public byte[] FotodoArtista { get; set; }
     }
 }

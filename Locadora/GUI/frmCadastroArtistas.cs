@@ -114,10 +114,28 @@ namespace GUI
             }
             else
             {
+                byte[] arquivo = objArtista.FotodoArtista;
                 txtNome.Text = objArtista.Nome;
                 dtpNascimento.Value = objArtista.DtNascimento;
                 txtPaisNasc.Text = objArtista.PaisNascimento;
-                picFoto.Image = objArtista.FotodoArtista;
+                Image img1 = ConverteByteParaImagem(arquivo);
+                picFoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                picFoto.Image = img1;
+            }
+        }
+
+        private Image ConverteByteParaImagem(byte[] arquivo)
+        {
+            try
+            {
+                using (MemoryStream mStream = new MemoryStream(arquivo))
+                {
+                    return Image.FromStream(mStream);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 

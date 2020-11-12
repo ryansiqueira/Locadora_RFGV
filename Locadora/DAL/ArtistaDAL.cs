@@ -27,8 +27,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@nome", objArtista.Nome);
             cmd.Parameters.AddWithValue("@dtnascimento", objArtista.DtNascimento);
             cmd.Parameters.AddWithValue("@paisnascimento", objArtista.PaisNascimento);
-            cmd.Parameters.AddWithValue("@foto", objArtista.FotodoArtista);
-            cmd.Parameters.Add("@foto", SqlDbType.VarBinary).Value = objArtista.FotodoArtista;
+            cmd.Parameters.AddWithValue("@foto", SqlDbType.VarBinary).Value = objArtista.FotodoArtista;
             cmd.ExecuteNonQuery();
 
             conn.Close();

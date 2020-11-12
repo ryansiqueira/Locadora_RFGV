@@ -50,7 +50,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "DELETE FROM Funcionarios WHERE CdFuncionarios = @cod";
+            string sql = "DELETE FROM Funcionarios WHERE CdFuncionario = @cod";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -67,7 +67,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "UPDATE Funcionarios SET NmFuncionario = @nm, CPF = @CPF, DtNascimentos = @nas, DsEstadoCivil = @estciv,Sexo = @sexo, Email = @email," +
+            string sql = "UPDATE Funcionarios SET NmFuncionario = @nm, CPF = @CPF, DtNascimento = @nas, DsEstadoCivil = @estciv,Sexo = @sexo, Email = @email," +
                 "Telefone = @telefone, RG = @rg, Endereco = @ende, Cidade = @cid, CEP = @cep, Estado = @esta, Celular = @celula, DsStatus = @status" +
                 "WHERE CdFuncionario = @cod";
 
@@ -94,7 +94,46 @@ namespace DAL
             conn.Close();
         }
 
-        public Funcionarios ObterFuncionario(int CdFuncionario, string cpf)
+        public Funcionarios ObterFuncionarioCPF(string cpf)
+        {
+            Funcionarios func = null;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            string sqlcpf = "SELECT * FROM Funcionarios WHERE CPF = @cpf";
+
+            SqlCommand cmdcpf = new SqlCommand(sqlcpf, conn);
+            cmdcpf.Parameters.AddWithValue("@cpf", cpf);
+
+            SqlDataReader drcpf = cmdcpf.ExecuteReader();
+
+            if (drcpf.HasRows && drcpf.Read())
+            {
+                func = new Funcionarios();
+                func.CdFuncionario = Convert.ToInt32(drcpf["CdFuncionario"]);
+                func.NmFuncionario = Convert.ToString(drcpf["NmFuncionario"]);
+                func.CPF = Convert.ToString(drcpf["CPF"]);
+                func.DtNascimento = Convert.ToDateTime(drcpf["DtNascimento"]);
+                func.EstadoCivil = Convert.ToChar(drcpf["DsEstadoCivil"]);
+                func.Sexo = Convert.ToChar(drcpf["Sexo"]);
+                func.Email = Convert.ToString(drcpf["Email"]);
+                func.Telefone = Convert.ToString(drcpf["Telefone"]);
+                func.RG = Convert.ToString(drcpf["RG"]);
+                func.Endereco = Convert.ToString(drcpf["Endereco"]);
+                func.Cidade = Convert.ToString(drcpf["Cidade"]);
+                func.CEP = Convert.ToString(drcpf["CEP"]);
+                func.Estado = Convert.ToString(drcpf["Estado"]);
+                func.Celular = Convert.ToString(drcpf["Celular"]);
+                func.DsStatus = Convert.ToBoolean(drcpf["DsStatus"]);
+            }
+
+            conn.Close();
+
+            return func;
+        }
+
+        public Funcionarios ObterFuncionarioCod(int CdFuncionario)
         {
             Funcionarios func = null;
 
@@ -128,38 +167,7 @@ namespace DAL
                 func.Celular = Convert.ToString(dr["Celular"]);
                 func.DsStatus = Convert.ToBoolean(dr["DsStatus"]);
             }
-            conn.Close();
-
-            conn.Open();
-
-            string sqlcpf = "SELECT * FROM Funcionarios WHERE CdFuncionario = @cpf";
-
-            SqlCommand cmdcpf = new SqlCommand(sqlcpf, conn);
-            cmdcpf.Parameters.AddWithValue("@cpf", cpf);
-
-            SqlDataReader drcpf = cmdcpf.ExecuteReader();
-
-            if (drcpf.HasRows && drcpf.Read())
-            {
-                func = new Funcionarios();
-                func.CdFuncionario = Convert.ToInt32(drcpf["CdFuncionario"]);
-                func.NmFuncionario = Convert.ToString(drcpf["NmFuncionario"]);
-                func.CPF = Convert.ToString(drcpf["CPF"]);
-                func.DtNascimento = Convert.ToDateTime(drcpf["DtNascimento"]);
-                func.EstadoCivil = Convert.ToChar(drcpf["DsEstadoCivil"]);
-                func.Sexo = Convert.ToChar(drcpf["Sexo"]);
-                func.Email = Convert.ToString(drcpf["Email"]);
-                func.Telefone = Convert.ToString(drcpf["Telefone"]);
-                func.RG = Convert.ToString(drcpf["RG"]);
-                func.Endereco = Convert.ToString(drcpf["Endereco"]);
-                func.Cidade = Convert.ToString(drcpf["Cidade"]);
-                func.CEP = Convert.ToString(drcpf["CEP"]);
-                func.Estado = Convert.ToString(drcpf["Estado"]);
-                func.Celular = Convert.ToString(drcpf["Celular"]);
-                func.DsStatus = Convert.ToBoolean(drcpf["DsStatus"]);
-            }
-
-            conn.Close();
+            conn.Close();           
 
             return func;
         }

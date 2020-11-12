@@ -63,7 +63,6 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.mskRG = new System.Windows.Forms.MaskedTextBox();
             this.cbEstadoCivil = new System.Windows.Forms.ComboBox();
             this.cbSexo = new System.Windows.Forms.ComboBox();
             this.mskCEP = new System.Windows.Forms.MaskedTextBox();
@@ -75,6 +74,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mskRG = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -308,8 +308,9 @@
             this.mksCPF.Location = new System.Drawing.Point(191, 148);
             this.mksCPF.Mask = "000\\.000\\.000-00";
             this.mksCPF.Name = "mksCPF";
-            this.mksCPF.Size = new System.Drawing.Size(100, 22);
+            this.mksCPF.Size = new System.Drawing.Size(115, 22);
             this.mksCPF.TabIndex = 3;
+            this.mksCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // dtpNascimento
             // 
@@ -391,14 +392,6 @@
             this.label17.TabIndex = 39;
             this.label17.Text = "Devoluções";
             // 
-            // mskRG
-            // 
-            this.mskRG.Location = new System.Drawing.Point(191, 316);
-            this.mskRG.Mask = "000\\.000\\.000\\-0";
-            this.mskRG.Name = "mskRG";
-            this.mskRG.Size = new System.Drawing.Size(309, 22);
-            this.mskRG.TabIndex = 9;
-            // 
             // cbEstadoCivil
             // 
             this.cbEstadoCivil.FormattingEnabled = true;
@@ -435,6 +428,7 @@
             this.mskCEP.Name = "mskCEP";
             this.mskCEP.Size = new System.Drawing.Size(309, 22);
             this.mskCEP.TabIndex = 12;
+            this.mskCEP.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // cbEstados
             // 
@@ -488,7 +482,7 @@
             // 
             // btnBuscarCPF
             // 
-            this.btnBuscarCPF.Location = new System.Drawing.Point(297, 144);
+            this.btnBuscarCPF.Location = new System.Drawing.Point(309, 144);
             this.btnBuscarCPF.Name = "btnBuscarCPF";
             this.btnBuscarCPF.Size = new System.Drawing.Size(70, 30);
             this.btnBuscarCPF.TabIndex = 19;
@@ -549,6 +543,15 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // mskRG
+            // 
+            this.mskRG.Location = new System.Drawing.Point(191, 316);
+            this.mskRG.Mask = "000\\.000\\.000\\-0";
+            this.mskRG.Name = "mskRG";
+            this.mskRG.Size = new System.Drawing.Size(309, 22);
+            this.mskRG.TabIndex = 9;
+            this.mskRG.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // FrmCadastroFuncionarios
             // 
@@ -636,7 +639,6 @@
         private System.Windows.Forms.DataGridView dgvFuncionarios;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.MaskedTextBox mskRG;
         private System.Windows.Forms.ComboBox cbEstadoCivil;
         private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.MaskedTextBox mskCEP;
@@ -652,5 +654,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.MaskedTextBox mskRG;
     }
 }

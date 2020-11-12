@@ -25,7 +25,7 @@ namespace GUI
             Funcionarios fun = new Funcionarios();
 
             fun.NmFuncionario = txtNome.Text;
-            fun.CPF = 99999.ToString();
+            fun.CPF = mksCPF.Text;
             fun.DtNascimento = dtpNascimento.Value;
             switch (cbEstadoCivil.Text)
             {
@@ -61,10 +61,10 @@ namespace GUI
             }
             fun.Email = txtEmail.Text;
             fun.Telefone = txtTelefone.Text;
-            fun.RG = 999.ToString();
+            fun.RG = mskRG.Text;
             fun.Endereco = txtEndereco.Text;
             fun.Cidade = txtCidade.Text;
-            fun.CEP = 9999.ToString();
+            fun.CEP = mskCEP.Text;
             fun.Estado = cbEstados.Text;
             fun.Celular = txtCelular.Text;
             fun.DsStatus = ckbStatus.Checked;
@@ -150,22 +150,9 @@ namespace GUI
 
         private void btnBuscarCd_Click(object sender, EventArgs e)
         {
-            BuscarFuncionarios();
-        }
-
-        public void CarregarFuncionarios()
-        {
-            FuncionarioDAL fdal = new FuncionarioDAL();
-            dgvFuncionarios.DataSource = fdal.ListarFuncionarios();
-        }
-
-        public void BuscarFuncionarios()
-        {
-            Funcionarios fun = new Funcionarios();
-
             FuncionarioDAL fdal = new FuncionarioDAL();
 
-            fdal.ObterFuncionario(Convert.ToInt32(txtCodigo.Text), mksCPF.Text);
+            Funcionarios fun = fdal.ObterFuncionarioCod(Convert.ToInt32(txtCodigo.Text));
 
             if (fdal == null)
             {
@@ -221,9 +208,72 @@ namespace GUI
                 ckbStatus.Checked = fun.DsStatus;
             }
         }
+
+        public void CarregarFuncionarios()
+        {
+            FuncionarioDAL fdal = new FuncionarioDAL();
+            dgvFuncionarios.DataSource = fdal.ListarFuncionarios();
+        }
+        
         private void btnBuscarCPF_Click(object sender, EventArgs e)
         {
-            BuscarFuncionarios();
+            FuncionarioDAL fdal = new FuncionarioDAL();
+
+            Funcionarios fun = fdal.ObterFuncionarioCPF(mksCPF.Text);
+
+            if (fun == null)
+            {
+                MessageBox.Show("Não há registros!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                txtCodigo.Text = fun.CdFuncionario.ToString();
+                txtNome.Text = fun.NmFuncionario;
+                mksCPF.Text = fun.CPF;
+                dtpNascimento.Value = fun.DtNascimento;
+                switch (fun.EstadoCivil)
+                {
+                    case 'S':
+                        cbEstadoCivil.Text = "Solteiro";
+                        break;
+
+                    case 'C':
+                        cbEstadoCivil.Text = "Casado";
+                        break;
+
+                    case 'D':
+                        cbEstadoCivil.Text = "Divorciado";
+                        break;
+
+                    case 'V':
+                        cbEstadoCivil.Text = "Viúvo";
+                        break;
+                }
+                switch (fun.Sexo)
+                {
+                    case 'M':
+                        cbSexo.Text = "Masculino";
+                        break;
+
+                    case 'F':
+                        cbSexo.Text = "Feminino";
+                        break;
+
+                    case 'N':
+                        cbSexo.Text = "Não-binário";
+                        break;
+                }
+                txtEmail.Text = fun.Email;
+                txtTelefone.Text = fun.Telefone;
+                mskRG.Text = fun.RG;
+                txtEndereco.Text = fun.Endereco;
+                txtCidade.Text = fun.Cidade;
+                mskCEP.Text = fun.CEP;
+                cbEstados.Text = fun.Estado;
+                txtCelular.Text = fun.Celular;
+                ckbStatus.Checked = fun.DsStatus;
+            }
         }
     }
 }

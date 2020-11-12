@@ -35,22 +35,24 @@ namespace GUI
             objFilmes.Situacao = chLocado.Checked ? 'L' : 'N';
             objFilmes.Atores = txtAtoresParticipantes.Text;
             objFilmes.Diretor = txtDiretor.Text;
-            //if (picFoto.Image != null)
-            //{
-            //    using (MemoryStream stream = new MemoryStream())
-            //    {
-            //        picFoto.Image.Save(stream, ImageFormat.Jpeg);
+            if (picFoto.Image != null)
+            {
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    picFoto.Image.Save(stream, ImageFormat.Jpeg);
 
-            //        byte[] CapaFilme = stream.ToArray();
+                    byte[] CapaFilme = stream.ToArray();
 
-            //        FilmesDAL Cad_Foto = new FilmesDAL();
+                    objFilmes.CapaFilme = CapaFilme;
 
-            //        Cad_Foto.InserirFilmes(picFoto.Text, CapaFilme, picFoto.Name, picFoto.Properties.ZoomPercent);
-            //    }
+                    //FilmesDAL Cad_Foto = new FilmesDAL();
 
-            //    picFoto.Image.Dispose();
-            //    picFoto.Image = null;
-            //}
+                    //Cad_Foto.InserirFilmes(picFoto.Text, CapaFilme, picFoto.Name, picFoto.Properties.ZoomPercent);
+                }
+
+                //picFoto.Image.Dispose();
+                //picFoto.Image = null;
+            }
 
             FilmesDAL fDAL = new FilmesDAL();
             fDAL.InserirFilmes(objFilmes);
@@ -62,7 +64,7 @@ namespace GUI
         }
         //void converterFoto()
         //{
-        //    //convertendo a foto para dados binários
+        //    convertendo a foto para dados binários
         //    if (picFoto.Image != null)
         //    {
         //        MemoryStream ms = new MemoryStream();
@@ -77,7 +79,7 @@ namespace GUI
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             int cdFilme = Convert.ToInt32(txtCodigoBarra.Text);
-            
+
             FilmesDAL fDAL = new FilmesDAL();
             Filmes filme = fDAL.ObterFilme(cdFilme);
 
@@ -88,6 +90,7 @@ namespace GUI
             }
             else
             {
+                byte[] arquivo = filme.CapaFilme;
                 txtCodigo.Text = Convert.ToString(filme.Codigo);
                 txtCodigoBarra.Text = Convert.ToString(filme.CodigoBarras);
                 txtTitulo.Text = filme.Titulo;
@@ -102,14 +105,31 @@ namespace GUI
                 //chNaoLocado.Checked = filme.Situacao == 'N';
                 txtAtoresParticipantes.Text = filme.Atores;
                 txtDiretor.Text = filme.Diretor;
-                //txtfoto = Convert.ToString(filme.FotoFilme);
+                Image img1 = ConverteByteParaImagem(arquivo);
+                picFoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                picFoto.Image = img1;
+                //picFoto.Image = null;
+                //if (picFoto.Image != null && picFoto.Image.Length > 0)
+                //{
+                //    picFoto.Image = ByteToImage(Funcionario.Foto)
+                //}
+                //CapaFilme = filme.CapaFilme.byte
+
             }
         }
+        public Image byteArrayToImage(byte[] img)
+        {
+            using (var ms = new MemoryStream(img))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
         private void LimparCampos()
         {
             txtCodigo.Text = string.Empty;
             txtCodigoBarra.Text = string.Empty;
-            txtTitulo.Text = string.Empty;            
+            txtTitulo.Text = string.Empty;
             txtGenero.Text = string.Empty;
             rbBLURAY.Checked = true;
             txtPreco.Text = string.Empty;
@@ -125,6 +145,21 @@ namespace GUI
         {
             FilmesDAL fDAL = new FilmesDAL();
             GridViewListaItens.DataSource = fDAL.ListarFilmes();
+        }
+
+        private Image ConverteByteParaImagem(byte[] arquivo)
+        {
+            try
+            {
+                using (MemoryStream mStream = new MemoryStream(arquivo))
+                {
+                    return Image.FromStream(mStream);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -223,12 +258,12 @@ namespace GUI
                 txtAtoresParticipantes.Text = filme.Atores;
                 txtDiretor.Text = filme.Diretor;
                 //txtfoto = Convert.ToString(filme.FotoFilme);
-            }        
+            }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
         }
-    }   
+    }
 }

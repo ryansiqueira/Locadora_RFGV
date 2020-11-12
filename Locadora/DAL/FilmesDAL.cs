@@ -33,8 +33,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@situacao", objFilmes.Situacao);
             cmd.Parameters.AddWithValue("@atores", objFilmes.Atores);
             cmd.Parameters.AddWithValue("@diretor", objFilmes.Diretor);
-            
-            //cmd.Parameters.Add("@capafilme", SqlDbType.VarBinary).Value = ;
+            cmd.Parameters.Add("@capafilme", SqlDbType.VarBinary).Value = objFilmes.CapaFilme;
 
             cmd.ExecuteNonQuery();
 
@@ -70,7 +69,10 @@ namespace DAL
                 filme.Situacao = Convert.ToChar(dr["Situacao"].ToString());
                 filme.Atores = dr["Atores"].ToString();
                 filme.Diretor = dr["Diretor"].ToString();
-                //filme.FotoFilme = dr["CapaFilme"].ToString();
+                if (dr["CapaFilme"]!= DBNull.Value)
+                {
+                    filme.CapaFilme = (byte[])dr["CapaFilme"];
+                }                
             }
 
             //cmd.ExecuteNonQuery();
@@ -147,7 +149,7 @@ namespace DAL
                     //objFilmes.Situacao = Convert.ToChar(dr["Situacao"]);
                     //objFilmes.Atores = dr["Atores"].ToString();
                     //objFilmes.Diretor = dr["Diretor"].ToString();
-                    //objFilmes.FotoFilme = dr["CapaFilme"].ToString();
+                    //objFilmes.CapaFilme = dr["CapaFilme"].ToString();
 
                     listaFilmes.Add(objFilmes);
                 }
@@ -164,7 +166,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "UPDATE Itens SET CodigoBarras = @codigobarras, Titulo = @titulo, Genero = @genero, Ano = @ano, Tipo = @tipo, Preco = @preco, DtAdquirida = @dataadquirida, VlCusto = @valorcusto, Situacao = @situacao, Atores = @atores, Diretor = @diretor WHERE CdItem = @codigo";
+            string sql = "UPDATE Itens SET CodigoBarras = @codigobarras, Titulo = @titulo, Genero = @genero, Ano = @ano, Tipo = @tipo, Preco = @preco, DtAdquirida = @dataadquirida, VlCusto = @valorcusto, Situacao = @situacao, Atores = @atores, Diretor = @diretor, CapaFilme = @capafilme WHERE CdItem = @codigo";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@codigobarras", objFilmes.CodigoBarras);
             cmd.Parameters.AddWithValue("@titulo", objFilmes.Titulo);
@@ -177,7 +179,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@situacao", objFilmes.Situacao);
             cmd.Parameters.AddWithValue("@atores", objFilmes.Atores);
             cmd.Parameters.AddWithValue("@diretor", objFilmes.Diretor);
-            //cmd.Parameters.AddWithValue("@capafilme", objFilmes.FotoFilme);
+            cmd.Parameters.Add("@capafilme", SqlDbType.VarBinary).Value = objFilmes.CapaFilme;
             cmd.Parameters.AddWithValue("@codigo", objFilmes.Codigo);
 
             cmd.ExecuteNonQuery();

@@ -65,3 +65,5 @@ C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CoreCompile
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.exe
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.pdb
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroArtistas.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroGeneros.resources

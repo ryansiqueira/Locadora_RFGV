@@ -19,7 +19,7 @@ CREATE TABLE Funcionarios (
     CEP varchar(9) NOT NULL,
     Estado varchar(3) NOT NULL,
     Celular varchar(12) NOT NULL,
-    DsStatus varchar(max) NOT NULL
+    DsStatus bit NOT NULL
 )
 
 CREATE TABLE Itens (
@@ -41,19 +41,19 @@ CREATE TABLE Itens (
 
 CREATE TABLE Clientes (
     CdCliente INT PRIMARY KEY IDENTITY,
-    NmCliente varchar(50) NOT NULL,
+    NmCliente varchar(500) NOT NULL,
     DtNascimento date NOT NULL,
-    Sexo char(1) NOT NULL,
-    DsEstadoCivil CHAR (1) NOT NULL,
-    RG varchar(10) NOT NULL,
-    CPF varchar(12) NOT NULL,
-    Endereco varchar(50) NOT NULL,
+    Sexo varchar(20) NOT NULL,
+    DsEstadoCivil CHAR (20) NOT NULL,
+    RG varchar(20) NOT NULL,
+    CPF varchar(20) NOT NULL,
+    Endereco varchar(200) NOT NULL,
     Cidade varchar(50) NOT NULL,
     CEP varchar(50) NOT NULL,
     Estado varchar(2) NOT NULL,
-    Telefone varchar(20) NOT NULL,
-    Email varchar(50) NOT NULL,
-    Celular varchar(20) NOT NULL,
+    Telefone varchar(50) NOT NULL,
+    Email varchar(200) NOT NULL,
+    Celular varchar(50) NOT NULL,
     DsStatus varchar(50) NOT NULL
 )
 

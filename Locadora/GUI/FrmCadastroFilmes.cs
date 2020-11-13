@@ -283,5 +283,21 @@ namespace GUI
         {
             LimparCampos();
         }
+
+        private void txtGenero_Enter(object sender, EventArgs e)
+        {            
+            GeneroDAL gDal = new GeneroDAL();
+            txtGenero.DataSource = gDal.CarregaGeneros();
+            txtGenero.DisplayMember = "CdGenero";
+            txtGenero.ValueMember = "NmGenero";
+        }
+
+        private void txtAtoresParticipantes_Enter(object sender, EventArgs e)
+        {
+            ArtistaDAL tDAL = new ArtistaDAL();
+            txtAtoresParticipantes.DataSource = tDAL.CarregaArtistas();
+            txtAtoresParticipantes.DisplayMember = "CdArtistia";
+            txtAtoresParticipantes.ValueMember = "NmArtistas";
+        }
     }
 }

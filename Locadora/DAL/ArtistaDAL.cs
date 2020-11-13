@@ -135,7 +135,7 @@ namespace DAL
                 while (dr.Read())
                 {
                     objArtista = new Artista();
-                    objArtista.CdArtista = Convert.ToInt32(dr["CdArtista"]);
+                    objArtista.CdArtista = Convert.ToInt32(dr["CdArtistia"]);
                     objArtista.Nome = dr["NmArtistas"].ToString();
                     objArtista.DtNascimento = Convert.ToDateTime(dr["DtNascimento"]);
                     objArtista.PaisNascimento = dr["PaisNascimento"].ToString();
@@ -165,6 +165,23 @@ namespace DAL
             cmd.ExecuteNonQuery();
 
             conn.Close();
-        } 
+        }
+
+        public DataTable CarregaArtistas()
+        {
+            SqlConnection sql = new SqlConnection(connectionString);
+            sql.Open();
+            SqlCommand cmd = new SqlCommand("Select NmArtistas From Artistas", sql);
+            SqlDataReader reader = cmd.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+            DataRow row = table.NewRow();
+            row["NmArtistas"] = "";
+            table.Rows.InsertAt(row, 0);
+
+            sql.Close();
+            return table;
+
+        }
     }
 }

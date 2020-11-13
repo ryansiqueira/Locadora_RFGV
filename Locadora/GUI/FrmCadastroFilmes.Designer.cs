@@ -43,12 +43,10 @@
             this.lblFoto = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtGenero = new System.Windows.Forms.TextBox();
             this.txtAno = new System.Windows.Forms.TextBox();
             this.rbDVD = new System.Windows.Forms.RadioButton();
             this.rbBLURAY = new System.Windows.Forms.RadioButton();
             this.dtDataadquirida = new System.Windows.Forms.DateTimePicker();
-            this.txtAtoresParticipantes = new System.Windows.Forms.TextBox();
             this.txtDiretor = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
@@ -83,6 +81,8 @@
             this.Atores = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diretor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CapaFilme = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtGenero = new System.Windows.Forms.ComboBox();
+            this.txtAtoresParticipantes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewListarItens)).BeginInit();
@@ -235,14 +235,6 @@
             this.txtTitulo.Size = new System.Drawing.Size(132, 22);
             this.txtTitulo.TabIndex = 15;
             // 
-            // txtGenero
-            // 
-            this.txtGenero.Location = new System.Drawing.Point(215, 159);
-            this.txtGenero.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(132, 22);
-            this.txtGenero.TabIndex = 16;
-            // 
             // txtAno
             // 
             this.txtAno.Location = new System.Drawing.Point(215, 204);
@@ -283,14 +275,6 @@
             this.dtDataadquirida.Name = "dtDataadquirida";
             this.dtDataadquirida.Size = new System.Drawing.Size(132, 22);
             this.dtDataadquirida.TabIndex = 19;
-            // 
-            // txtAtoresParticipantes
-            // 
-            this.txtAtoresParticipantes.Location = new System.Drawing.Point(215, 464);
-            this.txtAtoresParticipantes.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAtoresParticipantes.Name = "txtAtoresParticipantes";
-            this.txtAtoresParticipantes.Size = new System.Drawing.Size(132, 22);
-            this.txtAtoresParticipantes.TabIndex = 22;
             // 
             // txtDiretor
             // 
@@ -619,11 +603,31 @@
             this.CapaFilme.Visible = false;
             this.CapaFilme.Width = 125;
             // 
+            // txtGenero
+            // 
+            this.txtGenero.FormattingEnabled = true;
+            this.txtGenero.Location = new System.Drawing.Point(212, 159);
+            this.txtGenero.Name = "txtGenero";
+            this.txtGenero.Size = new System.Drawing.Size(135, 24);
+            this.txtGenero.TabIndex = 46;
+            this.txtGenero.Enter += new System.EventHandler(this.txtGenero_Enter);
+            // 
+            // txtAtoresParticipantes
+            // 
+            this.txtAtoresParticipantes.FormattingEnabled = true;
+            this.txtAtoresParticipantes.Location = new System.Drawing.Point(212, 465);
+            this.txtAtoresParticipantes.Name = "txtAtoresParticipantes";
+            this.txtAtoresParticipantes.Size = new System.Drawing.Size(135, 24);
+            this.txtAtoresParticipantes.TabIndex = 47;
+            this.txtAtoresParticipantes.Enter += new System.EventHandler(this.txtAtoresParticipantes_Enter);
+            // 
             // frmCadastroFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1772, 791);
+            this.Controls.Add(this.txtAtoresParticipantes);
+            this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.GridViewListarItens);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnBuscarTitulo);
@@ -639,12 +643,10 @@
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.txtDiretor);
-            this.Controls.Add(this.txtAtoresParticipantes);
             this.Controls.Add(this.dtDataadquirida);
             this.Controls.Add(this.rbBLURAY);
             this.Controls.Add(this.rbDVD);
             this.Controls.Add(this.txtAno);
-            this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblFoto);
@@ -689,12 +691,10 @@
         private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtAno;
         private System.Windows.Forms.RadioButton rbDVD;
         private System.Windows.Forms.RadioButton rbBLURAY;
         private System.Windows.Forms.DateTimePicker dtDataadquirida;
-        private System.Windows.Forms.TextBox txtAtoresParticipantes;
         private System.Windows.Forms.TextBox txtDiretor;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnAtualizar;
@@ -729,6 +729,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Atores;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diretor;
         private System.Windows.Forms.DataGridViewImageColumn CapaFilme;
+        private System.Windows.Forms.ComboBox txtGenero;
+        private System.Windows.Forms.ComboBox txtAtoresParticipantes;
     }
 }
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
 using Models;
+using System.Data;
 
 namespace DAL
 {
@@ -120,6 +121,23 @@ namespace DAL
             cmd.ExecuteNonQuery();
 
             conn.Close();
+        }
+
+        public DataTable CarregaGeneros()
+        {
+            SqlConnection sql = new SqlConnection(connectionString);
+            sql.Open();
+            SqlCommand cmd = new SqlCommand("Select NmGenero From Generos", sql);
+            SqlDataReader reader = cmd.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+            DataRow row = table.NewRow();
+            row["NmGenero"] = "";
+            table.Rows.InsertAt(row, 0);
+
+            sql.Close();
+            return table;
+
         }
     }
 }

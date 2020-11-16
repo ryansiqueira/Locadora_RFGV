@@ -15,3 +15,4 @@ C:\Trabalho Anderson\Locadora_RFGV\Locadora\Models\obj\Debug\Models.csproj.CoreC
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\Models\obj\Debug\Models.dll
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\Models\obj\Debug\Models.pdb
 D:\Educação\Analise e Desenvolvimento de Sistemas\4º Semestre\Aula de C# Win Forms\Trabalho\ryansiqueira\Locadora_RFGV\Locadora\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Locadora\Models\obj\Debug\Models.csprojAssemblyReference.cache

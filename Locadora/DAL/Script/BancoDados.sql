@@ -35,7 +35,7 @@ CREATE TABLE Itens (
         Situacao char(1) NOT NULL,
         Atores varchar(max) NOT NULL,
         Diretor varchar(max) NOT NULL,
-        CapaFilme nvarchar(Max) NOT NULL
+        CapaFilme varbinary(Max) NOT NULL
 
 )
 

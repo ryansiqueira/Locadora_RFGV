@@ -74,3 +74,4 @@ C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Tra
 C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroGeneros.resources
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroArtistas.resources
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmCadastroGeneros.resources
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmLocacao.resources

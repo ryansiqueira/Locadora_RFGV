@@ -61,5 +61,12 @@ namespace GUI
             func.MdiParent = this;
             func.Show();
         }
+
+        private void locaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLocacao loc = new frmLocacao();
+            loc.MdiParent = this;
+            loc.Show();
+        }
     }
 }

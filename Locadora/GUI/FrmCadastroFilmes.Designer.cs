@@ -43,19 +43,12 @@
             this.lblFoto = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtGenero = new System.Windows.Forms.TextBox();
             this.txtAno = new System.Windows.Forms.TextBox();
             this.rbDVD = new System.Windows.Forms.RadioButton();
             this.rbBLURAY = new System.Windows.Forms.RadioButton();
             this.dtDataadquirida = new System.Windows.Forms.DateTimePicker();
-            this.txtAtoresParticipantes = new System.Windows.Forms.TextBox();
             this.txtDiretor = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.GridViewListaItens = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.GridViewHistorico = new System.Windows.Forms.DataGridView();
@@ -74,9 +67,25 @@
             this.chLocado = new System.Windows.Forms.CheckBox();
             this.btnBuscarTitulo = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).BeginInit();
+            this.GridViewListarItens = new System.Windows.Forms.DataGridView();
+            this.CodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gênero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DtAdquirida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VlCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Atores = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diretor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapaFilme = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtGenero = new System.Windows.Forms.ComboBox();
+            this.txtAtoresParticipantes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewListarItens)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -226,14 +235,6 @@
             this.txtTitulo.Size = new System.Drawing.Size(132, 22);
             this.txtTitulo.TabIndex = 15;
             // 
-            // txtGenero
-            // 
-            this.txtGenero.Location = new System.Drawing.Point(215, 159);
-            this.txtGenero.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(132, 22);
-            this.txtGenero.TabIndex = 16;
-            // 
             // txtAno
             // 
             this.txtAno.Location = new System.Drawing.Point(215, 204);
@@ -275,14 +276,6 @@
             this.dtDataadquirida.Size = new System.Drawing.Size(132, 22);
             this.dtDataadquirida.TabIndex = 19;
             // 
-            // txtAtoresParticipantes
-            // 
-            this.txtAtoresParticipantes.Location = new System.Drawing.Point(215, 464);
-            this.txtAtoresParticipantes.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAtoresParticipantes.Name = "txtAtoresParticipantes";
-            this.txtAtoresParticipantes.Size = new System.Drawing.Size(132, 22);
-            this.txtAtoresParticipantes.TabIndex = 22;
-            // 
             // txtDiretor
             // 
             this.txtDiretor.Location = new System.Drawing.Point(215, 506);
@@ -301,58 +294,6 @@
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // GridViewListaItens
-            // 
-            this.GridViewListaItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewListaItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.GridViewListaItens.Location = new System.Drawing.Point(724, 50);
-            this.GridViewListaItens.Margin = new System.Windows.Forms.Padding(4);
-            this.GridViewListaItens.Name = "GridViewListaItens";
-            this.GridViewListaItens.RowHeadersWidth = 51;
-            this.GridViewListaItens.Size = new System.Drawing.Size(1035, 311);
-            this.GridViewListaItens.TabIndex = 26;
-            this.GridViewListaItens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewListaItens_CellContentClick);
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "CodigoBarras";
-            this.Column2.HeaderText = "Código de Barras";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Titulo";
-            this.Column3.HeaderText = "Titulo";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Genero";
-            this.Column4.HeaderText = "Gênero";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Ano";
-            this.Column5.HeaderText = "Ano";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 125;
             // 
             // btnAtualizar
             // 
@@ -526,11 +467,168 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // GridViewListarItens
+            // 
+            this.GridViewListarItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewListarItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodigoBarras,
+            this.Titulo,
+            this.Gênero,
+            this.Ano,
+            this.CdItem,
+            this.Tipo,
+            this.Preco,
+            this.DtAdquirida,
+            this.VlCusto,
+            this.Situacao,
+            this.Atores,
+            this.Diretor,
+            this.CapaFilme});
+            this.GridViewListarItens.Location = new System.Drawing.Point(724, 47);
+            this.GridViewListarItens.Name = "GridViewListarItens";
+            this.GridViewListarItens.RowHeadersWidth = 51;
+            this.GridViewListarItens.RowTemplate.Height = 24;
+            this.GridViewListarItens.Size = new System.Drawing.Size(1036, 306);
+            this.GridViewListarItens.TabIndex = 45;
+            // 
+            // CodigoBarras
+            // 
+            this.CodigoBarras.DataPropertyName = "CodigoBarras";
+            this.CodigoBarras.HeaderText = "Codigo de Barras";
+            this.CodigoBarras.MinimumWidth = 6;
+            this.CodigoBarras.Name = "CodigoBarras";
+            this.CodigoBarras.Width = 125;
+            // 
+            // Titulo
+            // 
+            this.Titulo.DataPropertyName = "Titulo";
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Width = 125;
+            // 
+            // Gênero
+            // 
+            this.Gênero.DataPropertyName = "Gênero";
+            this.Gênero.HeaderText = "Gênero";
+            this.Gênero.MinimumWidth = 6;
+            this.Gênero.Name = "Gênero";
+            this.Gênero.Width = 125;
+            // 
+            // Ano
+            // 
+            this.Ano.DataPropertyName = "Ano";
+            this.Ano.HeaderText = "Ano";
+            this.Ano.MinimumWidth = 6;
+            this.Ano.Name = "Ano";
+            this.Ano.Width = 125;
+            // 
+            // CdItem
+            // 
+            this.CdItem.DataPropertyName = "CdItem";
+            this.CdItem.HeaderText = "Código";
+            this.CdItem.MinimumWidth = 6;
+            this.CdItem.Name = "CdItem";
+            this.CdItem.Width = 125;
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MinimumWidth = 6;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.Visible = false;
+            this.Tipo.Width = 125;
+            // 
+            // Preco
+            // 
+            this.Preco.DataPropertyName = "Preco";
+            this.Preco.HeaderText = "Preço";
+            this.Preco.MinimumWidth = 6;
+            this.Preco.Name = "Preco";
+            this.Preco.Visible = false;
+            this.Preco.Width = 125;
+            // 
+            // DtAdquirida
+            // 
+            this.DtAdquirida.DataPropertyName = "DtAdquirida";
+            this.DtAdquirida.HeaderText = "Data Adquirida";
+            this.DtAdquirida.MinimumWidth = 6;
+            this.DtAdquirida.Name = "DtAdquirida";
+            this.DtAdquirida.Visible = false;
+            this.DtAdquirida.Width = 125;
+            // 
+            // VlCusto
+            // 
+            this.VlCusto.DataPropertyName = "VlCusto";
+            this.VlCusto.HeaderText = "Valor de Custo";
+            this.VlCusto.MinimumWidth = 6;
+            this.VlCusto.Name = "VlCusto";
+            this.VlCusto.Visible = false;
+            this.VlCusto.Width = 125;
+            // 
+            // Situacao
+            // 
+            this.Situacao.DataPropertyName = "Situacao";
+            this.Situacao.HeaderText = "Situacao";
+            this.Situacao.MinimumWidth = 6;
+            this.Situacao.Name = "Situacao";
+            this.Situacao.Visible = false;
+            this.Situacao.Width = 125;
+            // 
+            // Atores
+            // 
+            this.Atores.DataPropertyName = "Atores";
+            this.Atores.HeaderText = "Atores";
+            this.Atores.MinimumWidth = 6;
+            this.Atores.Name = "Atores";
+            this.Atores.Visible = false;
+            this.Atores.Width = 125;
+            // 
+            // Diretor
+            // 
+            this.Diretor.DataPropertyName = "Diretor";
+            this.Diretor.HeaderText = "Diretor";
+            this.Diretor.MinimumWidth = 6;
+            this.Diretor.Name = "Diretor";
+            this.Diretor.Visible = false;
+            this.Diretor.Width = 125;
+            // 
+            // CapaFilme
+            // 
+            this.CapaFilme.DataPropertyName = "CapaFilme";
+            this.CapaFilme.HeaderText = "Capa do Filme";
+            this.CapaFilme.MinimumWidth = 6;
+            this.CapaFilme.Name = "CapaFilme";
+            this.CapaFilme.Visible = false;
+            this.CapaFilme.Width = 125;
+            // 
+            // txtGenero
+            // 
+            this.txtGenero.FormattingEnabled = true;
+            this.txtGenero.Location = new System.Drawing.Point(212, 159);
+            this.txtGenero.Name = "txtGenero";
+            this.txtGenero.Size = new System.Drawing.Size(135, 24);
+            this.txtGenero.TabIndex = 46;
+            this.txtGenero.Enter += new System.EventHandler(this.txtGenero_Enter);
+            // 
+            // txtAtoresParticipantes
+            // 
+            this.txtAtoresParticipantes.FormattingEnabled = true;
+            this.txtAtoresParticipantes.Location = new System.Drawing.Point(212, 465);
+            this.txtAtoresParticipantes.Name = "txtAtoresParticipantes";
+            this.txtAtoresParticipantes.Size = new System.Drawing.Size(135, 24);
+            this.txtAtoresParticipantes.TabIndex = 47;
+            this.txtAtoresParticipantes.Enter += new System.EventHandler(this.txtAtoresParticipantes_Enter);
+            // 
             // frmCadastroFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1772, 791);
+            this.Controls.Add(this.txtAtoresParticipantes);
+            this.Controls.Add(this.txtGenero);
+            this.Controls.Add(this.GridViewListarItens);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnBuscarTitulo);
             this.Controls.Add(this.chLocado);
@@ -543,15 +641,12 @@
             this.Controls.Add(this.GridViewHistorico);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAtualizar);
-            this.Controls.Add(this.GridViewListaItens);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.txtDiretor);
-            this.Controls.Add(this.txtAtoresParticipantes);
             this.Controls.Add(this.dtDataadquirida);
             this.Controls.Add(this.rbBLURAY);
             this.Controls.Add(this.rbDVD);
             this.Controls.Add(this.txtAno);
-            this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblFoto);
@@ -571,9 +666,9 @@
             this.Name = "frmCadastroFilme";
             this.Text = "Cadastro de Filmes";
             this.Load += new System.EventHandler(this.frmCadastroFilme_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewListaItens)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewHistorico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewListarItens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,22 +691,15 @@
         private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtAno;
         private System.Windows.Forms.RadioButton rbDVD;
         private System.Windows.Forms.RadioButton rbBLURAY;
         private System.Windows.Forms.DateTimePicker dtDataadquirida;
-        private System.Windows.Forms.TextBox txtAtoresParticipantes;
         private System.Windows.Forms.TextBox txtDiretor;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.DataGridView GridViewListaItens;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.DataGridView GridViewHistorico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -627,6 +715,22 @@
         private System.Windows.Forms.CheckBox chLocado;
         private System.Windows.Forms.Button btnBuscarTitulo;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.DataGridView GridViewListarItens;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoBarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gênero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ano;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CdItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DtAdquirida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VlCusto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Situacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Atores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diretor;
+        private System.Windows.Forms.DataGridViewImageColumn CapaFilme;
+        private System.Windows.Forms.ComboBox txtGenero;
+        private System.Windows.Forms.ComboBox txtAtoresParticipantes;
     }
 }
 

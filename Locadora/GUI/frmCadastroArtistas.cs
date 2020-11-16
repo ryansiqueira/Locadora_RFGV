@@ -74,7 +74,17 @@ namespace GUI
             objArtista.Nome = txtNome.Text;
             objArtista.DtNascimento = Convert.ToDateTime(dtpNascimento.Value);
             objArtista.PaisNascimento = txtPaisNasc.Text;
-            //objArtista.FotodoArtista = ;
+            if (picFoto.Image != null)
+            {
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    picFoto.Image.Save(stream, ImageFormat.Jpeg);
+
+                    byte[] FotoArtista = stream.ToArray();
+
+                    objArtista.FotodoArtista = FotoArtista;
+                }
+            }
 
             ArtistaDAL aDAL = new ArtistaDAL();
             aDAL.AlterarArtista(objArtista);

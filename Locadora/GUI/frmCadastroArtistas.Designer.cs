@@ -46,12 +46,11 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.dgvArtistas = new System.Windows.Forms.DataGridView();
             this.dgvFilmes = new System.Windows.Forms.DataGridView();
-            this.Filme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Personagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CdArtista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DtNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaisNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Filme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArtistas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFilmes)).BeginInit();
@@ -213,22 +212,11 @@
             // 
             this.dgvFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFilmes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Filme,
-            this.Personagem});
+            this.Filme});
             this.dgvFilmes.Location = new System.Drawing.Point(480, 45);
             this.dgvFilmes.Name = "dgvFilmes";
             this.dgvFilmes.Size = new System.Drawing.Size(274, 372);
             this.dgvFilmes.TabIndex = 18;
-            // 
-            // Filme
-            // 
-            this.Filme.HeaderText = "Filme";
-            this.Filme.Name = "Filme";
-            // 
-            // Personagem
-            // 
-            this.Personagem.HeaderText = "Personagem";
-            this.Personagem.Name = "Personagem";
             // 
             // CdArtista
             // 
@@ -253,6 +241,12 @@
             this.PaisNascimento.DataPropertyName = "PaisNascimento";
             this.PaisNascimento.HeaderText = "PaisNascimento";
             this.PaisNascimento.Name = "PaisNascimento";
+            // 
+            // Filme
+            // 
+            this.Filme.DataPropertyName = "Itens.Titulo";
+            this.Filme.HeaderText = "Filme";
+            this.Filme.Name = "Filme";
             // 
             // frmCadastroArtistas
             // 
@@ -307,11 +301,10 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.DataGridView dgvArtistas;
         private System.Windows.Forms.DataGridView dgvFilmes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Filme;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Personagem;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdArtista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn DtNascimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaisNascimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Filme;
     }
 }

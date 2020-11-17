@@ -115,7 +115,6 @@ namespace GUI
             ArtistaDAL aDAL = new ArtistaDAL();
             ArtistaDAL fDAL = new ArtistaDAL();
 
-            Filmes objFilmes = fDAL.ObterFilmesArtista(NmArtista);
             Artista objArtista = aDAL.ObterArtista(NmArtista);
 
             if (objArtista == null)
@@ -132,6 +131,8 @@ namespace GUI
                 picFoto.SizeMode = PictureBoxSizeMode.StretchImage;
                 picFoto.Image = img1;
             }
+            Filmes objFilmes = fDAL.ObterFilmesArtista(NmArtista);
+            dgvFilmes.DataSource = objFilmes;
         }
 
         private Image ConverteByteParaImagem(byte[] arquivo)

@@ -88,8 +88,8 @@ namespace DAL
 
         public Filmes ObterFilmesArtista(string NmArtista)
         {
-            Artista objArtista = null;
-            Filmes objFilmes = null;
+            Artista objArtista = new Artista();
+            Filmes objFilmes = new Filmes(); ;
 
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -105,10 +105,8 @@ namespace DAL
 
             if (dr.HasRows && dr.Read())
             {
-                objArtista = new Artista();
-                objFilmes = new Filmes();
                 objArtista.Nome = NmArtista;
-                objFilmes.Atores = dr["Atores"].ToString();
+                objFilmes.Titulo = dr["Titulo"].ToString();
             }
                 conn.Close();
 
@@ -135,11 +133,14 @@ namespace DAL
                 while (dr.Read())
                 {
                     objArtista = new Artista();
-                    objArtista.CdArtista = Convert.ToInt32(dr["CdArtistia"]);
+                    objArtista.CdArtista = Convert.ToInt32(dr["CdArtista"]);
                     objArtista.Nome = dr["NmArtistas"].ToString();
                     objArtista.DtNascimento = Convert.ToDateTime(dr["DtNascimento"]);
                     objArtista.PaisNascimento = dr["PaisNascimento"].ToString();
-                    //objArtista.FotodoArtista = dr["Foto"]; 
+                    if (dr["Foto"] != DBNull.Value)
+                    {
+                        objArtista.FotodoArtista = (byte[])dr["Foto"];
+                    }
 
                     listaArtistas.Add(objArtista);
                 }

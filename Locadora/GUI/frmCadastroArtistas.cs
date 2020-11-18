@@ -19,6 +19,7 @@ namespace GUI
         public frmCadastroArtistas()
         {
             InitializeComponent();
+            dgvFilmes.AutoGenerateColumns = false;
         }
 
         private void btnImagem_Click(object sender, EventArgs e)
@@ -131,8 +132,8 @@ namespace GUI
                 picFoto.SizeMode = PictureBoxSizeMode.StretchImage;
                 picFoto.Image = img1;
             }
-            Filmes objFilmes = fDAL.ObterFilmesArtista(NmArtista);
-            dgvFilmes.DataSource = objFilmes;
+
+            dgvFilmes.DataSource = fDAL.ObterFilmesArtista(NmArtista);
         }
 
         private Image ConverteByteParaImagem(byte[] arquivo)

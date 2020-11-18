@@ -45,11 +45,11 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.dgvArtistas = new System.Windows.Forms.DataGridView();
-            this.dgvFilmes = new System.Windows.Forms.DataGridView();
             this.CdArtista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DtNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaisNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvFilmes = new System.Windows.Forms.DataGridView();
             this.Filme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArtistas)).BeginInit();
@@ -208,16 +208,6 @@
             this.dgvArtistas.Size = new System.Drawing.Size(395, 174);
             this.dgvArtistas.TabIndex = 17;
             // 
-            // dgvFilmes
-            // 
-            this.dgvFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFilmes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Filme});
-            this.dgvFilmes.Location = new System.Drawing.Point(480, 45);
-            this.dgvFilmes.Name = "dgvFilmes";
-            this.dgvFilmes.Size = new System.Drawing.Size(274, 372);
-            this.dgvFilmes.TabIndex = 18;
-            // 
             // CdArtista
             // 
             this.CdArtista.DataPropertyName = "CdArtista";
@@ -242,9 +232,19 @@
             this.PaisNascimento.HeaderText = "PaisNascimento";
             this.PaisNascimento.Name = "PaisNascimento";
             // 
+            // dgvFilmes
+            // 
+            this.dgvFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFilmes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Filme});
+            this.dgvFilmes.Location = new System.Drawing.Point(480, 45);
+            this.dgvFilmes.Name = "dgvFilmes";
+            this.dgvFilmes.Size = new System.Drawing.Size(274, 372);
+            this.dgvFilmes.TabIndex = 18;
+            // 
             // Filme
             // 
-            this.Filme.DataPropertyName = "Itens.Titulo";
+            this.Filme.DataPropertyName = "Titulo";
             this.Filme.HeaderText = "Filme";
             this.Filme.Name = "Filme";
             // 

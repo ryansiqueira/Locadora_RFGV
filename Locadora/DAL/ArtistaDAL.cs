@@ -86,10 +86,9 @@ namespace DAL
             return objArtista;
         }
 
-        public Filmes ObterFilmesArtista(string NmArtista)
+        public List<Filmes> ObterFilmesArtista(string NmArtista)
         {
-            Artista objArtista = new Artista();
-            Filmes objFilmes = new Filmes(); ;
+            List<Filmes> listaFilmes = new List<Filmes>();
 
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -103,14 +102,20 @@ namespace DAL
 
             SqlDataReader dr = cmd.ExecuteReader();
 
-            if (dr.HasRows && dr.Read())
+            if (dr.HasRows)
             {
-                objArtista.Nome = NmArtista;
-                objFilmes.Titulo = dr["Titulo"].ToString();
-            }
-                conn.Close();
+                Filmes objFilme;
+                while (dr.Read())
+                {
+                    objFilme = new Filmes();
+                    objFilme.Titulo = dr["Titulo"].ToString();
 
-                return objFilmes;
+                    listaFilmes.Add(objFilme);
+                }
+            }
+            conn.Close();
+
+                return listaFilmes;
         }
 
         public List<Artista> ListarArtistas()

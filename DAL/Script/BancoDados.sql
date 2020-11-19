@@ -76,8 +76,20 @@ CREATE TABLE Usuarios (
     Senha VARCHAR(32) NOT NULL,
 )
 
---CREATE TABLE Locacao (
-    -- 05/11/202:
-    -- Devemos falar com o Anderson, para saber como proceder:
-    -- Chave primaria composta
---)
+CREATE TABLE Locacao (
+    CdLocacao INT,
+    CdItens INT REFERENCES Itens (CdItem),
+    PRIMARY KEY (CdLocacao, CdItens),
+    FKCliente INT REFERENCES Clientes (CdCliente),
+    DtAtual DATE NOT NULL,
+    DtPrevista DATE NOT NULL,
+    ValorTotal DECIMAL NOT NULL,
+    DsStatusPg bit NOT NULL
+)
+
+CREATE TABLE Devolucao (
+    CdDevolucao INT PRIMARY KEY IDENTITY,
+    FKLocacao INT REFERENCES Locacao (CdLocacao),
+    VlRecebido DECIMAL,
+    DsStatusPg bit NOT NULL
+)

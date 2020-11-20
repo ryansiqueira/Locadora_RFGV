@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Devolucao
+    public class Devolucao
     {
+        public int CdDevolucao { get; set; }
+        public int CodigoBarrasFilmes { get; set; }
+        public decimal Multa { get; set; }
+        public decimal ValorTotal { get; set; }
+        public string Pagamento { get; set; }
     }
 }

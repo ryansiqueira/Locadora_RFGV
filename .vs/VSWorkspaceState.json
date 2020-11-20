@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\DAL",
-    "\\DAL\\Script",
-    "\\GUI",
-    "\\Locadora",
-    "\\WebUI"
+    ""
   ],
-  "SelectedNode": "\\GUI\\FrmCadastroFilmes.cs",
+  "SelectedNode": "\\Locadora.sln",
   "PreviewInSolutionExplorer": false
 }

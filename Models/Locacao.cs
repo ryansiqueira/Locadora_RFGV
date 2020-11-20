@@ -8,6 +8,9 @@ namespace Models
 {
     public class Locacao
     {
+        public int CdLocacao { get; set; }
+        public int CdItens { get; set; }
+        public int FKCliente { get; set; }
 
     }
 }

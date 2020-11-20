@@ -76,8 +76,27 @@ CREATE TABLE Usuarios (
     Senha VARCHAR(32) NOT NULL,
 )
 
---CREATE TABLE Locacao (
-    -- 05/11/202:
-    -- Devemos falar com o Anderson, para saber como proceder:
-    -- Chave primaria composta
---)
+CREATE TABLE Locacao (
+    CdLocacao INT,
+    CdItens INT REFERENCES Itens (CdItem),
+    PRIMARY KEY (CdLocacao, CdItens),
+    FKCliente INT REFERENCES Clientes (CdCliente),    
+    DtAtual DATE NOT NULL,
+    DtPrevista DATE NOT NULL,
+    ValorTotal DECIMAL NOT NULL,
+    DsStatusPg bit NOT NULL,
+    QtdeItens INT NOT NULL
+)
+--Alteração de banco 20/11/2020
+--Comando para alterar no banco, sem precisar dropar a tabela
+--ALTER TABLE Locacao
+--ADD QtdeItens INT NOT NULL
+
+CREATE TABLE Devolucao (
+    CdDevolucao INT PRIMARY KEY IDENTITY,
+    FKLocacao INT NOT NULL,
+    FKItens INT NOT NULL,
+    FOREIGN KEY (FKLocacao, FKItens) REFERENCES Locacao (CdLocacao, CdItens),
+    VlRecebido DECIMAL NOT NULL,
+    DsStatusPg bit NOT NULL
+)

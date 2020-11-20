@@ -15,31 +15,13 @@ namespace WebUI
     {
 
         /// <summary>
-        /// txtCodigo control.
+        /// PicFoto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
-
-        /// <summary>
-        /// btnBuscar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
-
-        /// <summary>
-        /// txtCodigoBarras control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigoBarras;
+        protected global::System.Web.UI.WebControls.Image PicFoto;
 
         /// <summary>
         /// txtTitulo control.
@@ -51,13 +33,31 @@ namespace WebUI
         protected global::System.Web.UI.WebControls.TextBox txtTitulo;
 
         /// <summary>
-        /// dropGeneros control.
+        /// txtCodigo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropGeneros;
+        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
+
+        /// <summary>
+        /// txtCodigoBarras control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCodigoBarras;
+
+        /// <summary>
+        /// txtGenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGenero;
 
         /// <summary>
         /// txtAno control.
@@ -69,13 +69,13 @@ namespace WebUI
         protected global::System.Web.UI.WebControls.TextBox txtAno;
 
         /// <summary>
-        /// radionTipo control.
+        /// txtTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList radionTipo;
+        protected global::System.Web.UI.WebControls.TextBox txtTipo;
 
         /// <summary>
         /// txtPreco control.
@@ -105,22 +105,22 @@ namespace WebUI
         protected global::System.Web.UI.WebControls.TextBox txtValorCusto;
 
         /// <summary>
-        /// checkboxSituacao control.
+        /// txtSituacao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkboxSituacao;
+        protected global::System.Web.UI.WebControls.TextBox txtSituacao;
 
         /// <summary>
-        /// dropAtores control.
+        /// txtAtores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropAtores;
+        protected global::System.Web.UI.WebControls.TextBox txtAtores;
 
         /// <summary>
         /// txtDiretor control.
@@ -130,14 +130,5 @@ namespace WebUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDiretor;
-
-        /// <summary>
-        /// Image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
     }
 }

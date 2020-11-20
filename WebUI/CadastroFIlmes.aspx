@@ -26,14 +26,26 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>
-        :: Cadastro de Filmes</h2>
+        :: Informações do Filme</h2>
+   
+        <table class="m6">
+            <tr>
+                <td class="auto-style5">Foto do Filme:</td>
+                <td class="auto-style6">
+                    <asp:Image ID="PicFoto" runat="server" Height="99px" Width="156px" />
+                </td>
+                <td>Título:</td>
+                <td class="auto-style2">
+                    <asp:TextBox ID="txtTitulo" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
     <p>
         <table>
             <tr>
                 <td>Código:</td>
                 <td>
-                    <asp:TextBox ID="txtCodigo" runat="server" Width="62px"></asp:TextBox>
-                    <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" />
+                    <asp:TextBox ID="txtCodigo" runat="server" Width="157px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -41,20 +53,11 @@
                 <td>
                     <asp:TextBox ID="txtCodigoBarras" runat="server"></asp:TextBox>
                 </td>
-            </tr>
-            <tr>
-                <td>Título:</td>
-                <td class="auto-style2">
-                    <asp:TextBox ID="txtTitulo" runat="server"></asp:TextBox>
-                </td>
-            </tr>
+            </tr>            
             <tr>
                 <td>Gêneros:</td>
                 <td class="auto-style1">
-                    <asp:DropDownList ID="dropGeneros" runat="server">
-                        <asp:ListItem>Teste</asp:ListItem>
-                        <asp:ListItem>Teste1</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox ID="txtGenero" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -66,10 +69,7 @@
             <tr>
                 <td>Tipo:</td>
                 <td class="auto-style1">
-                    <asp:RadioButtonList ID="radionTipo" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem Selected="True" Value="D">DVD</asp:ListItem>
-                        <asp:ListItem Value="B">BLU RAY</asp:ListItem>
-                    </asp:RadioButtonList>
+                    <asp:TextBox ID="txtTipo" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -93,16 +93,13 @@
             <tr>
                 <td class="auto-style5">Situação:</td>
                 <td class="auto-style6">
-                    <asp:CheckBox ID="checkboxSituacao" runat="server" Text="Locado" />
+                    <asp:TextBox ID="txtSituacao" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Atores Participantes:</td>
                 <td class="auto-style6">
-                    <asp:DropDownList ID="dropAtores" runat="server">
-                        <asp:ListItem>Teste</asp:ListItem>
-                        <asp:ListItem>Teste1</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox ID="txtAtores" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -111,14 +108,8 @@
                     <asp:TextBox ID="txtDiretor" runat="server"></asp:TextBox>
                 </td>
             </tr>
-            <tr>
-                <td class="auto-style5">Foto da Capa do Filme:</td>
-                <td class="auto-style6">
-                    <asp:Image ID="Image1" runat="server" Height="99px" Width="156px" />
-                </td>
-            </tr>
-        </table>
-    </p>
+            </table>
+        
     <p>
         &nbsp;</p>
 </asp:Content>

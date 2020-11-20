@@ -57,7 +57,7 @@ namespace WebUI
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGenero;
+        protected global::System.Web.UI.WebControls.DropDownList txtGenero;
 
         /// <summary>
         /// txtAno control.
@@ -69,13 +69,13 @@ namespace WebUI
         protected global::System.Web.UI.WebControls.TextBox txtAno;
 
         /// <summary>
-        /// txtTipo control.
+        /// RadionTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipo;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadionTipo;
 
         /// <summary>
         /// txtPreco control.
@@ -111,7 +111,7 @@ namespace WebUI
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSituacao;
+        protected global::System.Web.UI.WebControls.CheckBox txtSituacao;
 
         /// <summary>
         /// txtAtores control.
@@ -120,7 +120,7 @@ namespace WebUI
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAtores;
+        protected global::System.Web.UI.WebControls.DropDownList txtAtores;
 
         /// <summary>
         /// txtDiretor control.

@@ -35,7 +35,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" method="post" action="CadastroFIlmes.aspx" runat="server">
         <div class="container">
             <header>
                 <h2>Videolândia</h2>

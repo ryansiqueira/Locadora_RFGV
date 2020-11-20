@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="CadastroFIlmes.aspx.cs" Inherits="WebUI.CadastroFIlmes" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="CadastroFIlmes.aspx.cs" Inherits="WebUI.CadastroFIlmes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
 
@@ -22,6 +23,18 @@
             margin-left: 40px;
             height: 34px;
         }
+        #Select1 {
+            height: 24px;
+            width: 162px;
+        }
+        #Checkbox1 {
+            height: 24px;
+            width: 153px;
+        }
+        #Select2 {
+            height: 24px;
+            width: 162px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -30,13 +43,13 @@
    
         <table class="m6">
             <tr>
-                <td class="auto-style5">Foto do Filme:</td>
+                <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style6">
                     <asp:Image ID="PicFoto" runat="server" Height="99px" Width="156px" />
                 </td>
                 <td>Título:</td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="txtTitulo" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTitulo" runat="server"></asp:TextBox>               
                 </td>
             </tr>
         </table>
@@ -57,7 +70,8 @@
             <tr>
                 <td>Gêneros:</td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtGenero" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="txtGenero" runat="server" Height="26px" Width="160px">
+                    </asp:DropDownList>
                 </td>
             </tr>
             <tr>
@@ -69,7 +83,10 @@
             <tr>
                 <td>Tipo:</td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtTipo" runat="server"></asp:TextBox>
+                    <asp:RadioButtonList ID="RadionTipo" runat="server" RepeatDirection="Horizontal">
+                    <asp:ListItem Selected="True" Value="D">DVD</asp:ListItem>
+                    <asp:ListItem Value="B">BLURAY</asp:ListItem>
+                </asp:RadioButtonList>
                 </td>
             </tr>
             <tr>
@@ -93,13 +110,14 @@
             <tr>
                 <td class="auto-style5">Situação:</td>
                 <td class="auto-style6">
-                    <asp:TextBox ID="txtSituacao" runat="server"></asp:TextBox>
+                    <asp:CheckBox ID="txtSituacao" runat="server" Text="Locado" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Atores Participantes:</td>
                 <td class="auto-style6">
-                    <asp:TextBox ID="txtAtores" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="txtAtores" runat="server" Height="26px" Width="160px">
+                    </asp:DropDownList>
                 </td>
             </tr>
             <tr>
@@ -112,4 +130,5 @@
         
     <p>
         &nbsp;</p>
+   
 </asp:Content>

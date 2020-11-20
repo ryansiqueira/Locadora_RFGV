@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Locacao
+    public class Locacao
     {
+        public int CdLocacao { get; set; }
+        public int CdItens { get; set; }
+        public int FKCliente { get; set; }
+
     }
 }

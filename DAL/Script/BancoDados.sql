@@ -80,12 +80,17 @@ CREATE TABLE Locacao (
     CdLocacao INT,
     CdItens INT REFERENCES Itens (CdItem),
     PRIMARY KEY (CdLocacao, CdItens),
-    FKCliente INT REFERENCES Clientes (CdCliente),
+    FKCliente INT REFERENCES Clientes (CdCliente),    
     DtAtual DATE NOT NULL,
     DtPrevista DATE NOT NULL,
     ValorTotal DECIMAL NOT NULL,
-    DsStatusPg bit NOT NULL
+    DsStatusPg bit NOT NULL,
+    QtdeItens INT NOT NULL
 )
+--Alteração de banco 20/11/2020
+--Comando para alterar no banco, sem precisar dropar a tabela
+--ALTER TABLE Locacao
+--ADD QtdeItens INT NOT NULL
 
 CREATE TABLE Devolucao (
     CdDevolucao INT PRIMARY KEY IDENTITY,

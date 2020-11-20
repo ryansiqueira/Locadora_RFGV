@@ -14,6 +14,7 @@ namespace GUI
         public frmCadastroFilme()
         {
             InitializeComponent();
+            GridViewListarItens.AutoGenerateColumns = false;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)

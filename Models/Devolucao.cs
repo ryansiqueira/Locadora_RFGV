@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Devolucao
+    public class Devolucao
     {
+        public int CdDevolucao { get; set; }
+        public int CodigoBarrasFilmes { get; set; }
+        public decimal ValorTotal { get; set; }
+        public char Pagamento { get; set; }
+        public int CdItem { get; set; }
+        public int CdLocacao { get; set; }
     }
 }

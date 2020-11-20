@@ -99,3 +99,27 @@ C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Tra
 C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\GUI\obj\Debug\GUI.exe
 C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\GUI\obj\Debug\GUI.pdb
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\bin\Debug\GUI.exe.config
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\bin\Debug\GUI.exe
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\bin\Debug\GUI.pdb
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\bin\Debug\DAL.dll
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\bin\Debug\Models.dll
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\bin\Debug\DAL.pdb
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\bin\Debug\Models.pdb
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmLocacao.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmCadastroArtistas.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmCadastroCliente.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmCadastroFilme.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.FrmCadastroFuncionarios.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmCadastroGeneros.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmCadastroUsuarios.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmLogin.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmPaginaInicial.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.exe
+C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.pdb
+C:\Users\Felipe.Negri\source\repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmDevolucao.resources

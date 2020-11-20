@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Locacao
+    public class Locacao
     {
-    }
+        public int CdLocacao { get; set; }
+        public int CdItens { get; set; }
+        public int FKCliente { get; set; }
+        public DateTime DtAtual { get; set; }
+        public DateTime DtPrevista { get; set; }
+        public decimal ValorTotal { get; set; }
+        public bool DsStatusPg { get; set; }
+        public int QtdeItens { get; set; }
+    }    
 }

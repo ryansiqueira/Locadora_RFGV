@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Locacao
+    public class Locacao
     {
+
     }
 }

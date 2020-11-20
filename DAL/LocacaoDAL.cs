@@ -13,16 +13,36 @@ namespace DAL
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["BDLocadoraConnectionString"].ConnectionString;
 
-        public Locacao InserirLocacao(int QtdeItens)
+        public void InserirLocacao(Locacao locacao,int QtdeItens)
         {
+            int rept = 0;
+
             SqlConnection conn = new SqlConnection(connectionString);
 
             conn.Open();
 
-            string sql = "INSERT INTO Locacao VALUES (@CdLocacao, @CdItens,";
+            while (rept <= QtdeItens)
+            {
+                string sql = "INSERT INTO Locacao VALUES (@CdLocacao, @CdItens, @FKCliente, @DtAtual, @DtPrevista, @ValorTotal, @DsStatusPg, @QtdeItens)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+            }      
 
-            SqlCommand cmd = new SqlCommand(sql,conn);
 
         }
+
+        public Cliente ObterCliente(int CdCliente)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            Cliente cliente = null;
+
+            return cliente;
+        }
+        
+
+        
+
+       
+        
     }
 }

@@ -84,7 +84,7 @@ CREATE TABLE Locacao (
     DtAtual DATE NOT NULL,
     DtPrevista DATE NOT NULL,
     ValorTotal DECIMAL NOT NULL,
-    DsStatusPg bit NOT NULL,
+    DsStatusPg char(1) NOT NULL,
     QtdeItens INT NOT NULL
 )
 --Alteração de banco 20/11/2020
@@ -98,5 +98,5 @@ CREATE TABLE Devolucao (
     FKItens INT NOT NULL,
     FOREIGN KEY (FKLocacao, FKItens) REFERENCES Locacao (CdLocacao, CdItens),
     VlRecebido DECIMAL NOT NULL,
-    DsStatusPg bit NOT NULL
+    DsStatusPg char(1) NOT NULL
 )

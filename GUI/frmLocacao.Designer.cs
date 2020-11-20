@@ -39,7 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnBuscarBarras = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCodigoBarras = new System.Windows.Forms.TextBox();
@@ -55,16 +57,25 @@
             this.btnAdicioanar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.txtExcluir = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.txtCPFFunc = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNmFuncionario = new System.Windows.Forms.TextBox();
+            this.txtFunc = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCPFFunc);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtNmFuncionario);
+            this.groupBox1.Controls.Add(this.txtFunc);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.dtpDataAtual);
             this.groupBox1.Controls.Add(this.txtCdLocacao);
@@ -76,7 +87,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 168);
+            this.groupBox1.Size = new System.Drawing.Size(454, 190);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cabeçalho";
@@ -84,7 +95,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 127);
+            this.label9.Location = new System.Drawing.Point(17, 163);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 17);
             this.label9.TabIndex = 14;
@@ -92,14 +103,14 @@
             // 
             // dtpDataAtual
             // 
-            this.dtpDataAtual.Location = new System.Drawing.Point(101, 122);
+            this.dtpDataAtual.Location = new System.Drawing.Point(101, 158);
             this.dtpDataAtual.Name = "dtpDataAtual";
             this.dtpDataAtual.Size = new System.Drawing.Size(322, 22);
             this.dtpDataAtual.TabIndex = 5;
             // 
             // txtCdLocacao
             // 
-            this.txtCdLocacao.Location = new System.Drawing.Point(101, 37);
+            this.txtCdLocacao.Location = new System.Drawing.Point(101, 20);
             this.txtCdLocacao.Name = "txtCdLocacao";
             this.txtCdLocacao.Size = new System.Drawing.Size(322, 22);
             this.txtCdLocacao.TabIndex = 0;
@@ -108,7 +119,7 @@
             // txtCPFCliente
             // 
             this.txtCPFCliente.Enabled = false;
-            this.txtCPFCliente.Location = new System.Drawing.Point(101, 94);
+            this.txtCPFCliente.Location = new System.Drawing.Point(101, 77);
             this.txtCPFCliente.Name = "txtCPFCliente";
             this.txtCPFCliente.Size = new System.Drawing.Size(322, 22);
             this.txtCPFCliente.TabIndex = 4;
@@ -116,7 +127,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 97);
+            this.label3.Location = new System.Drawing.Point(10, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 17);
             this.label3.TabIndex = 13;
@@ -125,22 +136,23 @@
             // txtNomeCliente
             // 
             this.txtNomeCliente.Enabled = false;
-            this.txtNomeCliente.Location = new System.Drawing.Point(157, 66);
+            this.txtNomeCliente.Location = new System.Drawing.Point(157, 49);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(266, 22);
             this.txtNomeCliente.TabIndex = 2;
             // 
             // txtCdCliente
             // 
-            this.txtCdCliente.Location = new System.Drawing.Point(101, 66);
+            this.txtCdCliente.Location = new System.Drawing.Point(101, 49);
             this.txtCdCliente.Name = "txtCdCliente";
             this.txtCdCliente.Size = new System.Drawing.Size(50, 22);
             this.txtCdCliente.TabIndex = 1;
+            this.txtCdCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCdCliente_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 69);
+            this.label2.Location = new System.Drawing.Point(40, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 10;
@@ -149,7 +161,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 40);
+            this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 9;
@@ -157,9 +169,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.nudQuantidade);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnBuscarBarras);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtCodigoBarras);
@@ -172,21 +185,38 @@
             this.groupBox2.Controls.Add(this.txtVlUnitario);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.cbItens);
-            this.groupBox2.Location = new System.Drawing.Point(12, 186);
+            this.groupBox2.Location = new System.Drawing.Point(12, 209);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(454, 541);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Itens";
             // 
-            // button1
+            // nudQuantidade
             // 
-            this.button1.Location = new System.Drawing.Point(366, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 33);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Atualizar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.nudQuantidade.Location = new System.Drawing.Point(93, 138);
+            this.nudQuantidade.Name = "nudQuantidade";
+            this.nudQuantidade.Size = new System.Drawing.Size(77, 22);
+            this.nudQuantidade.TabIndex = 30;
+            this.nudQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 17);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Quantidade:";
+            // 
+            // btnBuscarBarras
+            // 
+            this.btnBuscarBarras.Location = new System.Drawing.Point(366, 68);
+            this.btnBuscarBarras.Name = "btnBuscarBarras";
+            this.btnBuscarBarras.Size = new System.Drawing.Size(82, 33);
+            this.btnBuscarBarras.TabIndex = 16;
+            this.btnBuscarBarras.Text = "Buscar";
+            this.btnBuscarBarras.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -240,7 +270,7 @@
             // dtpDataPre
             // 
             this.dtpDataPre.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataPre.Location = new System.Drawing.Point(331, 118);
+            this.dtpDataPre.Location = new System.Drawing.Point(331, 105);
             this.dtpDataPre.Name = "dtpDataPre";
             this.dtpDataPre.Size = new System.Drawing.Size(117, 22);
             this.dtpDataPre.TabIndex = 9;
@@ -248,7 +278,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(228, 123);
+            this.label6.Location = new System.Drawing.Point(228, 110);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 17);
             this.label6.TabIndex = 22;
@@ -306,19 +336,20 @@
             this.cbItens.Name = "cbItens";
             this.cbItens.Size = new System.Drawing.Size(442, 24);
             this.cbItens.TabIndex = 6;
+            this.cbItens.Enter += new System.EventHandler(this.cbItens_Enter);
             // 
             // btnAdicioanar
             // 
-            this.btnAdicioanar.Location = new System.Drawing.Point(105, 733);
+            this.btnAdicioanar.Location = new System.Drawing.Point(105, 757);
             this.btnAdicioanar.Name = "btnAdicioanar";
             this.btnAdicioanar.Size = new System.Drawing.Size(82, 42);
             this.btnAdicioanar.TabIndex = 13;
-            this.btnAdicioanar.Text = "Adicionar";
+            this.btnAdicioanar.Text = "Adicionar Locação";
             this.btnAdicioanar.UseVisualStyleBackColor = true;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(193, 733);
+            this.btnAlterar.Location = new System.Drawing.Point(193, 757);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(82, 42);
             this.btnAlterar.TabIndex = 14;
@@ -327,35 +358,69 @@
             // 
             // txtExcluir
             // 
-            this.txtExcluir.Location = new System.Drawing.Point(281, 733);
+            this.txtExcluir.Location = new System.Drawing.Point(281, 757);
             this.txtExcluir.Name = "txtExcluir";
             this.txtExcluir.Size = new System.Drawing.Size(82, 42);
             this.txtExcluir.TabIndex = 15;
             this.txtExcluir.Text = "Excluir";
             this.txtExcluir.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // txtCPFFunc
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 140);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 17);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Quantidade:";
+            this.txtCPFFunc.Enabled = false;
+            this.txtCPFFunc.Location = new System.Drawing.Point(101, 131);
+            this.txtCPFFunc.Name = "txtCPFFunc";
+            this.txtCPFFunc.Size = new System.Drawing.Size(322, 22);
+            this.txtCPFFunc.TabIndex = 17;
             // 
-            // nudQuantidade
+            // label11
             // 
-            this.nudQuantidade.Location = new System.Drawing.Point(93, 138);
-            this.nudQuantidade.Name = "nudQuantidade";
-            this.nudQuantidade.Size = new System.Drawing.Size(77, 22);
-            this.nudQuantidade.TabIndex = 30;
-            this.nudQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(25, 134);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 17);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "CPF Func:";
+            // 
+            // txtNmFuncionario
+            // 
+            this.txtNmFuncionario.Enabled = false;
+            this.txtNmFuncionario.Location = new System.Drawing.Point(157, 103);
+            this.txtNmFuncionario.Name = "txtNmFuncionario";
+            this.txtNmFuncionario.Size = new System.Drawing.Size(266, 22);
+            this.txtNmFuncionario.TabIndex = 16;
+            // 
+            // txtFunc
+            // 
+            this.txtFunc.Location = new System.Drawing.Point(101, 103);
+            this.txtFunc.Name = "txtFunc";
+            this.txtFunc.Size = new System.Drawing.Size(50, 22);
+            this.txtFunc.TabIndex = 15;
+            this.txtFunc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFunc_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 106);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 17);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Funcionário:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(331, 133);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 33);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Adicionar Item";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 798);
+            this.ClientSize = new System.Drawing.Size(486, 806);
             this.Controls.Add(this.txtExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnAdicioanar);
@@ -367,8 +432,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,8 +466,14 @@
         private System.Windows.Forms.Button txtExcluir;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscarBarras;
         private System.Windows.Forms.NumericUpDown nudQuantidade;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtCPFFunc;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtNmFuncionario;
+        private System.Windows.Forms.TextBox txtFunc;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
     }
 }

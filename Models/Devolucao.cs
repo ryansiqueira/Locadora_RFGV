@@ -10,8 +10,9 @@ namespace Models
     {
         public int CdDevolucao { get; set; }
         public int CodigoBarrasFilmes { get; set; }
-        public decimal Multa { get; set; }
         public decimal ValorTotal { get; set; }
-        public string Pagamento { get; set; }
+        public char Pagamento { get; set; }
+        public int CdItem { get; set; }
+        public int CdLocacao { get; set; }
     }
 }

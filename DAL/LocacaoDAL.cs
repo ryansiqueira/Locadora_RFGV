@@ -85,6 +85,32 @@ namespace DAL
             return func;
         }
 
+        public Filmes ObterItensBarras(int CodigoBarras)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT Titulo, Preco FROM Itens WHERE CodigoBarras = @CodigoBarras";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@CodigoBarras", CodigoBarras);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            Filmes film = null;
+
+            if (dr.HasRows && dr.Read())
+            {
+                film = new Filmes();
+
+                film.Titulo = dr["Titulo"].ToString();
+                film.Preco = Convert.ToDecimal(dr["Preco"]);                
+            }
+            conn.Close();
+            return film;
+        }
+
         public DataTable CarregarFilmes()
         {
             SqlConnection sql = new SqlConnection(connectionString);

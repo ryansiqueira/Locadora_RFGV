@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCPFFunc = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNmFuncionario = new System.Windows.Forms.TextBox();
+            this.txtFunc = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dtpDataAtual = new System.Windows.Forms.DateTimePicker();
             this.txtCdLocacao = new System.Windows.Forms.TextBox();
@@ -39,8 +44,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.btnAddDGV = new System.Windows.Forms.Button();
             this.btnBuscarBarras = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,19 +58,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtVlUnitario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbItens = new System.Windows.Forms.ComboBox();
             this.btnAdicioanar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.txtExcluir = new System.Windows.Forms.Button();
-            this.txtCPFFunc = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtNmFuncionario = new System.Windows.Forms.TextBox();
-            this.txtFunc = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +88,48 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cabeçalho";
+            // 
+            // txtCPFFunc
+            // 
+            this.txtCPFFunc.Enabled = false;
+            this.txtCPFFunc.Location = new System.Drawing.Point(101, 131);
+            this.txtCPFFunc.Name = "txtCPFFunc";
+            this.txtCPFFunc.Size = new System.Drawing.Size(322, 22);
+            this.txtCPFFunc.TabIndex = 17;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(25, 134);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 17);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "CPF Func:";
+            // 
+            // txtNmFuncionario
+            // 
+            this.txtNmFuncionario.Enabled = false;
+            this.txtNmFuncionario.Location = new System.Drawing.Point(157, 103);
+            this.txtNmFuncionario.Name = "txtNmFuncionario";
+            this.txtNmFuncionario.Size = new System.Drawing.Size(266, 22);
+            this.txtNmFuncionario.TabIndex = 16;
+            // 
+            // txtFunc
+            // 
+            this.txtFunc.Location = new System.Drawing.Point(101, 103);
+            this.txtFunc.Name = "txtFunc";
+            this.txtFunc.Size = new System.Drawing.Size(50, 22);
+            this.txtFunc.TabIndex = 15;
+            this.txtFunc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFunc_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 106);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 17);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Funcionário:";
             // 
             // label9
             // 
@@ -169,9 +208,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.nudQuantidade);
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtTitulo);
+            this.groupBox2.Controls.Add(this.btnAddDGV);
             this.groupBox2.Controls.Add(this.btnBuscarBarras);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label8);
@@ -184,7 +222,6 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtVlUnitario);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.cbItens);
             this.groupBox2.Location = new System.Drawing.Point(12, 209);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(454, 541);
@@ -192,22 +229,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Itens";
             // 
-            // nudQuantidade
+            // txtTitulo
             // 
-            this.nudQuantidade.Location = new System.Drawing.Point(93, 138);
-            this.nudQuantidade.Name = "nudQuantidade";
-            this.nudQuantidade.Size = new System.Drawing.Size(77, 22);
-            this.nudQuantidade.TabIndex = 30;
-            this.nudQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTitulo.Enabled = false;
+            this.txtTitulo.Location = new System.Drawing.Point(6, 27);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(442, 22);
+            this.txtTitulo.TabIndex = 32;
             // 
-            // label10
+            // btnAddDGV
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 140);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 17);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Quantidade:";
+            this.btnAddDGV.Location = new System.Drawing.Point(331, 133);
+            this.btnAddDGV.Name = "btnAddDGV";
+            this.btnAddDGV.Size = new System.Drawing.Size(117, 33);
+            this.btnAddDGV.TabIndex = 31;
+            this.btnAddDGV.Text = "Adicionar Item";
+            this.btnAddDGV.UseVisualStyleBackColor = true;
+            this.btnAddDGV.Click += new System.EventHandler(this.btnAddDGV_Click);
             // 
             // btnBuscarBarras
             // 
@@ -217,6 +255,7 @@
             this.btnBuscarBarras.TabIndex = 16;
             this.btnBuscarBarras.Text = "Buscar";
             this.btnBuscarBarras.UseVisualStyleBackColor = true;
+            this.btnBuscarBarras.Click += new System.EventHandler(this.btnBuscarBarras_Click);
             // 
             // comboBox1
             // 
@@ -259,9 +298,12 @@
             // 
             // dgvItens
             // 
+            this.dgvItens.AllowUserToDeleteRows = false;
             this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItens.Location = new System.Drawing.Point(6, 174);
+            this.dgvItens.MultiSelect = false;
             this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersWidth = 51;
             this.dgvItens.RowTemplate.Height = 24;
             this.dgvItens.Size = new System.Drawing.Size(442, 265);
@@ -304,7 +346,7 @@
             // txtVlUnitario
             // 
             this.txtVlUnitario.Enabled = false;
-            this.txtVlUnitario.Location = new System.Drawing.Point(59, 109);
+            this.txtVlUnitario.Location = new System.Drawing.Point(59, 122);
             this.txtVlUnitario.Name = "txtVlUnitario";
             this.txtVlUnitario.Size = new System.Drawing.Size(92, 22);
             this.txtVlUnitario.TabIndex = 8;
@@ -312,31 +354,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 112);
+            this.label4.Location = new System.Drawing.Point(8, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
             this.label4.TabIndex = 18;
             this.label4.Text = "Valor:";
-            // 
-            // cbItens
-            // 
-            this.cbItens.FormattingEnabled = true;
-            this.cbItens.Items.AddRange(new object[] {
-            "TESTE\t",
-            "RYAN",
-            "CLETO",
-            "VIADO",
-            "OLA",
-            "VISH",
-            "TI",
-            "NOSSA",
-            "CORAÇÃO",
-            "BAROES"});
-            this.cbItens.Location = new System.Drawing.Point(6, 32);
-            this.cbItens.Name = "cbItens";
-            this.cbItens.Size = new System.Drawing.Size(442, 24);
-            this.cbItens.TabIndex = 6;
-            this.cbItens.Enter += new System.EventHandler(this.cbItens_Enter);
             // 
             // btnAdicioanar
             // 
@@ -365,57 +387,6 @@
             this.txtExcluir.Text = "Excluir";
             this.txtExcluir.UseVisualStyleBackColor = true;
             // 
-            // txtCPFFunc
-            // 
-            this.txtCPFFunc.Enabled = false;
-            this.txtCPFFunc.Location = new System.Drawing.Point(101, 131);
-            this.txtCPFFunc.Name = "txtCPFFunc";
-            this.txtCPFFunc.Size = new System.Drawing.Size(322, 22);
-            this.txtCPFFunc.TabIndex = 17;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 134);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 17);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "CPF Func:";
-            // 
-            // txtNmFuncionario
-            // 
-            this.txtNmFuncionario.Enabled = false;
-            this.txtNmFuncionario.Location = new System.Drawing.Point(157, 103);
-            this.txtNmFuncionario.Name = "txtNmFuncionario";
-            this.txtNmFuncionario.Size = new System.Drawing.Size(266, 22);
-            this.txtNmFuncionario.TabIndex = 16;
-            // 
-            // txtFunc
-            // 
-            this.txtFunc.Location = new System.Drawing.Point(101, 103);
-            this.txtFunc.Name = "txtFunc";
-            this.txtFunc.Size = new System.Drawing.Size(50, 22);
-            this.txtFunc.TabIndex = 15;
-            this.txtFunc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFunc_KeyPress);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 106);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 17);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Funcionário:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(331, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 33);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Adicionar Item";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // frmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -432,7 +403,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.ResumeLayout(false);
 
@@ -450,7 +420,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cbItens;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvItens;
         private System.Windows.Forms.DateTimePicker dtpDataPre;
@@ -467,13 +436,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnBuscarBarras;
-        private System.Windows.Forms.NumericUpDown nudQuantidade;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCPFFunc;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNmFuncionario;
         private System.Windows.Forms.TextBox txtFunc;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddDGV;
+        private System.Windows.Forms.TextBox txtTitulo;
     }
 }

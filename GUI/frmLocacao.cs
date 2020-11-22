@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using DAL;
+using System.Linq;
 
 namespace GUI
 {
@@ -17,6 +18,18 @@ namespace GUI
         public frmLocacao()
         {
             InitializeComponent();
+
+            //Adicionando 5 dias a data prevista
+            dtpDataPre.Value = dtpDataPre.Value.AddDays(5);
+
+            //Definindo a DataGridView
+            dgvItens.Columns.Add("tit", "Filme");
+            dgvItens.Columns.Add("barras", "Cod. Barras");
+            dgvItens.Columns.Add("preco", "Valor Unitario");
+            dgvItens.Columns.Add("dtPrev", "Data Prevista");
+
+            dgvItens.Columns["preco"].DefaultCellStyle.Format = "c";
+            dgvItens.Columns["dtPrev"].DefaultCellStyle.Format = "dd MMM yyyy";
         }
 
         private void txtCdLocacao_KeyPress(object sender, KeyPressEventArgs e)
@@ -49,15 +62,7 @@ namespace GUI
                     txtCPFCliente.Text = cliente.CPF;
                 }
             }            
-        }
-
-        private void cbItens_Enter(object sender, EventArgs e)
-        {
-            LocacaoDAL locDal = new LocacaoDAL();
-            cbItens.DataSource = locDal.CarregarFilmes();
-            cbItens.DisplayMember = "CdItens";
-            cbItens.ValueMember = "Titulo";
-        }
+        }       
 
         private void txtFunc_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -81,6 +86,40 @@ namespace GUI
                     txtCPFFunc.Text = funcionarios.CPF;
                 }
             }
+        }
+
+        private void btnBuscarBarras_Click(object sender, EventArgs e)
+        {
+            LocacaoDAL ldal = new LocacaoDAL();
+
+            Filmes film = ldal.ObterItensBarras(Convert.ToInt32(txtCodigoBarras.Text));
+
+            if (film == null)
+            {
+                MessageBox.Show("Esse código de barras não está cadastrado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCodigoBarras.Text = String.Empty;
+                txtCodigoBarras.Focus();
+            }
+            else
+            {
+                txtTitulo.Text = film.Titulo.ToString();
+                txtVlUnitario.Text = film.Preco.ToString();
+            }
+        }       
+
+        private void btnAddDGV_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow item = new DataGridViewRow();
+
+            item.CreateCells(dgvItens);
+           
+            item.Cells[0].Value = txtTitulo.Text;
+            item.Cells[1].Value = txtCodigoBarras.Text;
+            item.Cells[2].Value = txtVlUnitario.Text;
+            item.Cells[3].Value = dtpDataPre.Value;          
+            dgvItens.Rows.Add(item);
+
+            txtVlTotal.Text = dgvItens.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["preco"].Value ?? 0)).ToString("c");
         }
     }
 }

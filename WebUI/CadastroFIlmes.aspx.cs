@@ -13,35 +13,49 @@ namespace WebUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            ObterFilme("NCPC");
         }
 
         private void ObterFilme(string Titulo)
         {
             FilmesDAL fDAL = new FilmesDAL();
 
-            Filmes filme = fDAL.ObterFilme(Convert.ToInt32(Titulo));
+            Filmes filme = fDAL.ObterFilmeTitulo(Titulo);
             if (filme != null)
             {
-                txtTitulo.Text = filme.Titulo;
-                txtCodigo.Text = filme.Codigo.ToString();
-                txtCodigoBarras.Text = filme.CodigoBarras.ToString();
-                txtGenero.Text = filme.Genero;
-                txtAno.Text = filme.Ano.ToString();
-                RadionTipo.SelectedValue = filme.Tipo.ToString();
-                txtPreco.Text = filme.Preco.ToString();
-                txtDataAdquirida.Text = filme.DataAdquirida.ToString();
-                txtValorCusto.Text = filme.ValorCusto.ToString();
-                txtSituacao.Checked = filme.CheckSituacao;
-                txtAtores.Text = filme.Atores;
-                txtDiretor.Text = filme.Diretor;
+                lblTitulo.Text = filme.Titulo;
+                lblCodigo.Text = filme.Codigo.ToString();
+                lblCodigoBarras.Text = filme.CodigoBarras.ToString();
+                lblGenero.Text = filme.Genero;
+                lblAno.Text = filme.Ano.ToString();
+                if (filme.Tipo == 'D')
+                {
+                    lblTipo.Text = "DVD";
+                }   
+                else
+                {
+                    lblTipo.Text = "BLURAY";
+                }
+                lblPreco.Text = filme.Preco.ToString();
+                lblDataAdquirida.Text = filme.DataAdquirida.ToString();
+                lblValorCusto.Text = filme.ValorCusto.ToString();
+                if (filme.CheckSituacao)
+                {
+                    lblSituacao.Text = "Locado";
+                }    
+                else
+                {
+                    lblSituacao.Text = "Não Locado";
+                }
+                lblAtores.Text = filme.Atores;
+                lblDiretor.Text = filme.Diretor;
                 PicFoto.ImageUrl = filme.CapaFilme.ToString();
             }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            string Titulo = txtTitulo.Text;
+            string Titulo = lblTitulo.Text;
             ObterFilme(Titulo);
         }
 

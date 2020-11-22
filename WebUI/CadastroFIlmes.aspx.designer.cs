@@ -24,111 +24,111 @@ namespace WebUI
         protected global::System.Web.UI.WebControls.Image PicFoto;
 
         /// <summary>
-        /// txtTitulo control.
+        /// lblTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitulo;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
 
         /// <summary>
-        /// txtCodigo control.
+        /// lblCodigo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
+        protected global::System.Web.UI.WebControls.Label lblCodigo;
 
         /// <summary>
-        /// txtCodigoBarras control.
+        /// lblCodigoBarras control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigoBarras;
+        protected global::System.Web.UI.WebControls.Label lblCodigoBarras;
 
         /// <summary>
-        /// txtGenero control.
+        /// lblGenero control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtGenero;
+        protected global::System.Web.UI.WebControls.Label lblGenero;
 
         /// <summary>
-        /// txtAno control.
+        /// lblAno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAno;
+        protected global::System.Web.UI.WebControls.Label lblAno;
 
         /// <summary>
-        /// RadionTipo control.
+        /// lblTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadionTipo;
+        protected global::System.Web.UI.WebControls.Label lblTipo;
 
         /// <summary>
-        /// txtPreco control.
+        /// lblPreco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPreco;
+        protected global::System.Web.UI.WebControls.Label lblPreco;
 
         /// <summary>
-        /// txtDataAdquirida control.
+        /// lblDataAdquirida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDataAdquirida;
+        protected global::System.Web.UI.WebControls.Label lblDataAdquirida;
 
         /// <summary>
-        /// txtValorCusto control.
+        /// lblValorCusto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtValorCusto;
+        protected global::System.Web.UI.WebControls.Label lblValorCusto;
 
         /// <summary>
-        /// txtSituacao control.
+        /// lblSituacao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox txtSituacao;
+        protected global::System.Web.UI.WebControls.Label lblSituacao;
 
         /// <summary>
-        /// txtAtores control.
+        /// lblAtores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtAtores;
+        protected global::System.Web.UI.WebControls.Label lblAtores;
 
         /// <summary>
-        /// txtDiretor control.
+        /// lblDiretor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDiretor;
+        protected global::System.Web.UI.WebControls.Label lblDiretor;
     }
 }

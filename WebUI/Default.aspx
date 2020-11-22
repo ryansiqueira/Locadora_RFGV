@@ -11,14 +11,7 @@
             </td>
         </tr>
     </table>
-    <table border ="0">
-        <tr>
-            
-        </tr>
-    </table>
-
-
     <br />
-    <asp:ImageButton ID="ImageButton1" NavigateUrl="~/CadastroFIlmes.aspx" runat="server" Height="185px" Width="144px" ImageUrl="~/CapasFilmes/Pantera Negra.jpg"/>
+    <asp:ImageButton ID="ImageButton1" CommandArgument='<%#Eval("product.ProductId")%>' NavigateUrl="~/CadastroFIlmes.aspx" runat="server" Height="185px" Width="144px" ImageUrl="~/CapasFilmes/Pantera Negra.jpg" OnClick="ImageButton1_Click"/>
     
 </asp:Content>

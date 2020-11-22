@@ -14,21 +14,26 @@ namespace DAL
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["BDLocadoraConnectionString"].ConnectionString;
 
-        public void InserirLocacao(Locacao locacao,int QtdeItens)
-        {
-            
-
+        public void InserirLocacao(Locacao locacao)
+        {           
             SqlConnection conn = new SqlConnection(connectionString);
 
             conn.Open();
+            
+            string sql = "INSERT INTO Locacao VALUES (@CdLocacao, @CdItens, @FKCliente, @DtAtual, @DtPrevista, @ValorTotal, @DsStatusPg)";
+            SqlCommand cmd = new SqlCommand(sql, conn);
 
-            for (int i = 0; i <= QtdeItens; i++)
-            {
-                string sql = "INSERT INTO Locacao VALUES (@CdLocacao, @CdItens, @FKCliente, @DtAtual, @DtPrevista, @ValorTotal, @DsStatusPg, @QtdeItens)";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-            }      
+            cmd.Parameters.AddWithValue("@CdLocacao", locacao.CdLocacao);
+            cmd.Parameters.AddWithValue("@CdItens", locacao.CdItens);
+            cmd.Parameters.AddWithValue("@FKCliente", locacao.FKCliente);
+            cmd.Parameters.AddWithValue("@DtAtual", locacao.DtAtual);
+            cmd.Parameters.AddWithValue("@DtPrevista", locacao.DtPrevista);
+            cmd.Parameters.AddWithValue("@ValorTotal", locacao.ValorTotal);
+            cmd.Parameters.AddWithValue("@DsStatusPg", locacao.DsStatusPg);
 
+            cmd.ExecuteNonQuery();
 
+            conn.Close();
         }
 
         public Cliente ObterClienteLocacao(int CdCliente)
@@ -91,7 +96,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT Titulo, Preco FROM Itens WHERE CodigoBarras = @CodigoBarras";
+            string sql = "SELECT CdItem ,Titulo, Preco FROM Itens WHERE CodigoBarras = @CodigoBarras";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -104,6 +109,7 @@ namespace DAL
             {
                 film = new Filmes();
 
+                film.Codigo = Convert.ToInt32(dr["CdItem"]);
                 film.Titulo = dr["Titulo"].ToString();
                 film.Preco = Convert.ToDecimal(dr["Preco"]);                
             }
@@ -111,20 +117,21 @@ namespace DAL
             return film;
         }
 
-        public DataTable CarregarFilmes()
+        public void ExcluirLocacao(int CdLocacao)
         {
-            SqlConnection sql = new SqlConnection(connectionString);
-            sql.Open();
-            SqlCommand cmd = new SqlCommand("Select Titulo From Itens", sql);
-            SqlDataReader reader = cmd.ExecuteReader();
-            DataTable table = new DataTable();
-            table.Load(reader);
-            DataRow row = table.NewRow();
-            row["Titulo"] = "";
-            table.Rows.InsertAt(row, 0);
+            SqlConnection conn = new SqlConnection(connectionString);
+            
+            conn.Open();
 
-            sql.Close();
-            return table;
+            string sql = "DELETE FROM Locacao WHERE CdLocacao = @CdLocacao";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@CdLocacao", CdLocacao);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
         }
     }
 }

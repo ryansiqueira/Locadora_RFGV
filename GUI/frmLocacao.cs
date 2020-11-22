@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using DAL;
-using System.Linq;
 
 namespace GUI
 {
@@ -19,10 +18,14 @@ namespace GUI
         {
             InitializeComponent();
 
+            //Não permitir a geração de colunas automaticas
+            dgvItens.AutoGenerateColumns = false;
+
             //Adicionando 5 dias a data prevista
             dtpDataPre.Value = dtpDataPre.Value.AddDays(5);
 
             //Definindo a DataGridView
+            dgvItens.Columns.Add("cod", "Código");
             dgvItens.Columns.Add("tit", "Filme");
             dgvItens.Columns.Add("barras", "Cod. Barras");
             dgvItens.Columns.Add("preco", "Valor Unitario");
@@ -102,24 +105,108 @@ namespace GUI
             }
             else
             {
+                txtCdItem.Text = film.Codigo.ToString();
                 txtTitulo.Text = film.Titulo.ToString();
                 txtVlUnitario.Text = film.Preco.ToString();
             }
-        }       
+        } 
+
+        public void LimparTudo()
+        {
+            txtCdLocacao.Text = String.Empty;
+            txtCdCliente.Text = String.Empty;
+            txtNmFuncionario.Text = String.Empty;
+            txtCPFCliente.Text = String.Empty;
+            txtNomeCliente.Text = String.Empty;
+            txtNmFuncionario.Text = String.Empty;
+            dtpDataAtual.Value = DateTime.Today;
+            txtCdItem.Text = String.Empty;
+            txtTitulo.Text = String.Empty;
+            txtVlUnitario.Text = String.Empty;
+            txtCodigoBarras.Text = String.Empty;
+            dtpDataPre.Value = DateTime.Today;
+            dtpDataPre.Value = dtpDataPre.Value.AddDays(5);
+        }
+        
+        public void LimparItens()
+        {
+            txtCdItem.Text = String.Empty;
+            txtTitulo.Text = String.Empty;
+            txtVlUnitario.Text = String.Empty;
+            txtCodigoBarras.Text = String.Empty;
+            dtpDataPre.Value = DateTime.Today;
+            dtpDataPre.Value = dtpDataPre.Value.AddDays(5); 
+        }
 
         private void btnAddDGV_Click(object sender, EventArgs e)
         {
             DataGridViewRow item = new DataGridViewRow();
 
             item.CreateCells(dgvItens);
-           
-            item.Cells[0].Value = txtTitulo.Text;
-            item.Cells[1].Value = txtCodigoBarras.Text;
-            item.Cells[2].Value = txtVlUnitario.Text;
-            item.Cells[3].Value = dtpDataPre.Value;          
+
+            item.Cells[0].Value = txtCdItem.Text;
+            item.Cells[1].Value = txtTitulo.Text;
+            item.Cells[2].Value = txtCodigoBarras.Text;
+            item.Cells[3].Value = txtVlUnitario.Text;
+            item.Cells[4].Value = dtpDataPre.Value;          
             dgvItens.Rows.Add(item);
 
-            txtVlTotal.Text = dgvItens.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["preco"].Value ?? 0)).ToString("c");
+            txtVlTotal.Text = dgvItens.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["preco"].Value ?? 0)).ToString();
+
+            LimparItens();
+        }
+
+        private void btnAdicioanar_Click(object sender, EventArgs e)
+        {
+            Locacao loc = new Locacao();
+            LocacaoDAL locDAL = new LocacaoDAL();
+
+            for (int x = 0; x < dgvItens.Rows.Count; x++)
+            {
+                loc.CdLocacao = Convert.ToInt32(txtCdLocacao.Text);
+                loc.CdItens = Convert.ToInt32(dgvItens.Rows[x].Cells[0].Value);
+                loc.FKCliente = Convert.ToInt32(txtCdCliente.Text);
+                loc.DtAtual = Convert.ToDateTime(dtpDataAtual.Value);
+                loc.DtPrevista = Convert.ToDateTime(dtpDataPre.Value);
+                loc.ValorTotal = Convert.ToDecimal(txtVlTotal.Text);
+
+                switch (cbPagamento.Text)
+                {
+                    case "Pago Total":
+                        loc.DsStatusPg = 'T';
+                        break;
+
+                    case "Pago Parcial":
+                        loc.DsStatusPg = 'P';
+                        break;
+
+                    case "Não Pago":
+                        loc.DsStatusPg = 'N';
+                        break;
+                }
+                
+                locDAL.InserirLocacao(loc);
+            }
+
+            MessageBox.Show("Locação inserida com sucesso!","Atenção",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            LimparTudo();
+        }
+
+        private void txtExcluir_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtCdLocacao.Text))
+            {
+                MessageBox.Show("Informar o código da Locação!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                LocacaoDAL locdal = new LocacaoDAL();
+
+                locdal.ExcluirLocacao(Convert.ToInt32(txtCdLocacao.Text));
+
+                MessageBox.Show("Locação excluida com sucesso","Atenção!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                txtCdLocacao.Text = String.Empty;
+            }
         }
     }
 }

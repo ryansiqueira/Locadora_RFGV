@@ -18,6 +18,9 @@ namespace GUI
         {
             InitializeComponent();
 
+            //Não deixar check no Recebido
+            ckbRecebido.Checked = false;
+
             //Não permitir a geração de colunas automaticas
             dgvItens.AutoGenerateColumns = false;
 
@@ -178,6 +181,7 @@ namespace GUI
                 loc.DtAtual = Convert.ToDateTime(dtpDataAtual.Value);
                 loc.DtPrevista = Convert.ToDateTime(dtpDataPre.Value);
                 loc.ValorTotal = Convert.ToDecimal(txtVlTotal.Text);
+                loc.DsRecebido = ckbRecebido.Checked;
 
                 switch (cbPagamento.Text)
                 {
@@ -225,6 +229,7 @@ namespace GUI
                 }
                 else
                 {
+                    txtVlRecebido.Text = "0";
                     loc.ValorRecebido = Convert.ToDecimal(txtVlRecebido.Text);
                     locDAL.InserirLocacao(loc);
                     MessageBox.Show("Locação inserida com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);

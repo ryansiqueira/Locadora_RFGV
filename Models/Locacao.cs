@@ -16,5 +16,6 @@ namespace Models
         public decimal ValorTotal { get; set; }
         public char DsStatusPg { get; set; }
         public decimal ValorRecebido { get; set; }
+        public bool DsRecebido { get; set; }
     }    
 }

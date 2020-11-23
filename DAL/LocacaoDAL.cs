@@ -20,7 +20,7 @@ namespace DAL
 
             conn.Open();
             
-            string sql = "INSERT INTO Locacao VALUES (@CdLocacao, @CdItens, @FKCliente, @DtAtual, @DtPrevista, @ValorTotal, @DsStatusPg, @ValorRecebido)";
+            string sql = "INSERT INTO Locacao VALUES (@CdLocacao, @CdItens, @FKCliente, @DtAtual, @DtPrevista, @ValorTotal, @DsStatusPg, @ValorRecebido, @DsRecebido)";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@CdLocacao", locacao.CdLocacao);
@@ -31,6 +31,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@ValorTotal", locacao.ValorTotal);
             cmd.Parameters.AddWithValue("@DsStatusPg", locacao.DsStatusPg);
             cmd.Parameters.AddWithValue("@ValorRecebido", locacao.ValorRecebido);
+            cmd.Parameters.AddWithValue("@DsRecebido", locacao.DsRecebido);
 
             cmd.ExecuteNonQuery();
 

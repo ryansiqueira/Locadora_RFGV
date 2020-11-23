@@ -124,3 +124,4 @@ C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.
 C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.pdb
 C:\Users\Felipe.Negri\source\repos\ryansiqueira\Locadora_RFGV\GUI\obj\Debug\GUI.frmDevolucao.resources
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\GUI\obj\Debug\GUI.frmDevolucao.resources
+C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\GUI\obj\Debug\GUI.frmDevolucao.resources

@@ -179,3 +179,7 @@ C:\Trabalho Anderson\Locadora_RFGV\Locadora\WebUI\bin\DAL.dll
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\WebUI\bin\Models.dll
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\WebUI\bin\DAL.pdb
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\WebUI\bin\Models.pdb
+C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\WebUI\bin\DAL.dll
+C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\WebUI\bin\Models.dll
+C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\WebUI\bin\DAL.pdb
+C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\WebUI\bin\Models.pdb

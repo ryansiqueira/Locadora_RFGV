@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\DAL",
-    "\\DAL\\Script"
+    "\\DAL\\Script",
+    "\\GUI"
   ],
-  "SelectedNode": "\\DAL\\Script\\BancoDados.sql",
+  "SelectedNode": "\\GUI\\frmDevolucao.cs",
   "PreviewInSolutionExplorer": false
 }

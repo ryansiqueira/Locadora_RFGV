@@ -268,5 +268,15 @@ namespace GUI
                 txtVlRecebido.Visible = false;
             }
         }
+
+        private void btnBuscaLoca_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Metodo em construção, melhoria na próxima release","Informação",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Metodo em construção, melhoria na próxima release", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

@@ -106,6 +106,7 @@
             this.btnBuscaLoca.TabIndex = 36;
             this.btnBuscaLoca.Text = "Buscar";
             this.btnBuscaLoca.UseVisualStyleBackColor = true;
+            this.btnBuscaLoca.Click += new System.EventHandler(this.btnBuscaLoca_Click);
             // 
             // txtCPFFunc
             // 
@@ -447,6 +448,7 @@
             this.btnAlterar.TabIndex = 14;
             this.btnAlterar.Text = "Atualizar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // txtExcluir
             // 

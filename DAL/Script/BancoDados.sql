@@ -91,9 +91,11 @@ CREATE TABLE Locacao (
 
 CREATE TABLE Devolucao (
     CdDevolucao INT PRIMARY KEY IDENTITY,
-    FKLocacao INT NOT NULL,
-    FKItens INT NOT NULL,
-    FOREIGN KEY (FKLocacao, FKItens) REFERENCES Locacao (CdLocacao, CdItens),
-    VlRecebido DECIMAL NOT NULL,
-    DsStatusPg char(1) NOT NULL
+    DataEntrega date NOT NULL,
+    DataPrevista date NOT NULL,
+    ValorTotal decimal NOT NULL,
+    ValorPago decimal NOT NULL,
+    Pagamento char(1) NOT NULL,
+    FKLocacao INT REFERENCES Locacao(CdLocacao),
+    Recebido bit NOT NULL
 )

@@ -68,5 +68,12 @@ namespace GUI
             loc.MdiParent = this;
             loc.Show();
         }
+
+        private void devoluçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDevolucao dev = new frmDevolucao();
+            dev.MdiParent = this;
+            dev.Show();
+        }
     }
 }

@@ -22,22 +22,23 @@ CREATE TABLE Funcionarios (
     DsStatus bit NOT NULL
 )
 
-CREATE TABLE Itens (
-        CdItem INT PRIMARY KEY IDENTITY,
-        CodigoBarras int NOT NULL,
-        Titulo varchar(50) NOT NULL,
-        Genero varchar(Max) NOT NULL,
-        Ano INT NOT NULL,
-        Tipo char(1) NOT NULL,
-        Preco decimal NOT NULL,
-        DtAdquirida Datetime NOT NULL,
-        VlCusto decimal NOT NULL,
-        Situacao char(1) NOT NULL,
-        Atores varchar(max) NOT NULL,
-        Diretor varchar(max) NOT NULL,
-        CapaFilme varbinary(Max) NOT NULL
-
-)
+CREATE TABLE [dbo].[Itens] (
+    [CdItem] INT IDENTITY (1, 1) NOT NULL,
+    [CodigoBarras] INT NOT NULL,
+    [Titulo] VARCHAR (50) NOT NULL,
+    [Genero] VARCHAR (MAX) NOT NULL,
+    [Ano] INT NOT NULL,
+    [Tipo] CHAR (1) NOT NULL,
+    [Preco] DECIMAL (18) NOT NULL,
+    [DtAdquirida] DATETIME NOT NULL,
+    [VlCusto] DECIMAL (18) NOT NULL,
+    [Situacao] CHAR (1) NOT NULL,
+    [Atores] VARCHAR (MAX) NOT NULL,
+    [Diretor] VARCHAR (MAX) NOT NULL,
+    [CapaFilme] VARBINARY (MAX) NULL,
+    [Caminho] VARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([CdItem] ASC)
+);
 
 CREATE TABLE Clientes (
     CdCliente INT PRIMARY KEY IDENTITY,
@@ -58,7 +59,7 @@ CREATE TABLE Clientes (
 )
 
 CREATE TABLE Artistas (
-    CdArtistia INT PRIMARY KEY IDENTITY,
+    CdArtista INT PRIMARY KEY IDENTITY,
     NmArtistas varchar (50) NOT NULL,
     DtNascimento date NOT NULL,
     PaisNascimento varchar(20) NOT NULL,
@@ -76,8 +77,24 @@ CREATE TABLE Usuarios (
     Senha VARCHAR(32) NOT NULL,
 )
 
---CREATE TABLE Locacao (
-    -- 05/11/202:
-    -- Devemos falar com o Anderson, para saber como proceder:
-    -- Chave primaria composta
---)
+CREATE TABLE Locacao (
+    CdLocacao INT,
+    CdItens INT REFERENCES Itens (CdItem),
+    PRIMARY KEY (CdLocacao, CdItens),
+    FKCliente INT REFERENCES Clientes (CdCliente),  
+    FKFuncionario INT REFERENCES Funcionario (CdFuncionario),
+    DtAtual DATE NOT NULL,
+    DtPrevista DATE NOT NULL,
+    ValorTotal DECIMAL NOT NULL,
+    DsStatusPg char(1) NOT NULL,
+    ValorRecebido decimal(18,0)
+)
+
+CREATE TABLE Devolucao (
+    CdDevolucao INT PRIMARY KEY IDENTITY,
+    FKLocacao INT NOT NULL,
+    FKItens INT NOT NULL,
+    FOREIGN KEY (FKLocacao, FKItens) REFERENCES Locacao (CdLocacao, CdItens),
+    VlRecebido DECIMAL NOT NULL,
+    DsStatusPg char(1) NOT NULL
+)

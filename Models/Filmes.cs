@@ -18,9 +18,13 @@ namespace Models
         public DateTime DataAdquirida { get; set; }
         public decimal ValorCusto { get; set; }
         public char Situacao { get; set; }
+
+        public bool CheckSituacao { get; set; }
         public string Atores { get; set; }
         public string Diretor { get; set; }
         public byte[] CapaFilme { get; set; }
+
+        public string Caminho { get; set; }
 
     }
 }

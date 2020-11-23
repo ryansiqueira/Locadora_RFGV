@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="CadastroFIlmes.aspx.cs" Inherits="WebUI.CadastroFIlmes" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Mestre.Master" AutoEventWireup="true" CodeBehind="CadastroFIlmes.aspx.cs" Inherits="WebUI.CadastroFIlmes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
 
@@ -22,103 +23,108 @@
             margin-left: 40px;
             height: 34px;
         }
+        #Select1 {
+            height: 24px;
+            width: 162px;
+        }
+        #Checkbox1 {
+            height: 24px;
+            width: 153px;
+        }
+        #Select2 {
+            height: 24px;
+            width: 162px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>
-        :: Cadastro de Filmes</h2>
+        :: Informações do Filme</h2>
+   
+        <table class="m6">
+            <tr>
+                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style6">
+                    <asp:Image ID="PicFoto" runat="server" Height="99px" Width="156px" />
+                </td>
+                <td>Título:</td>
+                <td class="auto-style2">
+                    <asp:Label ID="lblTitulo" runat="server"></asp:Label>               
+                </td>
+            </tr>
+        </table>
     <p>
         <table>
             <tr>
                 <td>Código:</td>
                 <td>
-                    <asp:TextBox ID="txtCodigo" runat="server" Width="62px"></asp:TextBox>
-                    <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" />
+                    <asp:Label ID="lblCodigo" runat="server" Width="157px"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td>Código de Barras:</td>
                 <td>
-                    <asp:TextBox ID="txtCodigoBarras" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblCodigoBarras" runat="server"></asp:Label>
                 </td>
-            </tr>
-            <tr>
-                <td>Título:</td>
-                <td class="auto-style2">
-                    <asp:TextBox ID="txtTitulo" runat="server"></asp:TextBox>
-                </td>
-            </tr>
+            </tr>            
             <tr>
                 <td>Gêneros:</td>
                 <td class="auto-style1">
-                    <asp:DropDownList ID="dropGeneros" runat="server">
-                        <asp:ListItem>Teste</asp:ListItem>
-                        <asp:ListItem>Teste1</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:Label ID="lblGenero" runat="server" Height="26px" Width="160px">
+                    </asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style3">Ano:</td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="txtAno" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblAno" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td>Tipo:</td>
                 <td class="auto-style1">
-                    <asp:RadioButtonList ID="radionTipo" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem Selected="True" Value="D">DVD</asp:ListItem>
-                        <asp:ListItem Value="B">BLU RAY</asp:ListItem>
-                    </asp:RadioButtonList>
+                    <asp:Label ID="lblTipo" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td>Preço:</td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtPreco" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblPreco" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td>Data Adquirida:</td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtDataAdquirida" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblDataAdquirida" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td>Valor de Custo:</td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtValorCusto" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblValorCusto" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Situação:</td>
                 <td class="auto-style6">
-                    <asp:CheckBox ID="checkboxSituacao" runat="server" Text="Locado" />
+                    <asp:Label ID="lblSituacao" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Atores Participantes:</td>
                 <td class="auto-style6">
-                    <asp:DropDownList ID="dropAtores" runat="server">
-                        <asp:ListItem>Teste</asp:ListItem>
-                        <asp:ListItem>Teste1</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:Label ID="lblAtores" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Diretor:</td>
                 <td class="auto-style6">
-                    <asp:TextBox ID="txtDiretor" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblDiretor" runat="server"></asp:Label>
                 </td>
             </tr>
-            <tr>
-                <td class="auto-style5">Foto da Capa do Filme:</td>
-                <td class="auto-style6">
-                    <asp:Image ID="Image1" runat="server" Height="99px" Width="156px" />
-                </td>
-            </tr>
-        </table>
-    </p>
+            </table>
+        
     <p>
         &nbsp;</p>
+   
 </asp:Content>

@@ -125,6 +125,7 @@ namespace GUI
             else
             {
                 byte[] arquivo = objArtista.FotodoArtista;
+                txtCodigo.Text = Convert.ToString(objArtista.CdArtista);
                 txtNome.Text = objArtista.Nome;
                 dtpNascimento.Value = objArtista.DtNascimento;
                 txtPaisNasc.Text = objArtista.PaisNascimento;

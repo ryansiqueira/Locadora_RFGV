@@ -44,9 +44,11 @@
     <Compile Include="Artista.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Criptografia.cs" />
+    <Compile Include="Devolucao.cs" />
     <Compile Include="Filmes.cs" />
     <Compile Include="Funcionarios.cs" />
     <Compile Include="Genero.cs" />
+    <Compile Include="Locacao.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

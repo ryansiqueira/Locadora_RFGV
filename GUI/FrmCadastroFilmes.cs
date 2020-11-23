@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using DAL;
@@ -19,6 +14,7 @@ namespace GUI
         public frmCadastroFilme()
         {
             InitializeComponent();
+            GridViewListarItens.AutoGenerateColumns = false;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -43,7 +39,17 @@ namespace GUI
 
                     byte[] CapaFilme = stream.ToArray();
 
+                    var path = @"C:/CapasFilmes/" + objFilmes.Titulo;
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    System.IO.File.WriteAllBytes(path, CapaFilme);
                     objFilmes.CapaFilme = CapaFilme;
+                    objFilmes.Caminho = path + "/" + CapaFilme;
+
+
+                    //System.IO.FileInfo fileInfo = new FileInfo(objFilmes.Caminho);
 
                     //FilmesDAL Cad_Foto = new FilmesDAL();
 
@@ -189,7 +195,7 @@ namespace GUI
             objFilmes.ValorCusto = Convert.ToDecimal(txtValorcusto.Text);
             objFilmes.Situacao = chLocado.Checked ? 'L' : 'N';
             objFilmes.Atores = txtAtoresParticipantes.Text;
-            objFilmes.Diretor = txtDiretor.Text;
+            objFilmes.Diretor = txtDiretor.Text;            
             if (picFoto.Image != null)
             {
                 using (MemoryStream stream = new MemoryStream())
@@ -199,17 +205,8 @@ namespace GUI
                     byte[] CapaFilme = stream.ToArray();
 
                     objFilmes.CapaFilme = CapaFilme;
-
-                    //FilmesDAL Cad_Foto = new FilmesDAL();
-
-                    //Cad_Foto.InserirFilmes(picFoto.Text, CapaFilme, picFoto.Name, picFoto.Properties.ZoomPercent);
                 }
-
-                //picFoto.Image.Dispose();
-                //picFoto.Image = null;
             }
-            //objFilmes.FotoFilme = picFoto.();
-
             FilmesDAL fDAL = new FilmesDAL();
             fDAL.EditarFilme(objFilmes);
 
@@ -219,13 +216,14 @@ namespace GUI
             CarregarFilmes();
         }
 
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnCarregarFoto_Click(object sender, EventArgs e)
-        {
+        {            
             ofdFoto.FileName = "";
             ofdFoto.Title = "Selecione uma imagem";
             ofdFoto.Filter = "JPEG|*.JPG|PNG|*.png";
@@ -261,6 +259,7 @@ namespace GUI
             }
             else
             {
+                byte[] arquivo = filme.CapaFilme;
                 txtCodigo.Text = Convert.ToString(filme.Codigo);
                 txtCodigoBarra.Text = Convert.ToString(filme.CodigoBarras);
                 txtTitulo.Text = filme.Titulo;
@@ -275,6 +274,9 @@ namespace GUI
                 //chNaoLocado.Checked = filme.Situacao == 'N';
                 txtAtoresParticipantes.Text = filme.Atores;
                 txtDiretor.Text = filme.Diretor;
+                Image img1 = ConverteByteParaImagem(arquivo);
+                picFoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                picFoto.Image = img1;
                 //txtfoto = Convert.ToString(filme.FotoFilme);
             }
         }

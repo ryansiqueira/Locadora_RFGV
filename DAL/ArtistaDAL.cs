@@ -43,7 +43,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@nome", objArtista.Nome);
             cmd.Parameters.AddWithValue("@dtnascimento", objArtista.DtNascimento);
-            cmd.Parameters.AddWithValue("@paisnascimento", objArtista.PaisNascimento);
+            cmd.Parameters.AddWithValue("@paisnasc", objArtista.PaisNascimento);
             cmd.Parameters.Add("@foto", SqlDbType.VarBinary).Value = objArtista.FotodoArtista;
 
 

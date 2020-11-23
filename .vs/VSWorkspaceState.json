@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\DAL",
-    "\\DAL\\Script",
-    "\\GUI",
-    "\\Models",
-    "\\WebUI"
+    "\\DAL\\Script"
   ],
-  "SelectedNode": "\\GUI\\FrmCadastroFilmes.cs",
+  "SelectedNode": "\\DAL\\Script\\BancoDados.sql",
   "PreviewInSolutionExplorer": false
 }

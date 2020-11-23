@@ -87,7 +87,7 @@ CREATE TABLE Locacao (
     DtPrevista DATE NOT NULL,
     ValorTotal DECIMAL NOT NULL,
     DsStatusPg char(1) NOT NULL,
-    QtdeItens INT NOT NULL
+    ValorRecebido decimal(18,0)
 )
 
 CREATE TABLE Devolucao (

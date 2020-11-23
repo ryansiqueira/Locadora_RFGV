@@ -14,21 +14,28 @@ namespace DAL
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["BDLocadoraConnectionString"].ConnectionString;
 
-        public void InserirLocacao(Locacao locacao,int QtdeItens)
-        {
-            
-
+        public void InserirLocacao(Locacao locacao)
+        {           
             SqlConnection conn = new SqlConnection(connectionString);
 
             conn.Open();
+            
+            string sql = "INSERT INTO Locacao VALUES (@CdLocacao, @CdItens, @FKCliente, @DtAtual, @DtPrevista, @ValorTotal, @DsStatusPg, @ValorRecebido, @DsRecebido)";
+            SqlCommand cmd = new SqlCommand(sql, conn);
 
-            for (int i = 0; i <= QtdeItens; i++)
-            {
-                string sql = "INSERT INTO Locacao VALUES (@CdLocacao, @CdItens, @FKCliente, @DtAtual, @DtPrevista, @ValorTotal, @DsStatusPg, @QtdeItens)";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-            }      
+            cmd.Parameters.AddWithValue("@CdLocacao", locacao.CdLocacao);
+            cmd.Parameters.AddWithValue("@CdItens", locacao.CdItens);
+            cmd.Parameters.AddWithValue("@FKCliente", locacao.FKCliente);
+            cmd.Parameters.AddWithValue("@DtAtual", locacao.DtAtual);
+            cmd.Parameters.AddWithValue("@DtPrevista", locacao.DtPrevista);
+            cmd.Parameters.AddWithValue("@ValorTotal", locacao.ValorTotal);
+            cmd.Parameters.AddWithValue("@DsStatusPg", locacao.DsStatusPg);
+            cmd.Parameters.AddWithValue("@ValorRecebido", locacao.ValorRecebido);
+            cmd.Parameters.AddWithValue("@DsRecebido", locacao.DsRecebido);
 
+            cmd.ExecuteNonQuery();
 
+            conn.Close();
         }
 
         public Cliente ObterClienteLocacao(int CdCliente)
@@ -85,20 +92,48 @@ namespace DAL
             return func;
         }
 
-        public DataTable CarregarFilmes()
+        public Filmes ObterItensBarras(int CodigoBarras)
         {
-            SqlConnection sql = new SqlConnection(connectionString);
-            sql.Open();
-            SqlCommand cmd = new SqlCommand("Select Titulo From Itens", sql);
-            SqlDataReader reader = cmd.ExecuteReader();
-            DataTable table = new DataTable();
-            table.Load(reader);
-            DataRow row = table.NewRow();
-            row["Titulo"] = "";
-            table.Rows.InsertAt(row, 0);
+            SqlConnection conn = new SqlConnection(connectionString);
 
-            sql.Close();
-            return table;
+            conn.Open();
+
+            string sql = "SELECT CdItem ,Titulo, Preco FROM Itens WHERE CodigoBarras = @CodigoBarras";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@CodigoBarras", CodigoBarras);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            Filmes film = null;
+
+            if (dr.HasRows && dr.Read())
+            {
+                film = new Filmes();
+
+                film.Codigo = Convert.ToInt32(dr["CdItem"]);
+                film.Titulo = dr["Titulo"].ToString();
+                film.Preco = Convert.ToDecimal(dr["Preco"]);                
+            }
+            conn.Close();
+            return film;
+        }
+
+        public void ExcluirLocacao(int CdLocacao)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            
+            conn.Open();
+
+            string sql = "DELETE FROM Locacao WHERE CdLocacao = @CdLocacao";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@CdLocacao", CdLocacao);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
         }
     }
 }

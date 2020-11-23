@@ -36,6 +36,7 @@ CREATE TABLE [dbo].[Itens] (
     [Atores] VARCHAR (MAX) NOT NULL,
     [Diretor] VARCHAR (MAX) NOT NULL,
     [CapaFilme] VARBINARY (MAX) NULL,
+    [Caminho] VARCHAR (MAX) NOT NULL,
     PRIMARY KEY CLUSTERED ([CdItem] ASC)
 );
 

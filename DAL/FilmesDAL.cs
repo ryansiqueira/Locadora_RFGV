@@ -34,10 +34,6 @@ namespace DAL
             cmd.Parameters.AddWithValue("@atores", objFilmes.Atores);
             cmd.Parameters.AddWithValue("@diretor", objFilmes.Diretor);
             cmd.Parameters.Add("@capafilme", SqlDbType.VarBinary).Value = objFilmes.CapaFilme;
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
         }
         
         public Filmes ObterFilme(int cdFilme)
@@ -157,6 +153,53 @@ namespace DAL
                     //{
                     //    objFilmes.CapaFilme = (byte[])dr["CapaFilme"];
                     //}
+                    //objFilmes.CapaFilme = dr["CapaFilme"].ToString();
+
+                    listaFilmes.Add(objFilmes);
+                }
+            }
+
+            conn.Close();
+
+            return listaFilmes;
+        }
+
+        public List<Filmes> ListarTudoFilmes()
+        {
+            List<Filmes> listaFilmes = new List<Filmes>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT CdItem,CodigoBarras, Titulo, Genero, Ano, Tipo, Preco, DtAdquirida, VlCusto, Situacao, Atores, Diretor, CapaFilme FROM Itens";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                Filmes objFilmes;
+                while (dr.Read())
+                {
+                    objFilmes = new Filmes();
+                    objFilmes.Codigo = Convert.ToInt32(dr["CdItem"]);
+                    objFilmes.CodigoBarras = Convert.ToInt32(dr["CodigoBarras"]);
+                    objFilmes.Titulo = dr["Titulo"].ToString();
+                    objFilmes.Genero = dr["Genero"].ToString();
+                    objFilmes.Ano = Convert.ToInt32(dr["Ano"]);
+                    objFilmes.Tipo = Convert.ToChar(dr["Tipo"]);
+                    objFilmes.Preco = Convert.ToDecimal(dr["Preco"]);
+                    objFilmes.DataAdquirida = Convert.ToDateTime(dr["DtAdquirida"]);
+                    objFilmes.ValorCusto = Convert.ToDecimal(dr["VlCusto"]);
+                    objFilmes.Situacao = Convert.ToChar(dr["Situacao"]);
+                    objFilmes.Atores = dr["Atores"].ToString();
+                    objFilmes.Diretor = dr["Diretor"].ToString();
+                    if (dr["CapaFilme"] != DBNull.Value)
+                    {
+                        objFilmes.CapaFilme = (byte[])dr["CapaFilme"];
+                    }
                     //objFilmes.CapaFilme = dr["CapaFilme"].ToString();
 
                     listaFilmes.Add(objFilmes);

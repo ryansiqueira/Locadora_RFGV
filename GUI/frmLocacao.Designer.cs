@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscaLoca = new System.Windows.Forms.Button();
             this.txtCPFFunc = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtNmFuncionario = new System.Windows.Forms.TextBox();
@@ -44,6 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtVlRecebido = new System.Windows.Forms.TextBox();
+            this.lblValorReceb = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCdItem = new System.Windows.Forms.TextBox();
@@ -64,7 +67,6 @@
             this.btnAdicioanar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.txtExcluir = new System.Windows.Forms.Button();
-            this.btnBuscaLoca = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -93,6 +95,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cabeçalho";
+            // 
+            // btnBuscaLoca
+            // 
+            this.btnBuscaLoca.Location = new System.Drawing.Point(306, 13);
+            this.btnBuscaLoca.Name = "btnBuscaLoca";
+            this.btnBuscaLoca.Size = new System.Drawing.Size(82, 33);
+            this.btnBuscaLoca.TabIndex = 36;
+            this.btnBuscaLoca.Text = "Buscar";
+            this.btnBuscaLoca.UseVisualStyleBackColor = true;
             // 
             // txtCPFFunc
             // 
@@ -213,6 +224,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtVlRecebido);
+            this.groupBox2.Controls.Add(this.lblValorReceb);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtCdItem);
@@ -236,6 +249,24 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Itens";
+            // 
+            // txtVlRecebido
+            // 
+            this.txtVlRecebido.Location = new System.Drawing.Point(350, 496);
+            this.txtVlRecebido.Name = "txtVlRecebido";
+            this.txtVlRecebido.Size = new System.Drawing.Size(98, 22);
+            this.txtVlRecebido.TabIndex = 36;
+            this.txtVlRecebido.Visible = false;
+            // 
+            // lblValorReceb
+            // 
+            this.lblValorReceb.AutoSize = true;
+            this.lblValorReceb.Location = new System.Drawing.Point(238, 499);
+            this.lblValorReceb.Name = "lblValorReceb";
+            this.lblValorReceb.Size = new System.Drawing.Size(109, 17);
+            this.lblValorReceb.TabIndex = 37;
+            this.lblValorReceb.Text = "Valor Recebido:";
+            this.lblValorReceb.Visible = false;
             // 
             // label13
             // 
@@ -301,9 +332,10 @@
             "Não Pago"});
             this.cbPagamento.Location = new System.Drawing.Point(13, 496);
             this.cbPagamento.Name = "cbPagamento";
-            this.cbPagamento.Size = new System.Drawing.Size(272, 24);
+            this.cbPagamento.Size = new System.Drawing.Size(212, 24);
             this.cbPagamento.TabIndex = 12;
             this.cbPagamento.Text = "--Selecione--";
+            this.cbPagamento.SelectedIndexChanged += new System.EventHandler(this.cbPagamento_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -424,15 +456,6 @@
             this.txtExcluir.UseVisualStyleBackColor = true;
             this.txtExcluir.Click += new System.EventHandler(this.txtExcluir_Click);
             // 
-            // btnBuscaLoca
-            // 
-            this.btnBuscaLoca.Location = new System.Drawing.Point(306, 13);
-            this.btnBuscaLoca.Name = "btnBuscaLoca";
-            this.btnBuscaLoca.Size = new System.Drawing.Size(82, 33);
-            this.btnBuscaLoca.TabIndex = 36;
-            this.btnBuscaLoca.Text = "Buscar";
-            this.btnBuscaLoca.UseVisualStyleBackColor = true;
-            // 
             // frmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -493,5 +516,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCdItem;
         private System.Windows.Forms.Button btnBuscaLoca;
+        private System.Windows.Forms.TextBox txtVlRecebido;
+        private System.Windows.Forms.Label lblValorReceb;
     }
 }

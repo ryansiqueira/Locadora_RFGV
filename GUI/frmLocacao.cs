@@ -37,7 +37,7 @@ namespace GUI
 
         private void txtCdLocacao_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
             {
                 e.Handled = true;
             }
@@ -126,6 +126,15 @@ namespace GUI
             txtCodigoBarras.Text = String.Empty;
             dtpDataPre.Value = DateTime.Today;
             dtpDataPre.Value = dtpDataPre.Value.AddDays(5);
+            cbPagamento.Text = "--Selecione--";
+            txtVlTotal.Text = String.Empty;
+            lblValorReceb.Visible = false;
+            txtVlRecebido.Visible = false;
+            txtVlRecebido.Text = String.Empty;
+            dgvItens.Rows.Clear();
+            txtFunc.Text = String.Empty;
+            txtCPFFunc.Text = String.Empty;
+
         }
         
         public void LimparItens()
@@ -184,12 +193,44 @@ namespace GUI
                         loc.DsStatusPg = 'N';
                         break;
                 }
-                
-                locDAL.InserirLocacao(loc);
-            }
 
-            MessageBox.Show("Locação inserida com sucesso!","Atenção",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            LimparTudo();
+                if(cbPagamento.Text == "Pago Total")
+                {
+                    if(txtVlTotal.Text == txtVlRecebido.Text)
+                    {
+                        loc.ValorRecebido = Convert.ToDecimal(txtVlRecebido.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Valor total difere do recebido para 'Pagamento Completo'","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        break;
+                    }
+                }
+                else if(cbPagamento.Text == "Pago Parcial")
+                {
+                    if (txtVlTotal.Text == txtVlRecebido.Text)
+                    {
+                        MessageBox.Show("O correto é 'Pago Total'", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
+                    else if (Convert.ToInt32(txtVlRecebido.Text) > Convert.ToInt32(txtVlTotal.Text))
+                    {
+                        MessageBox.Show("Não é possivel receber a mais do que o total", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                    else
+                    {
+                        loc.ValorRecebido = Convert.ToDecimal(txtVlRecebido.Text);
+                    }
+                }
+                else
+                {
+                    loc.ValorRecebido = Convert.ToDecimal(txtVlRecebido.Text);
+                    locDAL.InserirLocacao(loc);
+                    MessageBox.Show("Locação inserida com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimparTudo();
+                }                          
+            }            
         }
 
         private void txtExcluir_Click(object sender, EventArgs e)
@@ -206,6 +247,20 @@ namespace GUI
 
                 MessageBox.Show("Locação excluida com sucesso","Atenção!",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 txtCdLocacao.Text = String.Empty;
+            }
+        }
+
+        private void cbPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbPagamento.Text == "Pago Parcial" || cbPagamento.Text == "Pago Total")
+            {
+                lblValorReceb.Visible = true;
+                txtVlRecebido.Visible = true;
+            }
+            else
+            {
+                lblValorReceb.Visible = false;
+                txtVlRecebido.Visible = false;
             }
         }
     }

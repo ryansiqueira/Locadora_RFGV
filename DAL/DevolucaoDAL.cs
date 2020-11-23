@@ -20,22 +20,24 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "INSERT INTO Devolucao VALUES (@FKLocacao, @FKItens, @VlRecebido, @DsStatusPg, @DatadeEntrega)";
+            string sql = "INSERT INTO Devolucao VALUES (@Locacao, @dataprevista, @dataentrega, @valortotal, @valorpago, @pagamento, @recebido )";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@FKLocacao", objDevolucao.CdLocacao);
-            cmd.Parameters.AddWithValue("@FKItens", objDevolucao.CdItem);
-            cmd.Parameters.AddWithValue("@VlRecebido", objDevolucao.ValorTotal);
-            cmd.Parameters.AddWithValue("@DsStatusPg", objDevolucao.Pagamento);
-            cmd.Parameters.AddWithValue("@DatadeEntrega", objDevolucao.DatadeEntrega);
+            cmd.Parameters.AddWithValue("@Locacao", objDevolucao.CdLocacao);
+            cmd.Parameters.AddWithValue("@dataprevista", objDevolucao.DataPrevista);
+            cmd.Parameters.AddWithValue("@dataentrega", objDevolucao.DatadeEntrega);
+            cmd.Parameters.AddWithValue("@valortotal", objDevolucao.ValorTotal);
+            cmd.Parameters.AddWithValue("@valorpago", objDevolucao.ValorPago);
+            cmd.Parameters.AddWithValue("@pagamento", objDevolucao.Pagamento);
+            cmd.Parameters.AddWithValue("@recebido", objDevolucao.Recebido);
 
             cmd.ExecuteNonQuery();
 
             conn.Close();
         }
 
-        public Locacao BuscarLocacao (int codigobarras)
+        public Locacao BuscarLocacao (int codigoLocacao)
         {
             Locacao objLocacao = null;
 
@@ -43,13 +45,11 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT A.CdLocacao, A.CdItens, A.FkCliente, A.DtPrevista, A.ValorTotal, A.DsRecebido " +
-                "FROM Locacao A INNER JOIN Devolucao B ON B.FKLocacao = A.CdLocacao AND A.CdItens = Itens.CdItens " +
-                "WHERE A.CdItens = @codigodebarras";
+            string sql = "SELECT CdLocacao, DtPrevista, ValorTotal, DsStatusPg, DsRecebido FROM Locacao WHERE CdLocacao = @codigo";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@codigodebarras", codigobarras);
+            cmd.Parameters.AddWithValue("@codigo", codigoLocacao);
 
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -57,11 +57,6 @@ namespace DAL
             {
                 objLocacao = new Locacao();
                 objLocacao.CdLocacao = Convert.ToInt32(dr["CdLocacao"]);
-                objLocacao.CdItens = Convert.ToInt32(dr["CdItens"]);
-                objLocacao.FKCliente = Convert.ToInt32(dr["FkCliente"]);
-                objLocacao.DtPrevista = Convert.ToDateTime(dr["DtPrevista"]);
-                objLocacao.ValorTotal = Convert.ToDecimal(dr["ValorTotal"]);
-                //objLocacao.
             }
 
             conn.Close();

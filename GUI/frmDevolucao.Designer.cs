@@ -45,11 +45,11 @@ namespace GUI
             this.dtpDataEntrega = new System.Windows.Forms.DateTimePicker();
             this.dtpDataPrevista = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.ckbRecebido = new System.Windows.Forms.CheckBox();
             this.Itens = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FKCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoLocacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ckbRecebido = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,6 +188,16 @@ namespace GUI
             this.label6.TabIndex = 20;
             this.label6.Text = "Data Prevista:";
             // 
+            // ckbRecebido
+            // 
+            this.ckbRecebido.AutoSize = true;
+            this.ckbRecebido.Location = new System.Drawing.Point(87, 208);
+            this.ckbRecebido.Name = "ckbRecebido";
+            this.ckbRecebido.Size = new System.Drawing.Size(72, 17);
+            this.ckbRecebido.TabIndex = 22;
+            this.ckbRecebido.Text = "Recebido";
+            this.ckbRecebido.UseVisualStyleBackColor = true;
+            // 
             // Itens
             // 
             this.Itens.DataPropertyName = "CdItens";
@@ -217,16 +227,6 @@ namespace GUI
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(335, 180);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // ckbRecebido
-            // 
-            this.ckbRecebido.AutoSize = true;
-            this.ckbRecebido.Location = new System.Drawing.Point(87, 208);
-            this.ckbRecebido.Name = "ckbRecebido";
-            this.ckbRecebido.Size = new System.Drawing.Size(72, 17);
-            this.ckbRecebido.TabIndex = 22;
-            this.ckbRecebido.Text = "Recebido";
-            this.ckbRecebido.UseVisualStyleBackColor = true;
             // 
             // frmDevolucao
             // 
@@ -277,10 +277,10 @@ namespace GUI
         private System.Windows.Forms.DateTimePicker dtpDataEntrega;
         private System.Windows.Forms.DateTimePicker dtpDataPrevista;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox ckbRecebido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Itens;
         private System.Windows.Forms.DataGridViewTextBoxColumn FKCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoLocacao;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox ckbRecebido;
     }
 }

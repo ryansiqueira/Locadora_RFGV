@@ -39,7 +39,7 @@ namespace GUI
 
                     byte[] CapaFilme = stream.ToArray();
 
-                    var path = Path.Combine(@"c:\", "capasfilmes", objFilmes.Titulo);
+                    var path = Path.Combine(@"c:\", "CapasFilmes", objFilmes.Titulo);
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);

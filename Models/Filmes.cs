@@ -24,5 +24,7 @@ namespace Models
         public string Diretor { get; set; }
         public byte[] CapaFilme { get; set; }
 
+        public string Caminho { get; set; }
+
     }
 }

@@ -39,7 +39,17 @@ namespace GUI
 
                     byte[] CapaFilme = stream.ToArray();
 
+                    var path = @"C:/CapasFilmes/" + objFilmes.Titulo;
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    System.IO.File.WriteAllBytes(path, CapaFilme);
                     objFilmes.CapaFilme = CapaFilme;
+                    objFilmes.Caminho = path + "/" + CapaFilme;
+
+
+                    //System.IO.FileInfo fileInfo = new FileInfo(objFilmes.Caminho);
 
                     //FilmesDAL Cad_Foto = new FilmesDAL();
 
@@ -213,7 +223,7 @@ namespace GUI
         }
 
         private void btnCarregarFoto_Click(object sender, EventArgs e)
-        {
+        {            
             ofdFoto.FileName = "";
             ofdFoto.Title = "Selecione uma imagem";
             ofdFoto.Filter = "JPEG|*.JPG|PNG|*.png";

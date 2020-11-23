@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,11 +13,11 @@ namespace WebUI
     public partial class CadastroFIlmes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            ObterFilme("NCPC");
+        {  
+           ObterFilmeTitulo(lblTitulo.Text = Session["Titulo"].ToString());          
         }
 
-        private void ObterFilme(string Titulo)
+        private void ObterFilmeTitulo(string Titulo)
         {
             FilmesDAL fDAL = new FilmesDAL();
 
@@ -53,11 +54,6 @@ namespace WebUI
             }
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            string Titulo = lblTitulo.Text;
-            ObterFilme(Titulo);
-        }
 
         //string Titulo = txtTitulo.Text;
         //ObterFilme(Titulo);

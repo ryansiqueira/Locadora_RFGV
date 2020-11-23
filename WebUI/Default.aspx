@@ -4,14 +4,26 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table border ="0" align ="center">
+    <table border="0" align="center">
         <tr>
             <td>
-                <font face ="Arial" size ="5" color ="black" ><b>LANÇAMENTOS</b></font>
+                <font face="Arial" size="5" color="black"><b>LANÇAMENTOS</b></font>
             </td>
         </tr>
     </table>
     <br />
-    <asp:ImageButton ID="ImageButton1" CommandArgument='<%#Eval("product.ProductId")%>' NavigateUrl="~/CadastroFIlmes.aspx" runat="server" Height="185px" Width="144px" ImageUrl="~/CapasFilmes/Pantera Negra.jpg" OnClick="ImageButton1_Click"/>
-    
+    <div>
+        <asp:GridView ID="grvFilmes"
+            DataKeyNames="Titulo"
+            GridLines="Horizontal"
+            runat="Server" OnRowCommand="grvFilmes_RowCommand" Width="1199px">
+            <Columns>
+                <asp:TemplateField HeaderText="Capa Filme">
+                    <ItemTemplate>
+                        <asp:ImageButton ID="CapaPantera" runat="server" Height="168px" ImageUrl='<%# Eval("Caminho") %>' Width="123px" CommandName="CarregaFilme" CommandArgument='<%# Eval("Titulo") %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>            
+        </asp:GridView>        
+    </div>
 </asp:Content>

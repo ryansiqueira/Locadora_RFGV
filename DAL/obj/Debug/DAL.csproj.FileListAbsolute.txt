@@ -43,3 +43,12 @@ C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\DAL\obj\Debug\DAL.
 C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\DAL\obj\Debug\DAL.dll
 C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\DAL\obj\Debug\DAL.pdb
+Q:\FONTES GIT\Locadora_RFGV\DAL\bin\Debug\DAL.dll
+Q:\FONTES GIT\Locadora_RFGV\DAL\bin\Debug\DAL.pdb
+Q:\FONTES GIT\Locadora_RFGV\DAL\bin\Debug\Models.dll
+Q:\FONTES GIT\Locadora_RFGV\DAL\bin\Debug\Models.pdb
+Q:\FONTES GIT\Locadora_RFGV\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+Q:\FONTES GIT\Locadora_RFGV\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+Q:\FONTES GIT\Locadora_RFGV\DAL\obj\Debug\DAL.csproj.CopyComplete
+Q:\FONTES GIT\Locadora_RFGV\DAL\obj\Debug\DAL.dll
+Q:\FONTES GIT\Locadora_RFGV\DAL\obj\Debug\DAL.pdb

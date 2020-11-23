@@ -14,7 +14,10 @@ namespace WebUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {  
-           ObterFilmeTitulo(lblTitulo.Text = Session["Titulo"].ToString());          
+            if(Request.Params["Titulo"] != null)
+            {
+                ObterFilmeTitulo(lblTitulo.Text = Request.Params["Titulo"].ToString());
+            }       
         }
 
         private void ObterFilmeTitulo(string Titulo)
@@ -50,7 +53,7 @@ namespace WebUI
                 }
                 lblAtores.Text = filme.Atores;
                 lblDiretor.Text = filme.Diretor;
-                PicFoto.ImageUrl = filme.CapaFilme.ToString();
+                PicFoto.ImageUrl = filme.Caminho;
             }
         }
 

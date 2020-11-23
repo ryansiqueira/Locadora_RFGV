@@ -14,7 +14,8 @@ namespace Models
         public DateTime DtAtual { get; set; }
         public DateTime DtPrevista { get; set; }
         public decimal ValorTotal { get; set; }
-        public bool DsStatusPg { get; set; }
-        public int QtdeItens { get; set; }
+        public char DsStatusPg { get; set; }
+        public decimal ValorRecebido { get; set; }
+        public bool DsRecebido { get; set; }
     }    
 }

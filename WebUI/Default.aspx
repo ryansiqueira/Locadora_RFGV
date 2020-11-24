@@ -12,16 +12,26 @@
         </tr>
     </table>
     <br />
-    <div>
         <asp:GridView ID="grvFilmes"
             DataKeyNames="Titulo"
             GridLines="Horizontal"
+            AutoGenerateColumns="false"
             runat="Server" OnRowCommand="grvFilmes_RowCommand" Width="1199px">
+            <Columns>
+                               <asp:TemplateField>
+    <ItemTemplate>
+        <asp:Label ID="Text1" runat="server" Text='<%# Eval("Titulo") %>' />
+    </ItemTemplate>
+</asp:TemplateField>
+               <asp:TemplateField>
+    <ItemTemplate>
+        <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click" CommandName="CarregaFilme"  CommandArgument='<%# Eval("Titulo")%>'>
+        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Caminho") %>'  Height="99px" Width="156px"   />
+    </asp:LinkButton>
+
+    </ItemTemplate>
+</asp:TemplateField>
+            </Columns>
+
         </asp:GridView>    
-        <%--<asp:SqlDataSource ID="BancoLocadora" runat="server" 
-       ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Locadora;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" 
-        ProviderName="System.Data.SqlClient"  
-        SelectCommand="SELECT Titulo From Itens">
-     </asp:SqlDataSource>--%>
-    </div>
 </asp:Content>

@@ -14,6 +14,7 @@ namespace WebUI
         {
             FilmesDAL fDal = new FilmesDAL();
             grvFilmes.DataSource = fDal.ListarTudoFilmes();
+            grvFilmes.DataBind();
             //    < asp:SqlDataSource ID = "BancoLocadora" runat = "server"
             //ConnectionString = "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Locadora;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
             //ProviderName = "System.Data.SqlClient"

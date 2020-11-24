@@ -70,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CadastroFIlmes.aspx" />
-    <Content Include="CapasFilmes\MissaoImpossivel.jpg" />
     <Content Include="CapasFilmes\Pantera Negra.jpg" />
     <Content Include="CapasFilmes\ScoobyDoo.jpg" />
     <Content Include="Default.aspx" />

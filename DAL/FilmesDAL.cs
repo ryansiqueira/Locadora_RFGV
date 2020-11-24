@@ -216,6 +216,50 @@ namespace DAL
             return listaFilmes;
         }
 
+        public List<Filmes> ListarNomeFilme()
+        {
+            List<Filmes> listaFilmes = new List<Filmes>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT Titulo, CapaFilme, Caminho FROM Itens";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                Filmes objFilmes;
+                while (dr.Read())
+                {
+                    objFilmes = new Filmes();
+                    //objFilmes.Codigo = Convert.ToInt32(dr["CdItem"]);
+                    //objFilmes.CodigoBarras = Convert.ToInt32(dr["CodigoBarras"]);
+                    objFilmes.Titulo = dr["Titulo"].ToString();
+                    //objFilmes.Genero = dr["Genero"].ToString();
+                    //objFilmes.Ano = Convert.ToInt32(dr["Ano"]);
+                    //objFilmes.Tipo = Convert.ToChar(dr["Tipo"]);
+                    //objFilmes.Preco = Convert.ToDecimal(dr["Preco"]);
+                    //objFilmes.DataAdquirida = Convert.ToDateTime(dr["DtAdquirida"]);
+                    //objFilmes.ValorCusto = Convert.ToDecimal(dr["VlCusto"]);
+                    //objFilmes.Situacao = Convert.ToChar(dr["Situacao"]);
+                    //objFilmes.Atores = dr["Atores"].ToString();
+                    //objFilmes.Diretor = dr["Diretor"].ToString();
+                    objFilmes.Caminho = dr["Caminho"] as string;
+                    //objFilmes.Caminho = dr["Caminho"].ToString();
+
+                    listaFilmes.Add(objFilmes);
+                }
+            }
+
+            conn.Close();
+
+            return listaFilmes;
+        }
+
         public void EditarFilme(Filmes objFilmes)
         {
             SqlConnection conn = new SqlConnection(connectionString);

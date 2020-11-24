@@ -39,12 +39,12 @@ namespace GUI
 
                     byte[] CapaFilme = stream.ToArray();
 
-                    var path = Path.Combine(@"c:\", "CapasFilmes", objFilmes.Titulo);
+                    var path = Path.Combine(@"c:\Trabalho Anderson\Locadora_RFGV\Locadora\WebUI", "CapasFilmes");
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
                     }
-                    path = Path.Combine(path, "Capa.jpeg");
+                    path = Path.Combine(path, objFilmes.Titulo + ".jpg");
                     System.IO.File.WriteAllBytes(path, CapaFilme);
                     objFilmes.CapaFilme = CapaFilme;
                     objFilmes.Caminho = path;

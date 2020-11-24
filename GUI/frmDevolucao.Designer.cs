@@ -98,11 +98,17 @@ namespace GUI
             // cbxPagamento
             // 
             this.cbxPagamento.FormattingEnabled = true;
+            this.cbxPagamento.Items.AddRange(new object[] {
+            "--Selecione--",
+            "Pago Total",
+            "Pago Parcial",
+            "Não Pago"});
             this.cbxPagamento.Location = new System.Drawing.Point(205, 223);
             this.cbxPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxPagamento.Name = "cbxPagamento";
             this.cbxPagamento.Size = new System.Drawing.Size(108, 24);
             this.cbxPagamento.TabIndex = 11;
+            this.cbxPagamento.Text = "--Selecione--";
             // 
             // btnBuscar
             // 

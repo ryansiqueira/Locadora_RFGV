@@ -237,7 +237,7 @@ namespace GUI
                         loc.DsStatusPg = 'N';
                         break;
                 }
-                if (txtVlRecebido.Text == String.Empty)
+                if (txtVlRecebido.Text == "")
                 {
                     txtVlRecebido.Text = "0";
                 }

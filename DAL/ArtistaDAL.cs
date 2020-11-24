@@ -86,6 +86,40 @@ namespace DAL
             return objArtista;
         }
 
+
+        public Artista ObterArtista(int cdArtista)
+        {
+            Artista objArtista = null;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT * FROM Artistas WHERE CdArtista = @cdArtista";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@cdArtista", cdArtista);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows && dr.Read())
+            {
+                objArtista = new Artista();
+                objArtista.CdArtista = Convert.ToInt32(dr["CdArtista"]);
+                objArtista.Nome = dr["NmArtistas"].ToString();
+                objArtista.DtNascimento = Convert.ToDateTime(dr["DtNascimento"]);
+                objArtista.PaisNascimento = dr["PaisNascimento"].ToString();
+                if (dr["Foto"] != DBNull.Value)
+                {
+                    objArtista.FotodoArtista = (byte[])dr["Foto"];
+                }
+            }
+
+            conn.Close();
+
+            return objArtista;
+        }
         public List<Filmes> ObterFilmesArtista(string NmArtista)
         {
             List<Filmes> listaFilmes = new List<Filmes>();
@@ -188,6 +222,46 @@ namespace DAL
             sql.Close();
             return table;
 
+        }
+
+        public List<Artista> ListarArtistasPorNomeOuPais(string nome, string pais)
+        {
+            List<Artista> listaArtistas = new List<Artista>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT * FROM Artistas WHERE NmArtistas = @nome OR PaisNascimento = @pais";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@pais", pais);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                Artista objArtista;
+                while (dr.Read())
+                {
+                    objArtista = new Artista();
+                    objArtista.CdArtista = Convert.ToInt32(dr["CdArtista"]);
+                    objArtista.Nome = dr["NmArtistas"].ToString();
+                    objArtista.DtNascimento = Convert.ToDateTime(dr["DtNascimento"]);
+                    objArtista.PaisNascimento = dr["PaisNascimento"].ToString();
+                    if (dr["Foto"] != DBNull.Value)
+                    {
+                        objArtista.FotodoArtista = (byte[])dr["Foto"];
+                    }
+
+                    listaArtistas.Add(objArtista);
+                }
+            }
+
+            conn.Close();
+
+            return listaArtistas;
         }
     }
 }

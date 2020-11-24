@@ -69,6 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ArtistaDetalhe.aspx" />
+    <Content Include="Artistas.aspx" />
     <Content Include="CadastroFIlmes.aspx" />
     <Content Include="CapasFilmes\MissaoImpossivel.jpg" />
     <Content Include="CapasFilmes\Pantera Negra.jpg" />
@@ -77,6 +79,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistaDetalhe.aspx.cs">
+      <DependentUpon>ArtistaDetalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistaDetalhe.aspx.designer.cs">
+      <DependentUpon>ArtistaDetalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artistas.aspx.cs">
+      <DependentUpon>Artistas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artistas.aspx.designer.cs">
+      <DependentUpon>Artistas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CadastroFIlmes.aspx.cs">
       <DependentUpon>CadastroFIlmes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

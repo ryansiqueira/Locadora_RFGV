@@ -15,5 +15,11 @@ namespace Models
         public DateTime DtNascimento { get; set; }
         public string PaisNascimento { get; set; }
         public byte[] FotodoArtista { get; set; }
+        public string FotodoArtista64 { 
+            get 
+            {
+               return "data:image/jpeg;base64," + Convert.ToBase64String(FotodoArtista);
+            } 
+        }
     }
 }

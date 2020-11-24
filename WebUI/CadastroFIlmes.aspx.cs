@@ -56,31 +56,5 @@ namespace WebUI
                 PicFoto.ImageUrl = filme.Caminho;
             }
         }
-
-
-        //string Titulo = txtTitulo.Text;
-        //ObterFilme(Titulo);
-        ////string stTitulo = txtTitulo.Text;
-
-        ////FilmesDAL fDAL = new FilmesDAL();
-        ////Filmes filme = fDAL.ObterFilmeTitulo(stTitulo);
-        //      Filmes filme = new Filmes();
-        //    txtCodigo.Text = Convert.ToString(filme.Codigo);
-        //    txtCodigoBarras.Text = Convert.ToString(filme.CodigoBarras);
-        //    txtTitulo.Text = filme.Titulo;
-        //    txtGenero.Text = filme.Genero;
-        //    txtAno.Text = Convert.ToString(filme.Ano);
-        //    RadioBLURAY.Checked = filme.Tipo == 'B';
-        //    RadionDVD.Checked = filme.Tipo == 'D';
-        //    txtPreco.Text = Convert.ToString(filme.Preco);
-        //    txtDataAdquirida.Text = filme.DataAdquirida.ToString();
-        //    txtValorCusto.Text = Convert.ToString(filme.ValorCusto);
-        //    txtSituacao.Checked = filme.Situacao == 'L';
-        //    //chNaoLocado.Checked = filme.Situacao == 'N';
-        //    txtAtores.Text = filme.Atores;
-        //    txtDiretor.Text = filme.Diretor;
-        //    //PicFoto.ImageUrl = filme.CapaFilme.ToString();
-        ////txtfoto = Convert.ToString(filme.FotoFilme);
-        //FilmesDAL fDAL = new FilmesDAL();
     }
 }

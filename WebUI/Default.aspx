@@ -17,13 +17,11 @@
             DataKeyNames="Titulo"
             GridLines="Horizontal"
             runat="Server" OnRowCommand="grvFilmes_RowCommand" Width="1199px">
-            <Columns>
-                <asp:TemplateField HeaderText="Capa Filme">
-                    <ItemTemplate>
-                        <asp:ImageButton ID="CapaPantera" runat="server" Height="168px" ImageUrl='<%# Eval("Caminho") %>' Width="123px" CommandName="CarregaFilme" CommandArgument='<%# Eval("Titulo") %>' />
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>            
-        </asp:GridView>        
+        </asp:GridView>    
+        <%--<asp:SqlDataSource ID="BancoLocadora" runat="server" 
+       ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Locadora;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" 
+        ProviderName="System.Data.SqlClient"  
+        SelectCommand="SELECT Titulo From Itens">
+     </asp:SqlDataSource>--%>
     </div>
 </asp:Content>

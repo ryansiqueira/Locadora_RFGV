@@ -177,7 +177,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT CdItem,CodigoBarras, Titulo, Genero, Ano, Tipo, Preco, DtAdquirida, VlCusto, Situacao, Atores, Diretor, CapaFilme FROM Itens";
+            string sql = "SELECT CdItem,CodigoBarras, Titulo, Genero, Ano, Tipo, Preco, DtAdquirida, VlCusto, Situacao, Atores, Diretor, CapaFilme, Caminho FROM Itens";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -205,7 +205,7 @@ namespace DAL
                     {
                         objFilmes.CapaFilme = (byte[])dr["CapaFilme"];
                     }
-                    //objFilmes.CapaFilme = dr["CapaFilme"].ToString();
+                    objFilmes.Caminho = dr["Caminho"].ToString();
 
                     listaFilmes.Add(objFilmes);
                 }

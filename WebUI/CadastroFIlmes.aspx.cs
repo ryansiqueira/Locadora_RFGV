@@ -53,7 +53,7 @@ namespace WebUI
                 }
                 lblAtores.Text = filme.Atores;
                 lblDiretor.Text = filme.Diretor;
-                PicFoto.ImageUrl = filme.Caminho;
+                PicFoto.ImageUrl = filme.CapaFilme.ToString();
             }
         }
     }

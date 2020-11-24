@@ -45,7 +45,7 @@
             <tr>
                 <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style6">
-                    <asp:Image ID="PicFoto" runat="server" Height="99px" Width="156px" />
+                    <asp:Image ID="PicFoto" runat="server" ImageUrl='<%# Eval("Caminho") %>'  Height="99px" Width="156px" />
                 </td>
                 <td>Título:</td>
                 <td class="auto-style2">

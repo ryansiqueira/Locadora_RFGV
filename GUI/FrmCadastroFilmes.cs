@@ -39,14 +39,15 @@ namespace GUI
 
                     byte[] CapaFilme = stream.ToArray();
 
-                    var path = @"C:/CapasFilmes/" + objFilmes.Titulo;
+                    var path = Path.Combine(@"c:\", "CapasFilmes", objFilmes.Titulo);
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
                     }
+                    path = Path.Combine(path, "Capa.jpeg");
                     System.IO.File.WriteAllBytes(path, CapaFilme);
                     objFilmes.CapaFilme = CapaFilme;
-                    objFilmes.Caminho = path + "/" + CapaFilme;
+                    objFilmes.Caminho = path;
 
 
                     //System.IO.FileInfo fileInfo = new FileInfo(objFilmes.Caminho);
@@ -301,5 +302,84 @@ namespace GUI
             txtAtoresParticipantes.DisplayMember = "CdArtistia";
             txtAtoresParticipantes.ValueMember = "NmArtistas";
         }
+
+        //private void uploadFile(FileUpload fileUpload, string local_path, string tipoAnexo)
+        //{
+        //    string extension = "";
+        //    int nFileLen = 0;
+        //    string contentType = "";
+        //    bool errors = false;
+        //    string strFilename = "";
+        //    byte[] myData = new byte[1];
+        //    HttpPostedFile myFile = fileUpload.PostedFile;
+        //    nFileLen = myFile.ContentLength;
+        //    contentType = myFile.ContentType;
+        //    if (nFileLen <= 0)
+        //    {
+        //        lblErroAnexo.Text = "Selecione um Arquivo!";
+        //        errors = true;
+        //    }
+        //    else
+        //    {
+        //        myData = new byte[nFileLen];
+        //        myFile.InputStream.Read(myData, 0, nFileLen);
+        //        strFilename = Path.GetFileName(myFile.FileName);
+        //        //strFilename = "(" + fileType + ") - " + strFilename;
+        //        extension = Path.GetExtension(strFilename.ToLower());
+        //        bool exists = false;
+        //        foreach (string s in Directory.GetFiles(local_path))
+        //        {
+        //            if (Path.GetFileName(s).ToLower() == Path.GetFileName(strFilename).ToLower())
+        //            {
+        //                exists = true;
+        //                break;
+        //            }
+        //        }
+        //        if (exists == true)
+        //        {
+        //            lblErroAnexo.Text = "Já existe um arquivo com este nome para este cliente.";
+        //            errors = true;
+        //        }
+        //    }
+        //    if (errors == false)
+        //    {
+        //        try
+        //        {
+        //            FileStream newFile = new FileStream(local_path + "\\" + strFilename, FileMode.Create);
+        //            newFile.Write(myData, 0, myData.Length);
+        //            newFile.Close();
+        //            ValidaRetornoException validaRetorno = new ValidaRetornoException();
+        //            OportunidadeAnexoBLL oBLL = new OportunidadeAnexoBLL();
+        //            OportunidadeAnexoVO oOportunidadeAnexo = new OportunidadeAnexoVO(0
+        //                , int.Parse(txtCodigo.Text)
+        //                , strFilename
+        //                , extension
+        //                , nFileLen
+        //                , 0
+        //                , 0
+        //                , contentType
+        //                , local_path
+        //                , "0"
+        //                , HttpContext.Current.User.Identity.GetUserName()
+        //                , DateTime.Now
+        //                , null
+        //                , null,
+        //                tipoAnexo);
+        //            validaRetorno = oBLL.InserirAnexo(oOportunidadeAnexo);
+        //            if (validaRetorno.Status == false)
+        //            {
+        //                lblErroAnexo.Text = TrataTexto.TrataTextoAsp(validaRetorno.Excecao.ToString());
+        //            }
+        //            else
+        //            {
+        //                CarregaGridAnexos();
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            lblErroAnexo.Text = "Erro: Detalhes: " + ex.ToString();
+        //        }
+        //    }
+        //}
     }
 }

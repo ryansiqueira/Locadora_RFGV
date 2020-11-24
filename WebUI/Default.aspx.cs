@@ -32,8 +32,7 @@ namespace WebUI
             if (nomeComando == "CarregaFilme")
             {
                 ObterFilmeTitulo(Titulo);
-                Session["Titulo"] = grvFilmes.DataSource = Titulo;
-                Response.Redirect("CadastroFIlmes.aspx");
+                Response.Redirect("CadastroFIlmes.aspx?Titulo="+Titulo);
             }
         }
 

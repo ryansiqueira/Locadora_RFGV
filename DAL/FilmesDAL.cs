@@ -19,7 +19,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "INSERT INTO Itens VALUES (@codigobarras, @titulo, @genero, @ano, @tipo, @preco, @dataadquirida, @valorcusto, @situacao, @atores, @diretor, @capafilme)";
+            string sql = "INSERT INTO Itens VALUES (@codigobarras, @titulo, @genero, @ano, @tipo, @preco, @dataadquirida, @valorcusto, @situacao, @atores, @diretor, @capafilme, @caminho)";
             SqlCommand cmd = new SqlCommand(sql, conn);
             //cmd.Parameters.AddWithValue("@codigo", objFilmes.Codigo);
             cmd.Parameters.AddWithValue("@codigobarras", objFilmes.CodigoBarras);
@@ -34,6 +34,11 @@ namespace DAL
             cmd.Parameters.AddWithValue("@atores", objFilmes.Atores);
             cmd.Parameters.AddWithValue("@diretor", objFilmes.Diretor);
             cmd.Parameters.Add("@capafilme", SqlDbType.VarBinary).Value = objFilmes.CapaFilme;
+            cmd.Parameters.AddWithValue("@caminho", objFilmes.Caminho);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
         }
         
         public Filmes ObterFilme(int cdFilme)

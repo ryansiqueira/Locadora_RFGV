@@ -35,5 +35,41 @@ namespace DAL
 
             conn.Close();
         }
+
+        public List<Contato> ListarMensagens()
+        {
+            List<Contato> listaMensagens = new List<Contato>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT * FROM Contatos ORDER BY DataMensagem DESC";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                Contato objContato;
+                while (dr.Read())
+                {
+                    objContato = new Contato();
+                    objContato.CdContato = Convert.ToInt32(dr["CdContato"]);
+                    objContato.Email = dr["Email"].ToString();
+                    objContato.Nome = dr["Nome"].ToString();
+                    objContato.Assunto = dr["Assunto"].ToString();
+                    objContato.Mensagem = dr["Mensagem"].ToString();
+                    objContato.DataMensagem = Convert.ToDateTime(dr["DataMensagem"]);
+
+                    listaMensagens.Add(objContato);
+                }
+            }
+
+            conn.Close();
+
+            return listaMensagens;
+        }
     }
 }

@@ -52,6 +52,7 @@
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página Inicial" Value="Página Inicial">
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/PageContato.aspx" Text="Contato" Value="Contato"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Mensagens.aspx" Text="Mensagens" Value="Mensagens"></asp:MenuItem>
                     </Items>
                     <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
                     <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

@@ -75,6 +75,7 @@
     <Content Include="CapasFilmes\À Procura da Felicidade.jpg" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Mensagens.aspx" />
     <Content Include="PageContato.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -99,6 +100,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mensagens.aspx.cs">
+      <DependentUpon>Mensagens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mensagens.aspx.designer.cs">
+      <DependentUpon>Mensagens.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mestre.Master.cs">
       <DependentUpon>Mestre.Master</DependentUpon>

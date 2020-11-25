@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
 using Models;
-using System.Data;
+using System.Data.OleDb;
+using System.Xml.Serialization;
 
 namespace DAL
 {
@@ -20,7 +21,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "INSERT INTO Contatos VALUES (@email, @nome, @assunto, @mensagem)";
+            string sql = "INSERT INTO CONTATOS VALUES (@email, @nome, @assunto, @mensagem, @data)";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -28,6 +29,9 @@ namespace DAL
             cmd.Parameters.AddWithValue("@nome", objContato.Nome);
             cmd.Parameters.AddWithValue("@assunto", objContato.Assunto);
             cmd.Parameters.AddWithValue("@mensagem", objContato.Mensagem);
+            cmd.Parameters.AddWithValue("@data", objContato.DataMensagem);
+
+            cmd.ExecuteNonQuery();
 
             conn.Close();
         }

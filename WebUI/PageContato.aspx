@@ -3,9 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>:: Contato</h2>
-    <p>&nbsp;<asp:Label ID="Label1" runat="server" Text="Email:"></asp:Label>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label1" runat="server" Text="Email:"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+    &nbsp;
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" BorderStyle="Outset" ControlToValidate="txtEmail" ErrorMessage="RequiredFieldValidator">O Campo Email é Obrigatório!!</asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" BorderStyle="Outset" ControlToValidate="txtEmail" ErrorMessage="Email Inválido!!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
     </p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label2" runat="server" Text="NomeCompleto:"></asp:Label>
@@ -24,7 +27,7 @@
         <asp:TextBox ID="txtMensagem" runat="server" Height="60px" TextMode="MultiLine" Width="288px"></asp:TextBox>
     </p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnEnviar" runat="server" OnClick="btnEnviar_Click" Text="Enviar" Width="95px" OnClientClick="return confirm('Deseja enviar a mensagem ?');/>
+        <asp:Button ID="btnEnviar" runat="server" OnClick="btnEnviar_Click" Text="Enviar" Width="95px" />
     </p>
     <p>
         <asp:Label ID="lblMensagemTela" runat="server"></asp:Label>

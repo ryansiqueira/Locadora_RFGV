@@ -13,5 +13,6 @@ namespace Models
         public string Nome { get; set; }
         public string Assunto { get; set; }
         public string Mensagem { get; set; }
+        public DateTime DataMensagem { get; set; }
     }
 }

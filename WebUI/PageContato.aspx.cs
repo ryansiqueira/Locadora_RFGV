@@ -23,6 +23,7 @@ namespace WebUI
             objContato.Nome = txtNome.Text;
             objContato.Assunto = txtAssunto.Text;
             objContato.Mensagem = txtMensagem.Text;
+            objContato.DataMensagem = DateTime.Today;
 
             ContatoDAL cDAL = new ContatoDAL();
             cDAL.EnviarMensagem(objContato);

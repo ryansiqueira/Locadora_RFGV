@@ -13,7 +13,14 @@ namespace WebUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarregarPessoas();
+            if (Administrador.Admin == true && Logado.UsuarioLogado == true)
+            {
+                CarregarPessoas();
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
+            }
         }   
 
         private void CarregarPessoas()

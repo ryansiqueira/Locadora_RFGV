@@ -75,6 +75,7 @@ CREATE TABLE Usuarios (
     CdUsuario INT PRIMARY KEY IDENTITY,
     DsLogin VARCHAR(32) NOT NULL,
     Senha VARCHAR(32) NOT NULL,
+    Administrador BIT default(0)
 )
 
 CREATE TABLE Locacao (

@@ -18,7 +18,13 @@ namespace WebUI
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            e.Authenticated = new UsuarioDAL().AutenticarUsuario(Login1.UserName, Criptografia.GetMD5Hash(Login1.Password));
+            var usuarioDAL = new UsuarioDAL();
+            e.Authenticated = usuarioDAL.AutenticarUsuario(Login1.UserName, Criptografia.GetMD5Hash(Login1.Password));
+            Logado.UsuarioLogado = e.Authenticated;
+            if (e.Authenticated)
+            {
+                Administrador.Admin = usuarioDAL.VerificaAdmin(Login1.UserName).Administrador;
+            }
         }
     }
 }

@@ -11,6 +11,6 @@ namespace Models
         public int CdUsuario { get; set; }
         public string DsLogin { get; set; }
         public string DsSenha { get; set; }
-
+        public bool Administrador { get; set; }
     }
 }

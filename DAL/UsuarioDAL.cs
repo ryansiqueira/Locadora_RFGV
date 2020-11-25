@@ -27,7 +27,7 @@ namespace DAL
 
             cmd.Parameters.AddWithValue("@login", usuario);
             cmd.Parameters.AddWithValue("@senha", senha);
-
+            cmd.ExecuteNonQuery();
             autenticado = Convert.ToInt32(cmd.ExecuteScalar()) == 1;
 
             conn.Close();
@@ -52,6 +52,36 @@ namespace DAL
             cmd.ExecuteNonQuery();
 
             conn.Close();
+        }
+
+        public Usuario VerificaAdmin(string usuario)
+        {
+                List<Usuario> listarusuario = new List<Usuario>();
+
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                conn.Open();
+
+                string sql = $"SELECT Administrador FROM Usuarios WHERE Administrador = '{usuario}' ";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    Usuario usuarios;
+                    while (dr.Read())
+                    {
+                    usuarios = new Usuario();
+                    usuarios.Administrador = Convert.ToBoolean(dr["Administrador"]);
+                    listarusuario.Add(usuarios);
+                    }
+                }
+
+                conn.Close();
+
+                return listarusuario.FirstOrDefault();            
         }
     }
 }

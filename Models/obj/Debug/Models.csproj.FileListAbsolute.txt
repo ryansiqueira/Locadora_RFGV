@@ -27,3 +27,9 @@ C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\Models\obj\Debug\M
 C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\Models\obj\Debug\Models.pdb
 C:\Trabalho Anderson\Locadora_RFGV\Locadora\Models\obj\Debug\Models.csprojAssemblyReference.cache
 C:\Users\Guilherme Cleto\Desktop\Área de Trabalho\C#\2Sem2020\DALPP2\GitHub Trabalho\Locadora_RFGV\Models\obj\Debug\Models.csprojAssemblyReference.cache
+Q:\FONTES GIT\Locadora_RFGV\Models\bin\Debug\Models.dll
+Q:\FONTES GIT\Locadora_RFGV\Models\bin\Debug\Models.pdb
+Q:\FONTES GIT\Locadora_RFGV\Models\obj\Debug\Models.csprojAssemblyReference.cache
+Q:\FONTES GIT\Locadora_RFGV\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+Q:\FONTES GIT\Locadora_RFGV\Models\obj\Debug\Models.dll
+Q:\FONTES GIT\Locadora_RFGV\Models\obj\Debug\Models.pdb

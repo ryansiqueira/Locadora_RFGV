@@ -82,6 +82,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs" />
     <Compile Include="ArtistaDetalhe.aspx.cs">
       <DependentUpon>ArtistaDetalhe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +111,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logado.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

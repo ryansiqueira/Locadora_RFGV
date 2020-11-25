@@ -69,7 +69,7 @@ namespace DAL
 
             string sql = "UPDATE Funcionarios SET NmFuncionario = @nm, CPF = @CPF, DtNascimento = @nas, DsEstadoCivil = @estciv,Sexo = @sexo, Email = @email," +
                 "Telefone = @telefone, RG = @rg, Endereco = @ende, Cidade = @cid, CEP = @cep, Estado = @esta, Celular = @celula, DsStatus = @status" +
-                "WHERE CdFuncionario = @cod";
+                " WHERE CdFuncionario = @cod";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 

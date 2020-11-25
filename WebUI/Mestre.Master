@@ -56,6 +56,7 @@
                     <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
                     <StaticSelectedStyle BackColor="#5D7B9D" />
                 </asp:Menu>
+                <br />
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
                 <br />
             </nav>

@@ -7,7 +7,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
     &nbsp;
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" BorderStyle="Outset" ControlToValidate="txtEmail" ErrorMessage="RequiredFieldValidator">O Campo Email é Obrigatório!!</asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" BorderStyle="Outset" ControlToValidate="txtEmail" ErrorMessage="RequiredFieldValidator" InitialValue=" ">O Campo Email é Obrigatório!!</asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" BorderStyle="Outset" ControlToValidate="txtEmail" ErrorMessage="Email Inválido!!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
     </p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

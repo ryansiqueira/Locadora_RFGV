@@ -20,7 +20,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "INSERT INTO Devolucao VALUES (@Locacao, @dataprevista, @dataentrega, @valortotal, @valorpago, @pagamento, @recebido )";
+            string sql = "INSERT INTO Devolucao VALUES (@Locacao, @dataprevista, @dataentrega, @valortotal, @valorpago, @pagamento, @recebido)";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -45,7 +45,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT CdLocacao, DtPrevista, ValorTotal, DsStatusPg, DsRecebido FROM Locacao WHERE CdLocacao = @codigo";
+            string sql = "SELECT CdLocacao, DtPrevista, ValorTotal, ValorRecebido, DsStatusPg, DsRecebido FROM Locacao WHERE CdLocacao = @codigo";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -57,6 +57,11 @@ namespace DAL
             {
                 objLocacao = new Locacao();
                 objLocacao.CdLocacao = Convert.ToInt32(dr["CdLocacao"]);
+                objLocacao.DtPrevista = Convert.ToDateTime(dr["DtPrevista"]);
+                objLocacao.ValorTotal = Convert.ToDecimal(dr["ValorTotal"]);
+                objLocacao.DsStatusPg = Convert.ToChar(dr["DsStatusPg"]);
+                objLocacao.DsRecebido = Convert.ToBoolean(dr["DsRecebido"]);
+                objLocacao.ValorRecebido = Convert.ToDecimal(dr["ValorRecebido"]);
             }
 
             conn.Close();

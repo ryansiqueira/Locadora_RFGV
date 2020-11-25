@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckbRecebido = new System.Windows.Forms.CheckBox();
             this.btnBuscaLoca = new System.Windows.Forms.Button();
             this.txtCPFFunc = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -64,10 +65,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtVlUnitario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnAdicioanar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.txtExcluir = new System.Windows.Forms.Button();
-            this.ckbRecebido = new System.Windows.Forms.CheckBox();
+            this.btnAdicionarLocacao = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -97,6 +97,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cabeçalho";
+            // 
+            // ckbRecebido
+            // 
+            this.ckbRecebido.AutoSize = true;
+            this.ckbRecebido.Enabled = false;
+            this.ckbRecebido.Location = new System.Drawing.Point(20, 186);
+            this.ckbRecebido.Name = "ckbRecebido";
+            this.ckbRecebido.Size = new System.Drawing.Size(90, 21);
+            this.ckbRecebido.TabIndex = 37;
+            this.ckbRecebido.Text = "Recebido";
+            this.ckbRecebido.UseVisualStyleBackColor = true;
             // 
             // btnBuscaLoca
             // 
@@ -430,16 +441,6 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Valor:";
             // 
-            // btnAdicioanar
-            // 
-            this.btnAdicioanar.Location = new System.Drawing.Point(105, 786);
-            this.btnAdicioanar.Name = "btnAdicioanar";
-            this.btnAdicioanar.Size = new System.Drawing.Size(82, 42);
-            this.btnAdicioanar.TabIndex = 13;
-            this.btnAdicioanar.Text = "Adicionar Locação";
-            this.btnAdicioanar.UseVisualStyleBackColor = true;
-            this.btnAdicioanar.Click += new System.EventHandler(this.btnAdicioanar_Click);
-            // 
             // btnAlterar
             // 
             this.btnAlterar.Location = new System.Drawing.Point(193, 786);
@@ -460,25 +461,24 @@
             this.txtExcluir.UseVisualStyleBackColor = true;
             this.txtExcluir.Click += new System.EventHandler(this.txtExcluir_Click);
             // 
-            // ckbRecebido
+            // btnAdicionarLocacao
             // 
-            this.ckbRecebido.AutoSize = true;
-            this.ckbRecebido.Enabled = false;
-            this.ckbRecebido.Location = new System.Drawing.Point(20, 186);
-            this.ckbRecebido.Name = "ckbRecebido";
-            this.ckbRecebido.Size = new System.Drawing.Size(90, 21);
-            this.ckbRecebido.TabIndex = 37;
-            this.ckbRecebido.Text = "Recebido";
-            this.ckbRecebido.UseVisualStyleBackColor = true;
+            this.btnAdicionarLocacao.Location = new System.Drawing.Point(105, 786);
+            this.btnAdicionarLocacao.Name = "btnAdicionarLocacao";
+            this.btnAdicionarLocacao.Size = new System.Drawing.Size(82, 42);
+            this.btnAdicionarLocacao.TabIndex = 16;
+            this.btnAdicionarLocacao.Text = "Efetivar Locação";
+            this.btnAdicionarLocacao.UseVisualStyleBackColor = true;
+            this.btnAdicionarLocacao.Click += new System.EventHandler(this.btnAdicionarLocacao_Click);
             // 
             // frmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 836);
+            this.Controls.Add(this.btnAdicionarLocacao);
             this.Controls.Add(this.txtExcluir);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnAdicioanar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmLocacao";
@@ -514,7 +514,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCodigoBarras;
-        private System.Windows.Forms.Button btnAdicioanar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button txtExcluir;
         private System.Windows.Forms.Label label9;
@@ -534,5 +533,6 @@
         private System.Windows.Forms.TextBox txtVlRecebido;
         private System.Windows.Forms.Label lblValorReceb;
         private System.Windows.Forms.CheckBox ckbRecebido;
+        private System.Windows.Forms.Button btnAdicionarLocacao;
     }
 }

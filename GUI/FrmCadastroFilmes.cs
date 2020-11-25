@@ -39,12 +39,12 @@ namespace GUI
 
                     byte[] CapaFilme = stream.ToArray();
 
-                    var path = Path.Combine(@"c:\", "capasfilmes", objFilmes.Titulo);
+                    var path = Path.Combine(@"c:\Trabalho Anderson\Locadora_RFGV\Locadora\WebUI", "CapasFilmes");
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
                     }
-                    path = Path.Combine(path, "Capa.jpeg");
+                    path = Path.Combine(path, objFilmes.Titulo + ".jpg");
                     System.IO.File.WriteAllBytes(path, CapaFilme);
                     objFilmes.CapaFilme = CapaFilme;
                     objFilmes.Caminho = path;
@@ -68,20 +68,8 @@ namespace GUI
 
             LimparCampos();
             CarregarFilmes();
+            fDAL.SalvarImagemLocal(objFilmes);
         }
-        //void converterFoto()
-        //{
-        //    convertendo a foto para dados binários
-        //    if (picFoto.Image != null)
-        //    {
-        //        MemoryStream ms = new MemoryStream();
-        //        picFoto.Image.Save(ms, ImageFormat.Jpeg);
-        //        byte[] CapaFilme = new byte[ms.Length];
-        //        ms.Position = 0;
-        //        ms.Read(CapaFilme, 0, CapaFilme.Length);
-        //        cmd.Parameters.AddWithValue("@capafilme", CapaFilme);
-        //    }
-        //}
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {

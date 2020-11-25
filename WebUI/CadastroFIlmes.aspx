@@ -44,9 +44,9 @@
         <table class="m6">
             <tr>
                 <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style6">
-                    <asp:Image ID="PicFoto" runat="server" Height="99px" Width="156px" />
-                </td>
+        <asp:LinkButton ID="link2" runat="server" >
+        <asp:Image ID="PicFoto" runat="server" ImageUrl='<%# Eval("Caminho") %>'  Height="100px" Width="156px"   />
+    </asp:LinkButton>
                 <td>Título:</td>
                 <td class="auto-style2">
                     <asp:Label ID="lblTitulo" runat="server"></asp:Label>               

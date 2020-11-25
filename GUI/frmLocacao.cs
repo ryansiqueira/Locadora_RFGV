@@ -166,78 +166,7 @@ namespace GUI
             txtVlTotal.Text = dgvItens.Rows.Cast<DataGridViewRow>().Sum(i => Convert.ToDecimal(i.Cells["preco"].Value ?? 0)).ToString();
 
             LimparItens();
-        }
-
-        private void btnAdicioanar_Click(object sender, EventArgs e)
-        {
-            Locacao loc = new Locacao();
-            LocacaoDAL locDAL = new LocacaoDAL();
-
-            for (int x = 0; x < dgvItens.Rows.Count; x++)
-            {
-                loc.CdLocacao = Convert.ToInt32(txtCdLocacao.Text);
-                loc.CdItens = Convert.ToInt32(dgvItens.Rows[x].Cells[0].Value);
-                loc.FKCliente = Convert.ToInt32(txtCdCliente.Text);
-                loc.DtAtual = Convert.ToDateTime(dtpDataAtual.Value);
-                loc.DtPrevista = Convert.ToDateTime(dtpDataPre.Value);
-                loc.ValorTotal = Convert.ToDecimal(txtVlTotal.Text);
-                loc.DsRecebido = ckbRecebido.Checked;
-
-                switch (cbPagamento.Text)
-                {
-                    case "Pago Total":
-                        loc.DsStatusPg = 'T';
-                        break;
-
-                    case "Pago Parcial":
-                        loc.DsStatusPg = 'P';
-                        break;
-
-                    case "Não Pago":
-                        loc.DsStatusPg = 'N';
-                        break;
-                }
-
-                if(cbPagamento.Text == "Pago Total")
-                {
-                    if(txtVlTotal.Text == txtVlRecebido.Text)
-                    {
-                        loc.ValorRecebido = Convert.ToDecimal(txtVlRecebido.Text);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Valor total difere do recebido para 'Pagamento Completo'","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                        break;
-                    }
-                }
-                else if(cbPagamento.Text == "Pago Parcial")
-                {
-                    if (txtVlTotal.Text == txtVlRecebido.Text)
-                    {
-                        MessageBox.Show("O correto é 'Pago Total'", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    }
-                    else if (Convert.ToInt32(txtVlRecebido.Text) > Convert.ToInt32(txtVlTotal.Text))
-                    {
-                        MessageBox.Show("Não é possivel receber a mais do que o total", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                    {
-                        loc.ValorRecebido = Convert.ToDecimal(txtVlRecebido.Text);
-                    }
-                }
-                else
-                {
-                    txtVlRecebido.Text = "0";
-                    loc.ValorRecebido = Convert.ToDecimal(txtVlRecebido.Text);
-                    locDAL.InserirLocacao(loc);
-                    MessageBox.Show("Locação inserida com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimparTudo();
-                }                          
-            }            
-        }
-
+        }        
         private void txtExcluir_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtCdLocacao.Text))
@@ -277,6 +206,46 @@ namespace GUI
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Metodo em construção, melhoria na próxima release", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnAdicionarLocacao_Click(object sender, EventArgs e)
+        {
+            Locacao loc = new Locacao();
+            LocacaoDAL locDAL = new LocacaoDAL();
+
+            for (int x = 0; x < dgvItens.Rows.Count; x++)
+            {
+                loc.CdLocacao = Convert.ToInt32(txtCdLocacao.Text);
+                loc.CdItens = Convert.ToInt32(dgvItens.Rows[x].Cells[0].Value);
+                loc.FKCliente = Convert.ToInt32(txtCdCliente.Text);
+                loc.DtAtual = Convert.ToDateTime(dtpDataAtual.Value);
+                loc.DtPrevista = Convert.ToDateTime(dtpDataPre.Value);
+                loc.ValorTotal = Convert.ToDecimal(txtVlTotal.Text);
+                loc.DsRecebido = ckbRecebido.Checked;
+
+                switch (cbPagamento.Text)
+                {
+                    case "Pago Total":
+                        loc.DsStatusPg = 'T';
+                        break;
+
+                    case "Pago Parcial":
+                        loc.DsStatusPg = 'P';
+                        break;
+
+                    case "Não Pago":
+                        loc.DsStatusPg = 'N';
+                        break;
+                }
+                if (txtVlRecebido.Text == "")
+                {
+                    txtVlRecebido.Text = "0";
+                }
+                loc.ValorRecebido = Convert.ToDecimal(txtVlRecebido.Text);
+                locDAL.InserirLocacao(loc);
+            }                     
+            MessageBox.Show("Locação inserida com sucesso!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LimparTudo();
         }
     }
 }

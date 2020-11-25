@@ -72,10 +72,13 @@
     <Content Include="ArtistaDetalhe.aspx" />
     <Content Include="Artistas.aspx" />
     <Content Include="CadastroFIlmes.aspx" />
-    <Content Include="CapasFilmes\MissaoImpossivel.jpg" />
     <Content Include="CapasFilmes\Pantera Negra.jpg" />
     <Content Include="CapasFilmes\ScoobyDoo.jpg" />
+    <Content Include="CapasFilmes\À Procura da Felicidade.jpg" />
     <Content Include="Default.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Mensagens.aspx" />
+    <Content Include="PageContato.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -107,12 +110,33 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mensagens.aspx.cs">
+      <DependentUpon>Mensagens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mensagens.aspx.designer.cs">
+      <DependentUpon>Mensagens.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mestre.Master.cs">
       <DependentUpon>Mestre.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mestre.Master.designer.cs">
       <DependentUpon>Mestre.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PageContato.aspx.cs">
+      <DependentUpon>PageContato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageContato.aspx.designer.cs">
+      <DependentUpon>PageContato.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

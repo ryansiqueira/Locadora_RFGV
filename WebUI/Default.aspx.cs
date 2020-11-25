@@ -27,7 +27,7 @@ namespace WebUI
         {
             string nomeComando = e.CommandName;
             string Titulo = (string)e.CommandArgument;
-            string Caminho = (string)e.CommandArgument;
+            //string Caminho = (string)e.CommandArgument;
 
             if (nomeComando == "CarregaFilme")
             {

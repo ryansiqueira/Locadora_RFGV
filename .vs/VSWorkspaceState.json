@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DAL",
+    "\\DAL\\Script"
   ],
-  "SelectedNode": "\\Locadora.sln",
+  "SelectedNode": "\\DAL\\UsuarioDAL.cs",
   "PreviewInSolutionExplorer": false
 }

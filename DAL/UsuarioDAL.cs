@@ -62,7 +62,7 @@ namespace DAL
 
                 conn.Open();
 
-                string sql = $"SELECT Administrador FROM Usuarios WHERE Administrador = '{usuario}' ";
+                string sql = $"SELECT Administrador FROM Usuarios WHERE DsLogin = '{usuario}' ";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 

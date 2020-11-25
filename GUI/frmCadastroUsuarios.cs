@@ -24,6 +24,7 @@ namespace GUI
             Usuario objUsuario = new Usuario();
             objUsuario.DsLogin = txtUsuario.Text;
             objUsuario.DsSenha = Criptografia.GetMD5Hash(txtSenha.Text);
+            objUsuario.Administrador = CkAdministrador.Checked;
 
             UsuarioDAL uDAL = new UsuarioDAL();
             uDAL.CadastroUsuario(objUsuario);

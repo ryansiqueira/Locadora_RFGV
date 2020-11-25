@@ -25,3 +25,4 @@ C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\Models\bin\Debug\M
 C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
 C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\Models\obj\Debug\Models.dll
 C:\Users\Felipe.Negri\Source\Repos\ryansiqueira\Locadora_RFGV\Models\obj\Debug\Models.pdb
+C:\Trabalho Anderson\Locadora_RFGV\Locadora\Models\obj\Debug\Models.csprojAssemblyReference.cache

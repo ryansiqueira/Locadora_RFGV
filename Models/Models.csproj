@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Artista.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Contato.cs" />
     <Compile Include="Criptografia.cs" />
     <Compile Include="Devolucao.cs" />
     <Compile Include="Filmes.cs" />

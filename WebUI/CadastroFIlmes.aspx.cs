@@ -17,6 +17,7 @@ namespace WebUI
             if(Request.Params["Titulo"] != null)
             {
                 ObterFilmeTitulo(lblTitulo.Text = Request.Params["Titulo"].ToString());
+                //ObterFilmeTitulo(PicFoto.ImageUrl = Request.Params["Caminho"].ToString());
             }       
         }
 
@@ -53,7 +54,7 @@ namespace WebUI
                 }
                 lblAtores.Text = filme.Atores;
                 lblDiretor.Text = filme.Diretor;
-                PicFoto.ImageUrl = filme.CapaFilme.ToString();
+                PicFoto.ImageUrl = filme.Caminho;
             }
         }
     }

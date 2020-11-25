@@ -72,6 +72,7 @@
     <Content Include="CadastroFIlmes.aspx" />
     <Content Include="CapasFilmes\Pantera Negra.jpg" />
     <Content Include="CapasFilmes\ScoobyDoo.jpg" />
+    <Content Include="CapasFilmes\À Procura da Felicidade.jpg" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />

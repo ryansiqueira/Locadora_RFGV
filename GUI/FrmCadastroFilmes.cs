@@ -68,6 +68,7 @@ namespace GUI
 
             LimparCampos();
             CarregarFilmes();
+            fDAL.SalvarImagemLocal(objFilmes);
         }
         //void converterFoto()
         //{

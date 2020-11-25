@@ -115,7 +115,7 @@ namespace DAL
                 {
                     filme.CapaFilme = (byte[])dr["CapaFilme"];
                 }
-                filme.Caminho = dr["Caminho"].ToString();
+                //filme.FotoFilme = dr2["CapaFilme"].ToString();
             }
             conn.Close();
 
@@ -302,22 +302,20 @@ namespace DAL
             conn.Close();
         }
 
-        public void SalvarImagemLocal(Filmes objFilmes)
+        public DataTable ObterFilme()
         {
             SqlConnection conn = new SqlConnection(connectionString);
-
             conn.Open();
-
-            string sql = @"UPDATE Itens SET Caminho = 'CapasFilmes/"+ objFilmes.Titulo + ".jpg" + "' Where CodigoBarras = @codigobarras";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@codigobarras", objFilmes.CodigoBarras);
-            cmd.Parameters.AddWithValue("Caminho", objFilmes.Caminho);
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select * from Itens";
+            SqlDataAdapter dAdapter = new SqlDataAdapter();
+            dAdapter.SelectCommand = cmd;
+            DataSet objDs = new DataSet();
+            dAdapter.Fill(objDs);
+            return objDs.Tables[0];
         }
-
     }
 }
 

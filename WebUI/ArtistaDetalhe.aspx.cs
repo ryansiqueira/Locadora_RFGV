@@ -35,6 +35,9 @@ namespace WebUI
             txtDtNasc.Text = artista.DtNascimento.ToString("dd/MM/yyyy");
             txtPaisNasc.Text = artista.PaisNascimento; 
             imgFoto.ImageUrl = artista.FotodoArtista64;
+
+            this.gvFilmesArtista.DataSource = new ArtistaDAL().ObterFilmesArtistaWeb(CdArtista);
+            this.gvFilmesArtista.DataBind();
         }
     }
 }

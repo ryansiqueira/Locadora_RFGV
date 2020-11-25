@@ -37,7 +37,14 @@
               <div class="row pl-5">
                 <div class="col-sm-6 ml=5" style="vertical-align:middle">
                     <asp:Image ID="imgFoto" runat="server" CssClass="ml-5" Width="150" Height="160"/>
-                </div>
+                  </div>
+                  <div>
+&nbsp;<asp:GridView ID="gvFilmesArtista" runat="server" AutoGenerateColumns="False">
+                          <Columns>
+                              <asp:BoundField DataField="Titulo" HeaderText="Filmes" />
+                          </Columns>
+                      </asp:GridView>
+                  </div>
              </div>
         </div>
     </div>

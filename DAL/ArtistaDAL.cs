@@ -262,5 +262,37 @@ namespace DAL
 
             return listaArtistas;
         }
+
+        public List<Filmes> ObterFilmesArtistaWeb(int CdArtista)
+        {
+            List<Filmes> listaFilmes = new List<Filmes>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT B.Titulo FROM Artistas A INNER JOIN Itens B ON A.NmArtistas = B.Atores WHERE A.CdArtista = @codigo";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@codigo", CdArtista);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                Filmes objFilme;
+                while (dr.Read())
+                {
+                    objFilme = new Filmes();
+                    objFilme.Titulo = dr["Titulo"].ToString();
+
+                    listaFilmes.Add(objFilme);
+                }
+            }
+            conn.Close();
+
+            return listaFilmes;
+        }
     }
 }

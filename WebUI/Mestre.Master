@@ -58,6 +58,7 @@
                                 <asp:MenuItem NavigateUrl="~/TesteValidadores.aspx" Text="Validadores" Value="Validadores"></asp:MenuItem>
                             </asp:MenuItem>
                         </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Artistas.aspx" Text="Artistas" Value="Artistas"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/PageContato.aspx" Text="Contato" Value="Contato"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Mensagens.aspx" Text="Mensagens" Value="Mensagens"></asp:MenuItem>
                     </Items>

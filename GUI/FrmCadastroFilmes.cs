@@ -68,20 +68,8 @@ namespace GUI
 
             LimparCampos();
             CarregarFilmes();
+            fDAL.SalvarImagemLocal(objFilmes);
         }
-        //void converterFoto()
-        //{
-        //    convertendo a foto para dados binários
-        //    if (picFoto.Image != null)
-        //    {
-        //        MemoryStream ms = new MemoryStream();
-        //        picFoto.Image.Save(ms, ImageFormat.Jpeg);
-        //        byte[] CapaFilme = new byte[ms.Length];
-        //        ms.Position = 0;
-        //        ms.Read(CapaFilme, 0, CapaFilme.Length);
-        //        cmd.Parameters.AddWithValue("@capafilme", CapaFilme);
-        //    }
-        //}
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace WebUI
 {
@@ -15,6 +16,7 @@ namespace WebUI
             FilmesDAL fDal = new FilmesDAL();
             grvFilmes.DataSource = fDal.ListarNomeFilme();
             grvFilmes.DataBind();
+            
             //    < asp:SqlDataSource ID = "BancoLocadora" runat = "server"
             //ConnectionString = "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Locadora;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
             //ProviderName = "System.Data.SqlClient"
@@ -25,6 +27,7 @@ namespace WebUI
         {
             string nomeComando = e.CommandName;
             string Titulo = (string)e.CommandArgument;
+            string Caminho = (string)e.CommandArgument;
 
             if (nomeComando == "CarregaFilme")
             {
@@ -42,6 +45,26 @@ namespace WebUI
         protected void link1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            FilmesDAL fDAL = new FilmesDAL();          
+
+            DataTable dt = fDAL.ObterFilme(); 
+            DataView dv = new DataView(dt);
+
+            string SearchExpression = null;
+            if (!String.IsNullOrEmpty(txtPesquisa.Text))  
+            {
+                SearchExpression = string.Format("{0} '%{1}%'",
+                grvFilmes.SortExpression, txtPesquisa.Text);              
+            }
+            
+            dv.RowFilter = "Titulo like" + SearchExpression;            
+            grvFilmes.DataSource = dv;            
+            grvFilmes.DataBind();
+      
         }
     }
 }

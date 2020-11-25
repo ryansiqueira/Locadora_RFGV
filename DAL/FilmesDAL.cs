@@ -115,7 +115,7 @@ namespace DAL
                 {
                     filme.CapaFilme = (byte[])dr["CapaFilme"];
                 }
-                //filme.FotoFilme = dr2["CapaFilme"].ToString();
+                filme.Caminho = dr["Caminho"].ToString();
             }
             conn.Close();
 
@@ -302,49 +302,36 @@ namespace DAL
             conn.Close();
         }
 
+        public DataTable ObterFilme()
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select * from Itens";
+            SqlDataAdapter dAdapter = new SqlDataAdapter();
+            dAdapter.SelectCommand = cmd;
+            DataSet objDs = new DataSet();
+            dAdapter.Fill(objDs);
+            return objDs.Tables[0];
+        }
 
-        //public List<Pessoa> ListarPessoasFiltros(string nome, string email)
-        //{
-        //    List<Pessoa> listaPessoas = new List<Pessoa>();
+        public void SalvarImagemLocal(Filmes objFilmes)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
 
-        //    SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
 
-        //    conn.Open();
+            string sql = @"UPDATE Itens SET Caminho = 'CapasFilmes/" + objFilmes.Titulo + ".jpg" + "' Where CodigoBarras = @codigobarras";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@codigobarras", objFilmes.CodigoBarras);
+            cmd.Parameters.AddWithValue("Caminho", objFilmes.Caminho);
 
-        //    string sql = "SELECT * FROM Pessoas WHERE NmPessoa LIKE @nome AND DsEmail LIKE @email";
+            cmd.ExecuteNonQuery();
 
-        //    SqlCommand cmd = new SqlCommand(sql, conn);
-        //    cmd.Parameters.AddWithValue("@nome", $"%{nome}%");
-        //    cmd.Parameters.AddWithValue("@email", $"%{email}%");
-
-        //    SqlDataReader dr = cmd.ExecuteReader();
-
-        //    if (dr.HasRows)
-        //    {
-        //        Pessoa objPessoa;
-        //        while (dr.Read())
-        //        {
-        //            objPessoa = new Pessoa();
-        //            objPessoa.CdPessoa = Convert.ToInt32(dr["CdPessoa"]);
-        //            objPessoa.NmPessoa = dr["NmPessoa"].ToString();
-        //            objPessoa.NrCPF = dr["NrCPF"].ToString();
-        //            objPessoa.DtNascimento = Convert.ToDateTime(dr["DtNascimento"]);
-        //            objPessoa.DsEstadoCivil = Convert.ToChar(dr["DsEstadoCivil"]);
-        //            objPessoa.DsSexo = Convert.ToChar(dr["DsSexo"]);
-        //            objPessoa.DsEmail = dr["DsEmail"].ToString();
-        //            objPessoa.NrTelefone = dr["NrTelefone"].ToString();
-        //            objPessoa.BtRecebeSMS = Convert.ToBoolean(dr["BtRecebeSMS"]);
-        //            objPessoa.BtRecebeEmail = Convert.ToBoolean(dr["BtRecebeEmail"]);
-
-        //            listaPessoas.Add(objPessoa);
-        //        }
-        //    }
-
-        //    conn.Close();
-
-        //    return listaPessoas;
-        //}
-
+            conn.Close();
+        }
     }
 }
 

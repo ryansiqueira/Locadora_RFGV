@@ -26,7 +26,7 @@
                <asp:TemplateField>
     <ItemTemplate>
         <asp:LinkButton ID="link1" runat="server" OnClick="link1_Click" CommandName="CarregaFilme"  CommandArgument='<%# Eval("Titulo")%>'>
-        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Caminho") %>'  Height="99px" Width="156px"   />
+        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Caminho") %>'  Height="100px" Width="156px"   />
     </asp:LinkButton>
 
     </ItemTemplate>
